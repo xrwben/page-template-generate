@@ -1,0 +1,351 @@
+@activityName: '';
+@bf: 75rem; // 1080px -> fontSize -> 108px
+@imgUrl: './images';
+
+[v-cloak]{ display:none!important; }
+
+@import "./sprite.less";
+
+/* 定义颜色字体大小 S */
+html, body {
+    height: 100%;
+}
+/* 定义颜色字体大小 E */
+
+/* 定义普通样式 S */
+/* 页面内容 */
+#app {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.page-bgs {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    background: url('@{imgUrl}/bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 256/@bf;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background: url('@{imgUrl}/bg-deco.png') no-repeat;
+        background-size: 100% auto;
+    }
+}
+
+.page-bg {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+// 定义背景图高度及资源
+.page-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 78/@bf;
+    padding-bottom: 150/@bf;
+}
+.info-h {
+    margin: 0 auto 38/@bf;
+}
+.content {
+    display: flex;
+}
+.guide-i {
+    flex: 1;
+    text-align: center;
+    width: 50%;
+}
+.guide-qrcode {
+    width: 290/@bf;
+    height: 290/@bf;
+    box-sizing: border-box;
+    border: 3px solid #d8b473;
+    border-radius: 10/@bf;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    padding: 20/@bf;
+
+    &.pad {
+        padding: 16/@bf;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        background: #e5e5e5;
+        display: block;
+    }
+}
+.guide-name {
+    font-size: 36/@bf;
+    color: #f5e3bc;
+    text-align: center;
+    // width: 290/@bf;
+    width: 100%;
+    margin: 0 auto;
+    height: 84/@bf;
+    line-height: 84/@bf;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px 10/@bf;
+}
+.guide-info {
+    height: 144/@bf;
+    width: 290/@bf;
+    margin: 0 auto;
+    padding: 0px 10/@bf;
+    display: flex;
+    align-items: center;
+
+    .info-txt {
+        width: 100%;
+        font-size: 30/@bf;
+        color: #d8b473;
+        text-align: center;
+        line-height: 48/@bf;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+}
+.guide-tips {
+    margin-top: 16/@bf;
+    font-size: 28/@bf;
+    color: #d8b473;
+    text-align: center;
+}
+.guide-btn {
+    //..
+    margin: 6/@bf auto 0;
+}
+.btn-more {
+    width: 400/@bf;
+    margin-top: 102/@bf;
+}
+
+.btn-install,
+.btn-cert,
+.btn-more,
+.btn-close {
+    &:active {
+        opacity: 0.85;
+    }
+}
+
+.layer,
+.layer,
+.layer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.tips-layer {
+    .tips {
+        position: absolute;
+        top: 28/@bf;
+        right: 22/@bf;
+        width: 488/@bf;
+        height: 311/@bf;
+        background: url('@{imgUrl}/tips.png') no-repeat;
+        background-size: cover;
+    }
+}
+
+.op-layer {
+    .op-content {
+        width: 716/@bf;
+        height: 80%;
+        padding-bottom: 20/@bf;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 20/@bf;
+        background: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .op-inner {
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .op-header {
+        position: relative;
+        height: 98/@bf;
+        line-height: 102/@bf;
+        border-bottom: 1px solid #cecece;
+        font-size: 36/@bf;
+        color: #333333;
+        text-align: left;
+        padding-left: 34/@bf;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 28/@bf;
+        right: 24/@bf;
+    }
+
+    .op-item {
+        margin-top: 19/@bf;
+        background: #fff;
+        position: relative;
+        border-bottom: 1px solid #cecece;
+
+        .badge {
+            position: absolute;
+            top: 0px;
+            left: 22/@bf;
+            font-size: 36/@bf;
+            color: #fff;
+            text-align: center;
+            line-height: 60/@bf;
+        }
+    }
+
+    .op-img {
+        margin: 16/@bf auto 23/@bf;
+        width: 669/@bf;
+    }
+
+    .op-img-1 {
+        height: 384/@bf;
+    }
+    .op-img-2 {
+        height: 516/@bf;
+    }
+    .op-img-3,
+    .op-img-4,
+    .op-img-5,
+    .op-img-6 {
+        height: 517/@bf;
+    }
+
+    .op-img-7 {
+        height: 562/@bf;
+    }
+}
+
+.modal {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 540/@bf;
+    border-radius: 20/@bf;
+    background: #fff;
+    padding: 50/@bf 0;
+
+    .modal-txt {
+        font-size: 28/@bf;
+        color: #666666;
+        text-align: center;
+    }
+
+    .modal-btn {
+        height: 80/@bf;
+        border-radius: 40/@bf;
+        text-align: center;
+        line-height: 80/@bf;
+        margin: 40/@bf auto 0;
+    }
+
+    .modal-close {
+        width: 420/@bf;
+        background: #d8b473;
+        color: #fff;
+        font-size: 30/@bf;
+    }
+
+    .modal-h {
+        font-size: 30/@bf;
+        color: #333;
+        text-align: center;
+    }
+
+    .secret-txt {
+        font-size: 28/@bf;
+        color: #666666;
+        text-align: center;
+        height: 40/@bf;
+        line-height: 40/@bf;
+        margin-top: 10/@bf;
+    }
+
+    .modal-down {
+        width: 420/@bf;
+        background: #73a7d8;
+        color: #fff;
+        font-size: 30/@bf;
+    }
+}
+
+.toast-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: transparent;
+    z-index: 20;
+
+    .toast-msg {
+        position: fixed;
+        z-index: 20;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10/@bf 16/@bf;
+        font-size: 30/@bf;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 12/@bf;
+        max-width: 70%;
+
+        &.tips {
+            max-width: 900/@bf;
+        }
+    }
+}
+
+.uid {
+    position: fixed;
+    bottom: 10/@bf;
+    left: 10/@bf;
+    color: #6c6c6c;
+}

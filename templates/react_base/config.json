@@ -1,0 +1,12 @@
+{
+    "author": "mrzjd",
+    "email": "390303304@qq.com",
+    "type": "template",
+    "name": "react_base",
+    "useTpl": "_blank",
+    "branch": "tpl/react_base",
+    "created": "Thu Aug 15 2019 12:25:37 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "页面标题"
+    }
+}

@@ -1,0 +1,133 @@
+@imgUrl: './mobile/images';
+
+@import './sprite.less';
+
+#app {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: #e8a548;
+}
+
+.fl-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fl-ver {
+    display: flex;
+    align-items: center;
+}
+.txt-of {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn {
+    &:active {
+        opacity: 0.85;
+    }
+}
+
+.page-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner {
+    height: 1080/@bf;
+}
+
+.avatar-list {
+    min-height: 1400/@bf;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mods {
+    width: 50%;
+    margin-top: 100/@bf;
+
+    .nickname {
+        text-align: center;
+        color: #4d236f;
+        font-size: 36/@bf;
+        padding: 0px 50/@bf;
+        font-weight: bold;
+        height: 44/@bf;
+        line-height: 44/@bf;
+    }
+
+    .headpic {
+        margin: 14/@bf auto;
+        padding: 26/@bf;
+        position: relative;
+    }
+
+    .icon_live {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translate(25%, 80%);
+    }
+
+    .avatar {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content,
+    .time {
+        text-align: left;
+        color: #4d236f;
+        font-size: 30/@bf;
+        padding: 0px 60/@bf;
+        height: 66/@bf;
+        line-height: 34/@bf;
+    }
+
+    .time {
+        margin-top: 6/@bf;
+        word-break: break-all;
+        display: flex;
+        align-items: center;
+    }
+
+    .mod-atte {
+        margin: 14/@bf auto 0;
+    }
+}
+
+.footer {
+    width: 1080/@bf;
+    height: 205/@bf;
+    background: url('./images/bg3.jpg') no-repeat;
+    background-size: 100% auto;
+    padding-top: 150/@bf;
+}
+
+.footer-c {
+    background-color: #4d236f;
+    margin-top: -50/@bf;
+}
+
+.tiper {
+    margin: 0 auto;
+    font-size: 36/@bf;
+    color: #4d236f;
+    padding: 16/@bf 40/@bf;
+    font-weight: bold;
+}
+
+.copyright {
+    font-size: 30/@bf;
+    color: rgba(232, 165, 72, 0.5);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 20/@bf 0 40/@bf;
+}

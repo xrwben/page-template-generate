@@ -1,0 +1,188 @@
+.hallow-cp {
+    width: 981/@bf;
+    height: 834/@bf;
+    margin: 0 auto 0;
+    background: url('../../mobile/images/bg-cp.png') no-repeat;
+    background-size: 100% auto;
+    padding: 172/@bf 50/@bf 50/@bf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .hallow-mask {
+        font-size: 40/@bf;
+        color: #ea5413;
+        font-weight: bold;
+        transform: skewX(-10deg);
+    }
+
+    .cp-box {
+        width: 100%;
+        padding-top: 20/@bf;
+    }
+
+    .cp-i {
+        position: relative;
+        flex: 1;
+    }
+
+    .cown {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, -70%);
+    }
+
+    .cp-box .headpic {
+        display: block;
+        width: 210/@bf;
+        height: 210/@bf;
+        border-radius: 50%;
+        margin: 0 auto;
+        background: #f39800;
+        overflow: hidden;
+    }
+
+    .cp-box .icon-live {
+        position: absolute;
+        top: 210/@bf;
+        left: 50%;
+        transform: translate(-50%, -90%);
+    }
+
+    .cp-box .nickname {
+        margin-top: 8/@bf;
+        width: 100%;
+        .name {
+            max-width: 200/@bf;
+            font-size: 32/@bf;
+        }
+    }
+
+    .cp-mod .nickname {
+        color: #3259a1;
+    }
+
+    .cp-user .nickname {
+        color: #e70068;
+    }
+
+    .cp-mod .headpic {
+        border: 3/@bf solid #8098cd;
+    }
+
+    .cp-user .headpic {
+        border: 3/@bf solid #f14b96;
+    }
+
+    .cp-value {
+        width: 300/@bf;
+
+        .score {
+            font-size: 36/@bf;
+            color: #ff1c75;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            width: 110%;
+            height: 54/@bf;
+            line-height: 64/@bf;
+            border-radius: 30/@bf;
+            background-color: #ffdbee;
+            box-shadow: 0px 0px 6px inset #ff82ac;
+            margin: 14/@bf auto;
+            padding: 0px 10/@bf;
+            transform: translateX(-50%);
+        }
+    }
+
+    .icon-cp {
+        margin: 0 auto;
+    }
+
+    .icon-love {
+        display: block;
+        margin: -36/@bf auto 0;
+    }
+
+    .mod-center {
+        width: 100%;
+        position: relative;
+        padding-top: 40/@bf;
+
+        &:before {
+            content: '';
+            display: block;
+            .icon-s;
+            .cp-sep;
+            margin: 0 auto;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .infos {
+            width: 300/@bf;
+        }
+
+        .headpic {
+            width: 140/@bf;
+            height: 140/@bf;
+            border: 1px dashed #333;
+            border-radius: 50%;
+            margin: 0 auto;
+            padding: 6/@bf;
+        }
+
+        .avatar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f39800;
+        }
+
+        .icon-live {
+            // position: absolute;
+            margin: -44/@bf auto 4/@bf;
+        }
+
+        .nickname {
+            font-size: 32/@bf;
+            color: #4d236f;
+            margin-top: 6/@bf;
+
+            .name {
+                max-width: 240/@bf;
+            }
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .txt {
+            color: #4d236f;
+            font-size: 36/@bf;
+            margin: 4/@bf 0;
+        }
+
+        .cl-hl {
+            color: #ff1c75;
+            margin: 0px 4/@bf;
+        }
+    }
+
+    .mod-center-holder {
+        width: 100%;
+        height: 271/@bf;
+        background: url('../../mobile/images/icon-lv.png') no-repeat;
+        background-size: 956/@bf 271/@bf;
+        background-position: center;
+        margin-top: -30/@bf;
+        margin-bottom: -20/@bf;
+    }
+}

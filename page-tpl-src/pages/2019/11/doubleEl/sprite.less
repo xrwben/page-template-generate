@@ -1,0 +1,105 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_btn_sprite () {
+    .btn-s {
+        background: url('./images/btn.png') no-repeat;
+        background-size: 722/@bf 646/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn-atte-dis { .getSprite(157, 74, 450, 326); }
+    .btn-atte { .getSprite(157, 73, 263, 455); }
+    .btn-cart { .getSprite(440, 119, 0, 326); }
+    .btn-close { .getSprite(52, 55, 617, 326); }
+    .btn-rule { .getSprite(253, 191, 0, 455); }
+    .btn-t-buy-dis { .getSprite(359, 153, 0, 0); }
+    .btn-t-buy { .getSprite(359, 153, 0, 163); }
+    .btn-t-lv-dis { .getSprite(353, 152, 369, 0); }
+    .btn-t-lv { .getSprite(353, 152, 369, 162); }
+}
+.set_btn_sprite();
+
+.set_icon_sprite () {
+    .icon-s {
+        background: url('./images/icon.png') no-repeat;
+        background-size: 754/@bf 678/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .h-cart { .getSprite(571, 102, 0, 576); }
+    .h-rule { .getSprite(490, 302, 0, 0); }
+    .icon-cart-1 { .getSprite(254, 254, 500, 0); }
+    .icon-cart-2 { .getSprite(254, 254, 0, 312); }
+    .icon-cart-3 { .getSprite(254, 254, 264, 312); }
+    .icon-live-2 { .getSprite(105, 57, 528, 312); }
+    .icon-live { .getSprite(84, 31, 500, 264); }
+}
+.set_icon_sprite();
+
+.set_num_sprite () {
+    .num-s {
+        background: url('./images/num.png') no-repeat;
+        background-size: 258/@bf 241/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .l-0 { .getSprite(41, 53, 0, 188); }
+    .l-1 { .getSprite(38, 52, 201, 188); }
+    .l-2 { .getSprite(43, 52, 106, 126); }
+    .l-3 { .getSprite(43, 53, 0, 63); }
+    .l-4 { .getSprite(43, 52, 0, 126); }
+    .l-5 { .getSprite(45, 53, 0, 0); }
+    .l-6 { .getSprite(43, 53, 53, 63); }
+    .l-7 { .getSprite(41, 52, 102, 188); }
+    .l-8 { .getSprite(42, 53, 216, 63); }
+    .l-9 { .getSprite(43, 53, 163, 0); }
+    .r-0 { .getSprite(41, 53, 51, 188); }
+    .r-1 { .getSprite(38, 52, 153, 188); }
+    .r-2 { .getSprite(43, 52, 159, 126); }
+    .r-3 { .getSprite(43, 53, 106, 63); }
+    .r-4 { .getSprite(43, 52, 53, 126); }
+    .r-5 { .getSprite(45, 53, 55, 0); }
+    .r-6 { .getSprite(43, 53, 163, 63); }
+    .r-7 { .getSprite(41, 52, 216, 126); }
+    .r-8 { .getSprite(42, 53, 216, 0); }
+    .r-9 { .getSprite(43, 53, 110, 0); }
+}
+.set_num_sprite();
+
+.set_pic_sprite () {
+    .pic-s {
+        background: url('./images/pic.png') no-repeat;
+        background-size: 834/@bf 618/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .bar-deco { .getSprite(791, 184, 0, 194); }
+    .h-gift { .getSprite(511, 68, 0, 388); }
+    .h-rank { .getSprite(834, 184, 0, 0); }
+    .r-t-2 { .getSprite(45, 48, 521, 388); }
+    .r-t { .getSprite(45, 48, 576, 388); }
+    .txt-c1 { .getSprite(322, 71, 0, 466); }
+    .txt-c2 { .getSprite(110, 71, 0, 547); }
+    .txt-c3 { .getSprite(113, 70, 332, 466); }
+}
+.set_pic_sprite();
+
+.set_pic2_sprite () {
+    .pic2-s {
+        background: url('./images/pic2.png') no-repeat;
+        background-size: 772/@bf 550/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .cown-1 { .getSprite(286, 364, 0, 0); }
+    .cown-2 { .getSprite(236, 298, 296, 0); }
+    .cown-3 { .getSprite(230, 292, 542, 0); }
+    .headpic-bg { .getSprite(176, 176, 0, 374); }
+    .icon-lose { .getSprite(162, 144, 186, 374); }
+    .icon-win { .getSprite(162, 144, 358, 374); }
+}
+.set_pic2_sprite();

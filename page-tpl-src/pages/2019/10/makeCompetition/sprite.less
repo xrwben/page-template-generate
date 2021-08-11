@@ -1,0 +1,83 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_btn_sprite () {
+    .btn-s {
+        background: url('./images/btn.png') no-repeat;
+        background-size: 763/@bf 459/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn-close { .getSprite(72, 72, 539, 252); }
+    .btn_down { .getSprite(318, 91, 0, 200); }
+    .btn_rule { .getSprite(201, 190, 0, 0); }
+    .btn_up { .getSprite(318, 91, 211, 0); }
+    .tab-pk-1-a { .getSprite(224, 74, 0, 301); }
+    .tab-pk-1 { .getSprite(224, 74, 234, 301); }
+    .tab-pk-2-a { .getSprite(224, 74, 211, 101); }
+    .tab-pk-2 { .getSprite(224, 74, 234, 385); }
+    .tab-pk-3-a { .getSprite(224, 74, 539, 0); }
+    .tab-pk-3 { .getSprite(224, 74, 539, 84); }
+    .tab-pk-4-a { .getSprite(224, 74, 539, 168); }
+    .tab-pk-4 { .getSprite(224, 74, 0, 385); }
+}
+.set_btn_sprite();
+
+.set_ht_sprite () {
+    .ht-s {
+        background: url('./images/ht.png') no-repeat;
+        background-size: 978/@bf 368/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .h-getin { .getSprite(484, 116, 0, 0); }
+    .h-prompt { .getSprite(484, 116, 0, 126); }
+    .h-rule { .getSprite(484, 116, 0, 252); }
+    .h-tyrant { .getSprite(484, 116, 494, 0); }
+}
+.set_ht_sprite();
+
+.set_icon_sprite () {
+    .icon-s {
+        background: url('./images/icon.png') no-repeat;
+        background-size: 640/@bf 533/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .all-in { .getSprite(203, 145, 0, 0); }
+    .badge_1 { .getSprite(86, 116, 213, 179); }
+    .badge_2 { .getSprite(88, 119, 381, 175); }
+    .badge_3 { .getSprite(86, 116, 0, 417); }
+    .cown_1 { .getSprite(98, 89, 204, 417); }
+    .cown_2 { .getSprite(98, 90, 96, 417); }
+    .cown_3 { .getSprite(98, 89, 312, 417); }
+    .h-curr-bg { .getSprite(286, 73, 0, 334); }
+    .ic_pk { .getSprite(105, 63, 296, 334); }
+    .ic_pk_lose { .getSprite(159, 165, 381, 0); }
+    .ic_pk_win { .getSprite(159, 169, 0, 155); }
+    .ic_pk_win_king { .getSprite(158, 169, 213, 0); }
+    .icon-dot { .getSprite(19, 19, 550, 156); }
+    .icon_live { .getSprite(96, 44, 411, 334); }
+    .txt-mod { .getSprite(90, 42, 420, 417); }
+    .txt-pm { .getSprite(90, 42, 550, 0); }
+    .txt-user { .getSprite(88, 42, 550, 104); }
+    .txt-val { .getSprite(90, 42, 550, 52); }
+}
+.set_icon_sprite();
+
+.set_tab_sprite () {
+    .tab-s {
+        background: url('./images/tab.png') no-repeat;
+        background-size: 918/@bf 302/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .tab-pk-a { .getSprite(454, 146, 0, 0); }
+    .tab-pk { .getSprite(454, 146, 0, 156); }
+    .tab-prom-a { .getSprite(454, 146, 464, 0); }
+    .tab-prom { .getSprite(454, 146, 464, 156); }
+}
+.set_tab_sprite();

@@ -1,0 +1,507 @@
+.page {
+    z-index: 1;
+}
+
+@f1px: 1px;
+
+.page-ani-container {
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1270/@f1px; // 需要初始化画板区域
+    background: url('./images/bg0.jpg') no-repeat;
+    background-size: 100% auto;
+}
+
+.page-ani-el {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+/* 动画元素 */
+.pa-house {
+    width: 603/@f1px;
+    height: 643/@f1px;
+    background-image: url('./images/house.png');
+    transition: all 2s ease-in-out;
+    opacity: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &.enter {
+        opacity: 1;
+    }
+}
+
+@keyframes lightTwinkle {
+    0.01% { opacity: 0; }
+    0.1% { opacity: 1; }
+
+    50% { opacity: 1; }
+    50.1% { opacity: 0; }
+}
+
+.pa-w-1 {
+    width: 78/@f1px;
+    height: 108/@f1px;
+    background-image: url('./images/w-1.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(-143%, 23%);
+    animation: lightTwinkle 10s linear 4.5s infinite forwards;
+}
+
+.pa-w-2 {
+    width: 62/@f1px;
+    height: 118/@f1px;
+    background-image: url('./images/w-2.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(-169%, 127%);
+    animation: lightTwinkle 10s linear 3s infinite forwards;
+}
+
+.pa-w-3 {
+    width: 40/@f1px;
+    height: 124/@f1px;
+    background-image: url('./images/w-3.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(-104%, 106%);
+    animation: lightTwinkle 10s linear 3s infinite forwards;
+}
+
+.pa-w-4 {
+    width: 21/@f1px;
+    height: 54/@f1px;
+    background-image: url('./images/w-4.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(203%, 64%);
+    animation: lightTwinkle 10s linear 4s infinite forwards;
+}
+
+.pa-w-5 {
+    width: 31/@f1px;
+    height: 41/@f1px;
+    background-image: url('./images/w-5.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(284%, 336%);
+    animation: lightTwinkle 10s linear 3.5s infinite forwards;
+}
+
+.pa-w-6 {
+    width: 52/@f1px;
+    height: 79/@f1px;
+    background-image: url('./images/w-6.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(114%, 302%);
+    animation: lightTwinkle 10s linear 2.5s infinite forwards;
+}
+
+.pa-w-7 {
+    width: 43/@f1px;
+    height: 80/@f1px;
+    background-image: url('./images/w-7.png');
+    opacity: 0;
+    top: 0px;
+    left: 50%;
+    transform: translate(-360%, 400%);
+    animation: lightTwinkle 10s linear 2s infinite forwards;
+}
+
+.pa-bf {
+    width: 279/@f1px;
+    height: 275/@f1px;
+    background-image: url('./images/b-l.png');
+    opacity: 0;
+}
+
+.pa-bf-1 {
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom right;
+    transform: translate(-137%, -218%) scale(0);
+
+    @keyframes flowInBf1 {
+        0.01% { transform: translate(-137%, -218%) scale(0); opacity: 0; }
+        70% { transform: translate(-137%, -218%) scale(1); opacity: 1; }
+        90% { transform: translate(-137%, -218%) scale(1.2); opacity: 0; }
+        100% { transform: translate(-137%, -218%) scale(0); opacity: 0; }
+    }
+
+    animation: flowInBf1 4s linear 0s infinite forwards;
+}
+
+.pa-bf-2 {
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom left;
+    transform: translate(-240%, -162%) scale(0);
+
+    @keyframes flowInBf2 {
+        0.01% { transform: translate(-240%, -162%) scale(0); opacity: 0; }
+        80% { transform: translate(-240%, -162%) scale(1); opacity: 1; }
+        90% { transform: translate(-240%, -162%) scale(1.1); opacity: 0; }
+        100% { transform: translate(-240%, -162%) scale(0); opacity: 0; }
+    }
+
+    animation: flowInBf2 4s linear 2s infinite forwards;
+}
+
+@keyframes flow1 {
+    0.01% { transform: scale(1.1); opacity: 1; }
+    25% { transform: scale(1.15) translate(10px, 10px); opacity: 0.95; }
+    50% { transform: scale(1.2) translate(20px, 0px); opacity: 1; }
+    75% { transform: scale(1.15) translate(10px, -10px); opacity: 0.95; }
+    100% { transform: scale(1.1) translate(0px, 0px); opacity: 1; }
+}
+
+@keyframes flow2 {
+    0.01% { transform: scale(1.1); opacity: 1; }
+    25% { transform: scale(1.15) translate(-6px, -6px); opacity: 0.95; }
+    50% { transform: scale(1.2) translate(-20px, -2px); opacity: 1; }
+    75% { transform: scale(1.15) translate(-12px, 12px); opacity: 0.95; }
+    100% { transform: scale(1.1) translate(0px, 0px); opacity: 1; }
+}
+
+.pa-ghost-3 {
+    width: 73/@f1px;
+    height: 73/@f1px;
+    background-image: url('./images/ghost-3.png');
+    top: 20%;
+    left: 37%;
+    transform-origin: bottom right;
+    opacity: 0;
+    transition: all 2s linear 1s;
+    transform: scale(0);
+
+    &.enter {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    &.float {
+        animation: flow2 5s linear infinite forwards;
+    }
+}
+
+.pa-ghost-4 {
+    width: 66/@f1px;
+    height: 71/@f1px;
+    background-image: url('./images/ghost-4.png');
+    top: 7%;
+    left: 53%;
+    opacity: 0;
+    transition: all 2s linear 1s;
+    transform: scale(0);
+
+    &.enter {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    &.float {
+        animation: flow1 7s linear infinite forwards;
+    }
+}
+
+.pa-wing-b {
+    width: 121/@f1px;
+    height: 127/@f1px;
+    background-image: url('./images/wing-b.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(270%, -380%);
+    opacity: 0;
+    transition: all 2s linear 1s;
+
+    &.enter {
+        opacity: 1;
+    }
+
+    @keyframes wingFly {
+        0.01% { transform: translate(270%, -380%) skew(0deg, 0deg); }
+        25% { transform: translate(270%, -380%) skew(4deg, 0deg); }
+        75% { transform: translate(270%, -380%) skew(-4deg, 0deg); }
+        100% { transform: translate(270%, -380%) skew(0deg, 0deg); }
+    }
+
+    &.float {
+        animation: wingFly 1s linear 0s infinite forwards;
+    }
+}
+
+
+.pa-wing-a {
+    width: 105/@f1px;
+    height: 224/@f1px;
+    background-image: url('./images/wing-a.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(340%, -236%);
+    opacity: 0;
+    transition: all 2s linear 1s;
+
+    @keyframes wingFly2 {
+        0.01% { transform: translate(340%, -236%) skew(0deg, 0deg); }
+        25% { transform: translate(340%, -236%) skew(-6deg, 0deg); }
+        75% { transform: translate(340%, -236%) skew(6deg, 0deg); }
+        100% { transform: translate(340%, -236%) skew(0deg, 0deg); }
+    }
+
+    &.enter {
+        opacity: 1;
+    }
+
+    &.float {
+        animation: wingFly2 1s linear 0s infinite forwards;
+    }
+}
+
+.pa-jcc {
+    width: 459/@f1px;
+    height: 353/@f1px;
+    background-image: url('./images/jcc.png');
+    top: 12.5%;
+    left: 49.5%;
+    opacity: 0;
+    transition: all 1.2s linear .6s;
+
+    &.enter {
+        opacity: 1;
+    }
+}
+
+.pa-txt-jcc {
+    width: 32/@f1px;
+    height: 183/@f1px;
+    background-image: url('./images/txt-jcc.png');
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(2000%, -200%);
+    transition: all 1s linear .5s;
+
+    &.enter {
+        opacity: 1;
+        transform: translate(1550%, -255%);
+    }
+}
+
+.pa-ng-1 {
+    width: 136/@f1px;
+    height: 138/@f1px;
+    background-image: url('./images/ng-1.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(234%, -194%);
+    opacity: 0;
+    transition: all 1.2s linear 1s;
+
+    &.enter {
+        opacity: 1;
+    }
+
+    @keyframes shake1 {
+        0.01% { transform: translate(234%, -194%) rotate(0); }
+        25% { transform: translate(234%, -194%) rotate(4deg); }
+        50% { transform: translate(234%, -194%) rotate(0); }
+        75% { transform: translate(234%, -194%) rotate(-4deg); }
+        100% { transform: translate(234%, -194%) rotate(0); }
+    }
+    
+    &.float {
+        animation: shake1 2s linear 0s infinite forwards;
+    }
+}
+
+.pa-ng-2 {
+    width: 123/@f1px;
+    height: 125/@f1px;
+    background-image: url('./images/ng-2.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(-66%, -227%);
+    opacity: 0;
+    transition: all 1.2s linear 1s;
+
+    &.enter {
+        opacity: 1;
+    }
+
+    @keyframes shake2 {
+        0.01% { transform: translate(-66%, -227%) rotate(0); }
+        25% { transform: translate(-66%, -227%) rotate(-4deg); }
+        50% { transform: translate(-66%, -227%) rotate(0); }
+        75% { transform: translate(-66%, -227%) rotate(4deg); }
+        100% { transform: translate(-66%, -227%) rotate(0); }
+    }
+    
+    &.float {
+        transform-origin: bottom right;
+        animation: shake2 3s linear 0s infinite forwards;
+    }
+}
+
+.pa-txt-banner {
+    width: 836/@f1px;
+    height: 377/@f1px;
+    background-image: url('./images/txt-banner.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, 40%);
+
+    opacity: 0;
+    transition: all 2s ease .5s;
+
+    &.enter {
+        opacity: 1;
+        transform: translate(-40%, -64%);
+    }
+}
+
+.pa-ng-3 {
+    width: 87/@f1px;
+    height: 85/@f1px;
+    background-image: url('./images/ng-3.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(110%, -196%) scale(0);
+
+    opacity: 0;
+    transition: all .5s ease 2.5s;
+
+    &.enter {
+        opacity: 1;
+        transform: translate(110%, -196%) scale(1);
+    }
+
+    @keyframes shake3 {
+        0.01% { transform: translate(110%, -196%) scale(1) rotate(0); }
+        25% { transform: translate(110%, -196%) scale(1.1) rotate(6deg); }
+        50% { transform: translate(110%, -196%) scale(1) rotate(0deg); }
+        75% { transform: translate(110%, -196%) scale(1.1) rotate(6deg); }
+        100% { transform: translate(110%, -196%) scale(1) rotate(0); }
+    }
+
+    &.float {
+        animation: shake3 2s linear infinite forwards;
+    }
+}
+
+.pa-ng-4 {
+    width: 52/@f1px;
+    height: 62/@f1px;
+    background-image: url('./images/ng-4.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -139%) scale(0);
+
+    opacity: 0;
+    transition: all .5s ease 2.5s;
+
+    &.enter {
+        opacity: 1;
+        transform: translate(24%, -139%) scale(1);
+    }
+
+    @keyframes shake4 {
+        0.01% { transform: translate(24%, -139%) scale(1) rotate(0); }
+        25% { transform: translate(24%, -139%) scale(0.85) rotate(4deg); }
+        50% { transform: translate(24%, -139%) scale(1) rotate(0deg); }
+        75% { transform: translate(24%, -139%) scale(0.85) rotate(4deg); }
+        100% { transform: translate(24%, -139%) scale(1) rotate(0); }
+    }
+
+    &.float {
+        animation: shake4 2s linear infinite forwards;
+    }
+}
+
+.pa-ghost-1 {
+    width: 168/@bf;
+    height: 160/@bf;
+    background-image: url('./images/ghost-1.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(600%, -525%) scale(0.8);
+    opacity: 0;
+    transition: all 2s ease 2s;
+
+    &.enter {
+        opacity: 1;
+        transform: translate(400%, -525%) scale(1);
+    }
+
+    @keyframes flowGH1 {
+        0.01% { transform: translate(400%, -525%) scale(1); opacity: 1; }
+        25% { transform: translate(380%, -529%) scale(1.05); opacity: 1; }
+        50% { transform: translate(365%, -525%) scale(1); opacity: 0.95; }
+        75% { transform: translate(380%, -521%) scale(1); opacity: 0.8; }
+        100% { transform: translate(400%, -525%) scale(1); opacity: 1; }
+    }
+
+    &.float {
+        animation: flowGH1 5s linear infinite forwards;
+    }
+}
+
+.pa-ghost-2 {
+    width: 334/@bf;
+    height: 406/@bf;
+    background-image: url('./images/ghost-2.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(-204%, -108%) scale(1);
+    opacity: 0;
+    transition: all 2s ease 2s;
+
+    &.enter {
+        opacity: 1;
+        transform: translate(-204%, -108%) scale(1);
+    }
+
+    @keyframes flowGH2 {
+        0.01% { transform: translate(-204%, -108%) scale(1); opacity: 1; }
+        25% { transform: translate(-190%, -103%) scale(1.05); opacity: 0.9; }
+        50% { transform: translate(-180%, -108%) scale(1); opacity: 0.8; }
+        75% { transform: translate(-190%, -112%) scale(0.95); opacity: 0.9; }
+        99% { transform: translate(-204%, -108%) scale(1); opacity: 1; }
+    }
+
+    &.float {
+        animation: flowGH2 5s linear 0s infinite forwards;
+    }
+}
+
+.pa-cartain {
+    width: 100%;
+    height: 957px;
+    background-image: url('./images/cartain.png');
+    background-position: top center;
+    opacity: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 2s ease-in-out 3s;
+
+    &.enter {
+        opacity: 1;
+    }
+}

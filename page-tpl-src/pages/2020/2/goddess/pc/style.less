@@ -1,0 +1,26 @@
+@activityName: '';
+@bf: 1px*10/6;
+@pcUrl: './images';
+
+@import '../mixin.less';
+
+.btn {
+    cursor: pointer;
+}
+
+#app {
+    background: url("../images/bg-p-1.jpg") no-repeat center top / 100% 710px,
+        url("../images/bg-p-2.jpg") no-repeat 0 709px ~"/" 100% 919px,
+        url("../images/bg-p-3.jpg") no-repeat 0 1627px ~"/" 100% 2710px;
+    background-color: #8bd9c0;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 690px;
+    margin: 0 auto;
+}
+.rule-btn {
+    right: 44%;
+    top: 50%;
+    transform: translate(500px);
+}

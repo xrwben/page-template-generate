@@ -1,0 +1,25 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@mobileImg: './images';
+
+@import '../mixin.less';
+
+.level_icon {
+    height: 48/@bf !important;
+}
+
+.bgs {
+    width: 100%;
+    height: 100%;
+   .bg-1 {
+        width: 100%;
+        height: 650/@bf;
+        background: url("../images/banner-m-1.jpg") no-repeat center / 100% 100%;
+    }
+    .bg-2 {
+        width: 100%;
+        height: 853/@bf;
+        background: url("../images/banner-m-2.jpg") no-repeat center / 100% 100%;
+        margin-top: -1px;
+    }
+}

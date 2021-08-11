@@ -1,0 +1,61 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_tab_sprite () {
+    .tab-s {
+        background: url('./images/tab.png') no-repeat;
+        background-size: 547/@bf 420/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .tab-bg-a { .getSprite(280, 250, 0, 0); }
+    .tab-bg { .getSprite(257, 134, 290, 0); }
+    .tab-t-bet-a { .getSprite(179, 36, 136, 260); }
+    .tab-t-bet { .getSprite(170, 32, 367, 342); }
+    .tab-t-games-a { .getSprite(176, 36, 0, 342); }
+    .tab-t-games { .getSprite(168, 32, 0, 388); }
+    .tab-t-rw-a { .getSprite(179, 36, 325, 260); }
+    .tab-t-rw { .getSprite(171, 32, 186, 342); }
+    .tab-t-user-a { .getSprite(134, 76, 290, 144); }
+    .tab-t-user { .getSprite(126, 72, 0, 260); }
+}
+.set_tab_sprite();
+
+.set_common_sprite () {
+    .common-s {
+        background: url('./images/common.png') no-repeat;
+        background-size: 1134/@bf 96/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .a-play { .getSprite(51, 51, 288, 12); }
+    .btn-close { .getSprite(66, 63, 212, 12); }
+    .icon-pause { .getSprite(96, 96, 0, 0); }
+    .icon-play { .getSprite(96, 96, 106, 0); }
+    .icon-qs { .getSprite(33, 32, 349, 12); }
+    .sep { .getSprite(922, 2, 212, 0); }
+}
+.set_common_sprite();
+
+.set_num_sprite () {
+    .num-s {
+        background: url('./images/num.png') no-repeat;
+        background-size: 125/@bf 101/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .num-0 { .getSprite(27, 27, 0, 37); }
+    .num-1 { .getSprite(12, 27, 113, 0); }
+    .num-2 { .getSprite(27, 27, 37, 37); }
+    .num-3 { .getSprite(26, 27, 37, 74); }
+    .num-4 { .getSprite(27, 27, 76, 0); }
+    .num-5 { .getSprite(27, 27, 76, 37); }
+    .num-6 { .getSprite(26, 27, 73, 74); }
+    .num-7 { .getSprite(28, 27, 0, 0); }
+    .num-8 { .getSprite(28, 27, 38, 0); }
+    .num-9 { .getSprite(27, 27, 0, 74); }
+}
+.set_num_sprite();

@@ -1,0 +1,39 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_bet_sprite () {
+    .bet-s {
+        background: url('./images/bet.png') no-repeat;
+        background-size: 1336/@bf 433/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .br-h { .getSprite(369, 170, 0, 0); }
+    .br-list-h { .getSprite(957, 48, 379, 0); }
+    .btn-my-bet { .getSprite(353, 112, 379, 58); }
+    .btn-rule { .getSprite(265, 123, 0, 310); }
+    .h-curr-bet { .getSprite(352, 61, 742, 58); }
+    .icon-next { .getSprite(91, 89, 784, 180); }
+    .icon-opt1 { .getSprite(235, 90, 294, 180); }
+    .icon-opt2 { .getSprite(235, 90, 539, 180); }
+    .prog-i { .getSprite(284, 120, 0, 180); }
+}
+.set_bet_sprite();
+
+.set_bet2_sprite () {
+    .bet2-s {
+        background: url('./images/bet2.png') no-repeat;
+        background-size: 516/@bf 327/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .bet-h { .getSprite(369, 170, 0, 0); }
+    .btn-ok { .getSprite(362, 101, 0, 180); }
+    .choice-i { .getSprite(137, 141, 379, 0); }
+    .txt-tk { .getSprite(149, 36, 0, 291); }
+    .txt-tz { .getSprite(113, 38, 379, 151); }
+}
+.set_bet2_sprite();

@@ -1,0 +1,39 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@mobileImg: './images';
+
+@import '../mixin.less';
+
+.level_icon {
+    height: 48/@bf !important;
+}
+
+.page-bgs {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    .page-bg {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        &:not(:first-child) {
+            margin-top: -1px;
+        }
+    }
+
+    // 定义背景图高度及资源
+    .bg1 {
+        height: 540/@bf;
+        background-image: url('@{mobileImg}/banner.jpg');
+    }
+    .bg2 {
+        height: 540/@bf;
+        background-image: url('@{mobileImg}/banner2.jpg');
+    }
+}
+
+.qs-tips {
+    display: none;
+}

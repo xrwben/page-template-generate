@@ -1,0 +1,12 @@
+{
+    "author": "Jesse",
+    "email": "jesse@guojiang.tv",
+    "type": "page",
+    "name": "icp/dm/modinfo",
+    "useTpl": "_basic_pc",
+    "branch": "page/icp/dm/modinfo",
+    "created": "Wed Dec 04 2019 16:13:24 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "星光直播 主播详情"
+    }
+}

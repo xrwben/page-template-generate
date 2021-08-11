@@ -1,0 +1,323 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <!-- 开店、秒杀tab -->
+    <div class="tabs-block">
+        <div class="tab-btn" v-show="currentTab==='kd'">
+            <div class="btn tab-kd-show"></div>
+            <div class="btn tab-ms-hide" @click="changeCurrentTab('ms')"></div>
+        </div>
+        <div class="tab-btn" v-show="currentTab==='ms'">
+            <div class="btn tab-kd-hide" @click="changeCurrentTab('kd')"></div>
+            <div class="btn tab-ms-show"></div>
+        </div>
+    </div>
+    <div class="module-kd" v-show="currentTab==='kd'">
+        <div class="shop-demand-container">
+            <div class="shop-demand-bg">
+                <div class="shop-demand-block">
+                    <div class="discount-icon">{{ swiperIndex + 2 }}折</div>
+                    <div class="title">
+                        <div class="pic">
+                            <img v-if="discountList[swiperIndex] && discountList[swiperIndex].headPic" :src="discountList[swiperIndex].headPic" alt="" @click="goRoom(discountList[swiperIndex])">
+                            <img v-else src="${require('./images/xwyd.png')}" alt="">
+                        </div>
+                        <div class="name txt-of">{{ discountList[swiperIndex] && discountList[swiperIndex].nickname || '虚位以待' }}的店</div>
+                    </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="item in discountList">
+                                <p class="slide-tip">{{ item.discount === 5 ? '随机展示一名五折区的主播' : '' }}</p>
+                                <div class="gift-con">
+                                    <div class="gift-category" v-for="subItem in item.gifts">
+                                        <div class="pic">
+                                            <img :src="subItem.pic" alt="">
+                                        </div>
+                                        <div class="name">{{ subItem.gift }}</div>
+                                        <div class="new-price">{{ subItem.newprice }}{{ giftPer }}</div>
+                                        <div class="old-price">{{ subItem.oldprice }}{{ giftPer }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="tip">tip：资格争夺战，积分第一名主播礼物打2折，第二名主播打3折，第三名主播打4折，其他47名主播打5折。</p>
+        </div>
+        <div class="rank-container">
+            <div class="rank-tabs-block">
+                <div class="tab-btn" v-show="modRankTab==='zg'">
+                    <div class="btn tab-zg-show"></div>
+                    <div class="btn tab-cc-hide" @click="changeModRankTab('cc')"></div>
+                </div>
+                <div class="tab-btn" v-show="modRankTab==='cc'">
+                    <div class="btn tab-zg-hide" @click="changeModRankTab('zg')"></div>
+                    <div class="btn tab-cc-show"></div>
+                </div>
+            </div>
+            <div class="tip">
+                <p v-show="modRankTab==='zg'">1.8 11:00:00 - 1.9 23:59:59 按照收取礼物面板所有礼物获取积分排名（角标为周星、打榜除外）</p>
+                <p v-show="modRankTab==='cc'">1.10  00:00:00 - 1.12 23:59:59 所有主播按照收取所有打折礼物（1/2/3/4/5折）获取积分</p>
+            </div>
+            <div class="rank-con">
+                <div class="rank-title">
+                    <p>排名</p>
+                    <p>主播</p>
+                    <p>积分</p>
+                </div>
+                <div class="list-con">
+                    <pc-scroller class="rank-scroller" ref="rank-scroller" thumb-color="rgba(255, 255, 255, 0.5)">
+                        <ul>
+                            <li v-for="(item, index) in modRankList">
+                                <div class="item">
+                                    <span class="number">{{ index + 1 }}</span>
+                                    <div class="people">
+                                        <div class="avatar">
+                                            <span class="crown"></span>
+                                            <img :src="item.headPic" alt="" @click="goRoom(item)">
+                                            <span class="live" v-if="item.isPlaying"></span>
+                                        </div>
+                                        <div class="name">
+                                            <p class="txt-of">{{ item.nickname }}</p>
+                                            <span :class="`level_icon m_level_icon_${item.level}`"></span>
+                                        </div>
+                                    </div>
+                                    <div class="value txt-of">{{ item.score }}</div>
+                                </div>
+                                <p v-if="modRankTab==='zg' && index===49" class="tip">以上主播拥有开店资格</p>
+                            </li>
+                        </ul>
+                    </pc-scroller>
+                </div>
+                <div :class="['self-center', {'self-hide': !(isLogin && isMod)}]">
+                    <p class="tip">仅展示前100名主播</p>
+                    <div class="details" v-if="isLogin && isMod && myModRank">
+                        <div class="block-1">
+                            <div class="avatar">
+                                <span class="crown"></span>
+                                <img v-if="myModRank.isPlaying" :src="myModRank.headPic" alt="">
+                                <img v-else :src="myModRank.headPic" alt=""  @click=" (myModRank)">
+                                <span class="live" v-if="myModRank.isPlaying"></span>
+                            </div>
+                            <div class="name">
+                                <p class="txt-of">{{ myModRank.nickName }}</p>
+                                <span :class="`level_icon m_level_icon_${myModRank.level}`"></span>
+                            </div>
+                        </div>
+                        <div class="block-2">
+                            <div class="item">
+                                <p>{{ myModRank.pairInfos[0].name }}</p>
+                                <span>{{ myModRank.pairInfos[0].value }}</span>
+                            </div>
+                            <div class="item">
+                                <p>{{ myModRank.pairInfos[1].name }}</p>
+                                <span>{{ myModRank.pairInfos[1].value }}</span>
+                            </div>
+                        </div>
+                        <div class="block-3">
+                            <div class="item">
+                                <p>{{ myModRank.pairInfos[2].name }}</p>
+                                <span>{{ myModRank.pairInfos[2].value }}</span>
+                            </div>
+                            <div class="item">
+                                <p>{{ myModRank.pairInfos[3].name }}</p>
+                                <span>{{ myModRank.pairInfos[3].value }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="module-ms" v-show="currentTab==='ms'">
+        <div class="note-container">
+            <div class="title"></div>
+            <div class="note-con">
+                <p>1.活动期间，每日00:00-18:59:59积分消耗前三名，19:00:00-23:59:59积分消耗前五名可获得1折秒杀权。</p>
+                <p>1）1月8日-1月9日积分来源：礼物面板所有礼物（除了周星、打榜），1{{ giftPer }}=1积分（含粉丝团、守护、PK道具）</p>
+                <p>2）1月10日-1月12日积分来源：所有折扣礼物</p>
+                <p>2.秒杀成功后，自动放入背包中，帝王套、童话王国每次秒杀每人限购2个，梦里花开、烟花每次秒杀每人限购5个。</p>
+                <p>3.秒杀礼物有效期至1.19 23:59:59，逾期清空。</p>
+            </div>
+        </div>
+        <div class="gift-container">
+            <div class="title"></div>
+            <div class="tip">
+                <p>{{ msTips }}</p>
+                <!-- <p v-if="true">今日19:00:00 开启秒杀</p>
+                <p v-if="false">今日18:59:59结束该轮秒杀</p>
+                <p v-if="false">今日23:59:59结束该轮秒杀</p>
+                <p v-if="false">秒杀已结束</p> -->
+            </div>
+            <div class="gift-con">
+                <div class="gift-category" v-for="item in oneDiscountGift">
+                    <div class="pic">
+                        <img :src="item.pic" alt="">
+                    </div>
+                    <div class="name">{{ item.name }}</div>
+                    <div class="new-price">{{ item.newprice }}{{ giftPer }}</div>
+                    <div class="old-price">{{ item.oldprice }}{{ giftPer }}</div>
+                    <div :class="['btn-purchase', {'purchase-forbid':msEnd}]" @click="purchase(item)"></div>
+                    <div class="limit" v-if="canSeckill">每人限购{{ item.num }}个</div>
+                </div>
+            </div>
+        </div>
+        <div class="rank-container">
+            <div class="title"></div>
+            <div class="rank-tab-date">
+                <div :class="['date', {'current-date': currentDateTab===item.curDate}]" v-for="item in dateTabs" @click="changeCurrentDateTab(item.curDate)">{{ item.text }}</div>
+            </div>
+            <div class="rank-tab-time">
+                <div :class="['time', {'current-time': currentTimeTab===1}]" @click="changeCurrentTimeTab(1)">{{ currentDateTab===startTimeFormat() ? '11:00:00 - 18:59:59' : '00:00:00 - 18:59:59'}}</div>
+                <div :class="['time', {'current-time': currentTimeTab===2}]" @click="changeCurrentTimeTab(2)">19:00:00 - 23:59:59</div>
+            </div>
+            <div class="rank-con">
+                <div class="rank-title">
+                    <p>排名</p>
+                    <p>用户</p>
+                    <p>积分</p>
+                </div>
+                <div class="list-con">
+                    <ul>
+                        <li v-for="(item, index) in userRankList">
+                            <div class="item">
+                                <span class="number">{{ index + 1 }}</span>
+                                <div class="people">
+                                    <div class="avatar">
+                                        <img :src="item.headPic" alt="">
+                                    </div>
+                                    <div class="name">
+                                        <p class="txt-of">{{ item.nickname }}</p>
+                                        <span :class="`level_icon u_level_icon_${item.level}`"></span>
+                                    </div>
+                                </div>
+                                <div class="value txt-of">{{ item.score }}</div>
+                            </div>
+                            <p v-if="index===(currentTimeTab===1?2:4)" class="tip">以上用户将获得本轮一折秒杀权</p>
+                        </li>
+                    </ul>
+                </div>
+                <div :class="['self-center', {'self-hide': !isLogin}]">
+                    <div class="details" v-if="isLogin && myUserRank">
+                        <div class="block-1">
+                            <div class="avatar">
+                                <img :src="myUserRank.headPic" alt="">
+                            </div>
+                            <div class="name">
+                                <p class="txt-of">{{ myUserRank.nickName }}</p>
+                                <span :class="`level_icon u_level_icon_${myUserRank.level}`"></span>
+                            </div>
+                        </div>
+                        <div class="block-2">
+                            <div class="item">
+                                <p>{{ myUserRank.pairInfos[0].name }}</p>
+                                <span>{{ myUserRank.pairInfos[0].value }}</span>
+                            </div>
+                            <div class="item">
+                                <p>{{ myUserRank.pairInfos[1].name }}</p>
+                                <span>{{ myUserRank.pairInfos[1].value }}</span>
+                            </div>
+                        </div>
+                        <div class="block-3">
+                            <div class="item">
+                                <p>{{ myUserRank.pairInfos[2].name }}</p>
+                                <span>{{ myUserRank.pairInfos[2].value }}</span>
+                            </div>
+                            <div class="item">
+                                <p>{{ myUserRank.pairInfos[3].name }}</p>
+                                <span>{{ myUserRank.pairInfos[3].value }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wall-container">
+            <div ref="scroll-up-wrapper" class="list-con scroll-up-wrapper">
+                <ul ref="scroll-up-container" class="scroll-up-container">
+                    <li v-for="item in buyListWall">
+                        <span class="user txt-of">{{ item.nickname }}</span>
+                        <span class="mark">成功秒杀了</span>
+                        <span class="gift txt-of">{{ item.property }} * {{ item.num }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="copyright">在法律允许的范围内，本活动的解释权归平台所有</footer>
+
+    <!-- 秒杀弹窗 -->
+    <div class="popup-module" v-if="showPurchasePopup">
+        <div class="popup-ms-container">
+            <i class="close" @click="showPurchasePopup=false">关闭</i>
+            <div class="content">
+                <div class="prucharse-step-1" v-if="purchaseStep === 1">
+                    <div class="tip">本次限购{{ buyCurrentGift.left }}个</div>
+                    <div class="num">秒杀：<input type="text" @input="inputRuleReg" v-model="giftNumber" autofocus>个</div>
+                    <div class="price">价格：<span>{{ giftNumber * buyCurrentGift.newprice }}{{ giftPer }}</span></div>
+                    <div class="btn btn-purchase" @click="confirmPay"></div>
+                </div>
+                <div class="prucharse-step-2" v-if="purchaseStep === 2">
+                    <div class="tip">余额不足，快去充值吧！</div>
+                    <div class="btn-group">
+                        <div class="btn btn-no" @click="showPurchasePopup=false"></div>
+                        <div class="btn btn-recharge" @click="goRecharge"></div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 活动规则 -->
+    <div class="rule-btn" @click="showRulePopup=true"></div>
+    <div class="popup-module" v-if="showRulePopup">
+        <div class="popup-rule-container">
+            <i class="close" @click="showRulePopup=false">关闭</i>
+            <div class="title"></div>
+            <div class="content">
+                <pc-scroller class="rule-scroller" ref="rank-scroller" thumb-color="rgba(255, 255, 255, 0.5)">
+                    <div class="sub-title">第一阶段：开店资格争夺</div>
+                    <p>1.活动时间：<span>1.8 11:00:00 - 1.9 23:59:59</span></p>
+                    <p>2.活动礼物：主播收取礼物面板-热门的全部礼物获得积分（热门/守护/粉丝团/PK道具），1{{ giftPer }}=1积分。角标为周星和打榜的不计积分。</p>
+                    <p>3.活动玩法：榜单排名前50名的主播，可获得开店资格：只针对这些主播开放打折礼物购买入口，购买入口如下图所示；用户仅可在这50个直播间内购买打折礼物。积分第一名主播礼物打2折，第二名主播打3折，第三名主播打4折，其他47名主播打5折。若榜单出现相同成绩，则按照先到先得原则排序。</p>
+                    <img src="${require('./images/rule-pic.png')}" alt="">
+                    <div class="sub-title">第二阶段：业绩冲刺 新春特惠</div>
+                    <p>1.活动时间：<span>1.10 00:00:00 - 1.12 23:59:59。</span></p>
+                    <p>2.活动玩法：所有主播按照收取所有打折礼物（1/2/3/4/5折）获取积分。</p>
+                    <p>注：用户购买的打折礼物，有效期至1.19 23:59:59,请及时送出，逾期清空</p>
+                    <table>
+                        <tr><td>打折区</td><td>礼物名称</td><td>原价（{{ giftPer }}）</td><td>折扣后（{{ giftPer }}）</td></tr>
+                        <tr><td rowspan="3" class="row-3">2折区</td><td>告白气球</td><td>8888</td><td>1778</td></tr>
+                        <tr><td>炫酷超跑</td><td>29999</td><td>6000</td></tr>
+                        <tr><td>爱心飞船</td><td>131400</td><td>26280</td></tr>
+                        <tr><td rowspan="3" class="row-3">3折区</td><td>生日蛋糕</td><td>6666</td><td>2000</td></tr>
+                        <tr><td>丘比特</td><td>19999</td><td>6000</td></tr>
+                        <tr><td>宠你上天</td><td>52000</td><td>15600</td></tr>
+                        <tr><td rowspan="3" class="row-3">4折区</td><td>水晶鞋</td><td>5200</td><td>2080</td></tr>
+                        <tr><td>南瓜马车</td><td>12000</td><td>4800</td></tr>
+                        <tr><td>泰坦号</td><td>131400</td><td>52560</td></tr>
+                        <tr><td rowspan="3" class="row-3">5折区</td><td>仙女棒</td><td>2999</td><td>1500</td></tr>
+                        <tr><td>许愿池</td><td>29999</td><td>15000</td></tr>
+                        <tr><td>爱心飞机</td><td>88888</td><td>44444</td></tr>
+                    </table>
+                    <p>3.活动奖励：业绩冲刺榜积分排名前5名的主播获得奖励。</p>
+                    <table>
+                        <tr><td>排名</td><td>奖励</td></tr>
+                        <tr><td class="row-3">第一名</td><td>300000{{ giftPer }}、<br>app端默认搜索每日3h*7日</td></tr>
+                        <tr><td class="row-3">第二名</td><td>200000{{ giftPer }}、<br>app端默认搜索每日3h*5日</td></tr>
+                        <tr><td class="row-3">第三名</td><td>100000{{ giftPer }}、<br>app端默认搜索每日3h*3日</td></tr>
+                        <tr><td class="row-3">第四-五名</td><td>80000{{ giftPer }}、<br>app端默认搜索每日3h*1日</td></tr>
+                    </table>
+                    <p>注：</p>
+                    <p>1.{{ giftPer }}奖励于活动结束的5个工作日内发放至账户；</p>
+                    <p>2.活动期间送礼量大，服务器会有一定程度的延迟，请提前10秒冲榜，以免成绩未计入榜单。若发生因服务器延迟，造成成绩未计入榜单情况，平台不予补偿，请谅解！</p>
+                </pc-scroller>
+            </div>
+        </div>
+    </div>
+
+    <loading ref="loading"></loading>
+
+    <toast ref="toast"></toast>
+</div>
+<!-- mixin html content -->

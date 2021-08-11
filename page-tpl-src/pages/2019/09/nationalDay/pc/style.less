@@ -1,0 +1,116 @@
+@activityName: '';
+@bf: 1px*10/6.86;
+@pcUrl: './images';
+
+@import '../mixin.less';
+
+.btn {
+    cursor: pointer;
+}
+
+.page-bgs {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    .page-bg {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        &:not(:first-child) {
+            margin-top: -1px;
+        }
+    }
+
+    // 定义背景图高度及资源
+    .bg1 {
+        height: 370px;
+        background-image: url('@{pcUrl}/bg1.jpg');
+    }
+    .bg2 {
+        height: 370px;
+        background-image: url('@{pcUrl}/bg2.jpg');
+    }
+    .bg3 {
+        height: 468px;
+        background-image: url('@{pcUrl}/bg3.jpg');
+    }
+    .bg4 {
+        height: 400px;
+        background-image: url('@{pcUrl}/bg4.jpg');
+    }
+    .bg5 {
+        height: 300px;
+        background-image: url('@{pcUrl}/bg5.jpg');
+    }
+    .bg6 {
+        height: 392px;
+        background-image: url('@{pcUrl}/bg6.jpg');
+    }
+}
+
+.butn {
+    cursor: pointer;
+}
+
+.banner {
+    height: 890px;
+}
+
+.lottery .rw-pool-desc .sep {
+    position: relative;
+    top: 2px;
+}
+
+.game-box .game-h {
+    top: -50px;
+}
+
+.game-box .game-c {
+    margin-top: 50px;
+}
+
+.game-box .game-mask {
+    top: 33px;
+    left: -2px;
+    transform: scale(1.02);
+}
+
+.modal-rule .i_star {
+    line-height: 39px;
+    font-size: 22px;
+}
+
+.tip-opt .btn-cancel {
+    border-bottom-width: 2px;
+}
+
+.lottery .sign-count-a {
+    top: 26px;
+}
+
+.lottery .step-box {
+    margin-top: 220px;
+}
+
+.lottery .step-i:nth-child(2) {
+    margin-left: 42px;
+    margin-right: 40px;
+}
+
+.lottery .tiper {
+    margin: 15px auto 0;
+}
+
+.lottery .rw-pool-desc .namelist-w {
+    top: 7px;
+}
+
+.copyright {
+    margin-top: 80/@bf;
+    font-size: 30/@bf;
+    color: #fbe5ac;
+    padding-bottom: 40/@bf;
+    opacity: 0.6;
+}

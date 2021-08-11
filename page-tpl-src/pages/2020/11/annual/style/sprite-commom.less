@@ -1,0 +1,26 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_com-sprite_sprite () {
+    .com-sprite-s {
+        background: url('../images/com-sprite.png') no-repeat;
+        background-size: 810/@bf 473/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .close { .getSprite(59, 59, 0, 414); }
+    .competition-gray { .getSprite(195, 197, 205, 207); }
+    .competition-normal { .getSprite(195, 197, 205, 0); }
+    .hi-gray { .getSprite(195, 197, 410, 0); }
+    .hi-normal { .getSprite(195, 197, 0, 207); }
+    .live { .getSprite(74, 35, 69, 414); }
+    .question { .getSprite(25, 25, 153, 414); }
+    .reward-gray { .getSprite(195, 197, 615, 0); }
+    .reward-normal { .getSprite(195, 197, 615, 207); }
+    .user-gray { .getSprite(195, 197, 410, 207); }
+    .user-normal { .getSprite(195, 197, 0, 0); }
+}
+.set_com-sprite_sprite();

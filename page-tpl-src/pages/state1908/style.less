@@ -1,0 +1,37 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@imgUrl: './images';
+
+html, body {
+    margin: 0;
+    padding: 0px;
+}
+
+#app {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1080/@bf;
+    margin: 0 auto;
+}
+
+.rule {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rule-1 {
+    height: 500/@bf;
+    background-image: url('@{imgUrl}/bg1.jpg');
+}
+
+.rule-2 {
+    height: 690/@bf;
+    background-image: url('@{imgUrl}/bg2.jpg');
+}
+
+.rule-3 {
+    height: 760/@bf;
+    background-image: url('@{imgUrl}/bg3.jpg');
+}

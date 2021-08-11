@@ -1,0 +1,54 @@
+@activityName: '';
+@bf: 1px*10/7;
+// @bf: 192rem;
+@pcUrl: './images';
+
+@import '../mixin.less';
+
+.clicker,
+.avatar {
+    cursor: pointer;
+}
+
+#app {
+    background: url('@{pcUrl}/bg.jpg') repeat-y;
+    background-size: 100% auto;
+    background-position-y: 26px;
+    // background-position-y: -50px;
+}
+
+.banner {
+    width: 100%;
+    height: 921px;
+    background-image: url('@{pcUrl}/banner.jpg');
+    background-size: 100% auto;
+    background-position: center;
+    position: relative;
+}
+
+.page-content {
+    width: 1080/@bf;
+    margin: 0 auto;
+}
+
+.rw-list,
+.stage-prog,
+.rw-board,
+.ranks,
+.gift-icon {
+    box-sizing: border-box;
+}
+
+.floater {
+    right: 50%;
+    transform: translateX(650%) scale(1.4);
+}
+
+.layer-inner {
+    width: 1080/@bf;
+    height: 94%;
+
+    &:before {
+        height: 600px;
+    }
+}

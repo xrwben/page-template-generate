@@ -1,0 +1,69 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_sprite-btn_sprite () {
+    .sprite-btn-s {
+        background: url('./images/sprite-btn.png') no-repeat;
+        background-size: 515/@bf 415/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .arrow-right { .getSprite(26, 35, 447, 79); }
+    .btn-bp { .getSprite(162, 55, 0, 360); }
+    .btn-forever-flower { .getSprite(182, 158, 0, 0); }
+    .btn-rule { .getSprite(245, 103, 192, 0); }
+    .cancel { .getSprite(99, 40, 324, 113); }
+    .finished { .getSprite(122, 40, 192, 113); }
+    .gift-flower-tip { .getSprite(68, 69, 447, 0); }
+    .preview { .getSprite(177, 86, 187, 264); }
+    .purchase { .getSprite(177, 86, 0, 264); }
+    .recharge { .getSprite(177, 86, 187, 168); }
+    .unfinish { .getSprite(177, 86, 0, 168); }
+}
+.set_sprite-btn_sprite();
+
+.set_sprite-tab_sprite () {
+    .sprite-tab-s {
+        background: url('./images/sprite-tab.png') no-repeat;
+        background-size: 1009/@bf 901/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .date-212-hide { .getSprite(124, 100, 402, 801); }
+    .date-212-show { .getSprite(124, 100, 777, 345); }
+    .date-213-hide { .getSprite(124, 100, 268, 801); }
+    .date-213-show { .getSprite(124, 100, 134, 801); }
+    .date-214-hide { .getSprite(124, 100, 0, 801); }
+    .date-214-show { .getSprite(124, 100, 777, 455); }
+    .jotc-1 { .getSprite(278, 86, 576, 609); }
+    .jotc-2 { .getSprite(278, 86, 0, 705); }
+    .sxjl-1 { .getSprite(278, 86, 0, 609); }
+    .sxjl-2 { .getSprite(278, 86, 576, 705); }
+    .tab-cp-hide { .getSprite(379, 254, 0, 345); }
+    .tab-cp-show { .getSprite(500, 335, 0, 0); }
+    .tab-rw-hide { .getSprite(378, 254, 389, 345); }
+    .tab-rw-show { .getSprite(499, 335, 510, 0); }
+    .tsyd-1 { .getSprite(278, 86, 288, 705); }
+    .tsyd-2 { .getSprite(278, 86, 288, 609); }
+}
+.set_sprite-tab_sprite();
+
+.set_sprite-title_sprite () {
+    .sprite-title-s {
+        background: url('./images/sprite-title.png') no-repeat;
+        background-size: 1589/@bf 1030/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .title-bp-rule { .getSprite(789, 250, 800, 0); }
+    .title-bp { .getSprite(790, 250, 0, 0); }
+    .title-contribution { .getSprite(789, 250, 800, 260); }
+    .title-flower { .getSprite(789, 250, 800, 520); }
+    .title-rank { .getSprite(790, 250, 0, 260); }
+    .title-rule { .getSprite(789, 250, 0, 780); }
+    .title-xd { .getSprite(790, 250, 0, 520); }
+}
+.set_sprite-title_sprite();

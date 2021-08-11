@@ -1,0 +1,48 @@
+@bf: 108rem; // 1080px -> fontSize -> 108px
+
+@import '../mixin.less';
+
+.level_icon {
+    height: 48/@bf !important;
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    background: url("../images/bg-m-1.jpg") no-repeat center top / 100% 746/@bf,
+        url("../images/bg-m-1.png") no-repeat center 716/@bf ~"/" 100% auto,
+        url("../images/bg-m-2.png") no-repeat center bottom ~"/" 100% auto;
+    background-color: #121214;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 600/@bf;
+    position: relative;
+}
+
+// 头图banner
+.banner {
+    width: 100%;
+    height: 642/@bf;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .animation-entry, .animation-float {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .animation-float {
+        display: none;
+    }
+}
+// 头图静态
+.static-banner {
+    width: 100%;
+    height: 642/@bf;
+    background: url("../images/banner-m.jpg") no-repeat center top / 100% 746/@bf;
+    position: absolute;
+    top: 0;
+}

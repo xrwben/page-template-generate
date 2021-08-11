@@ -1,0 +1,56 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_sprite-btn_sprite () {
+    .sprite-btn-s {
+        background: url('./images/sprite-btn.png') no-repeat;
+        background-size: 1104/@bf 949/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .cancel { .getSprite(197, 61, 904, 465); }
+    .live { .getSprite(115, 46, 692, 638); }
+    .ms-forbid { .getSprite(197, 61, 904, 394); }
+    .ms-purchase { .getSprite(196, 61, 486, 638); }
+    .pay-forbid { .getSprite(197, 61, 904, 536); }
+    .pay { .getSprite(197, 61, 904, 607); }
+    .rank-sort-1 { .getSprite(77, 74, 0, 875); }
+    .rank-sort-2 { .getSprite(80, 78, 881, 776); }
+    .rank-sort-3 { .getSprite(79, 75, 971, 776); }
+    .rank-tab-cc-hide { .getSprite(442, 149, 0, 320); }
+    .rank-tab-cc-show { .getSprite(442, 149, 452, 320); }
+    .rank-tab-ms-hide { .getSprite(189, 80, 904, 304); }
+    .rank-tab-ms-show { .getSprite(189, 80, 904, 214); }
+    .rank-tab-ms2-hide { .getSprite(431, 89, 0, 776); }
+    .rank-tab-ms2-show { .getSprite(430, 89, 441, 776); }
+    .rank-tab-zg-hide { .getSprite(442, 149, 452, 479); }
+    .rank-tab-zg-show { .getSprite(442, 149, 0, 479); }
+    .rank-title { .getSprite(476, 128, 0, 638); }
+    .recharge { .getSprite(197, 61, 904, 678); }
+    .rule-btn-open { .getSprite(200, 204, 904, 0); }
+    .tab-kd-hide { .getSprite(441, 150, 452, 160); }
+    .tab-kd-show { .getSprite(442, 150, 0, 160); }
+    .tab-ms-hide { .getSprite(442, 150, 0, 0); }
+    .tab-ms-show { .getSprite(442, 150, 452, 0); }
+    .triangle-1 { .getSprite(40, 37, 817, 638); }
+    .triangle-2 { .getSprite(40, 37, 486, 709); }
+}
+.set_sprite-btn_sprite();
+
+.set_title-bg_sprite () {
+    .title-bg-s {
+        background: url('./images/title-bg.png') no-repeat;
+        background-size: 1092/@bf 582/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .gift-title { .getSprite(476, 128, 0, 178); }
+    .kd-title { .getSprite(606, 168, 0, 0); }
+    .note-title { .getSprite(476, 128, 0, 316); }
+    .rank-title { .getSprite(476, 128, 0, 454); }
+    .rule-title { .getSprite(476, 128, 616, 0); }
+}
+.set_title-bg_sprite();

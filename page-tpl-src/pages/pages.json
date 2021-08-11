@@ -1,0 +1,362 @@
+{
+    "state1908": {
+        "author": "mrzjd",
+        "name": "state1908",
+        "branch": "page/state1908",
+        "useTpl": "_blank",
+        "created": "Thu Aug 08 2019 11:00:52 GMT+0800 (中国标准时间)",
+        "archived": "Thu Aug 08 2019 14:51:43 GMT+0800 (中国标准时间)"
+    },
+    "iosGuide": {
+        "author": "mrzjd",
+        "name": "iosGuide",
+        "branch": "page/iosGuide",
+        "useTpl": "_basic_mobile",
+        "created": "Thu Aug 08 2019 18:10:21 GMT+0800 (中国标准时间)",
+        "archived": "Wed Mar 25 2020 18:07:55 GMT+0800 (中国标准时间)"
+    },
+    "starMaster19": {
+        "author": "mrzjd",
+        "name": "starMaster19",
+        "branch": "page/starMaster19",
+        "useTpl": "_basic_mixin",
+        "created": "Sat Aug 03 2019 14:18:43 GMT+0800 (中国标准时间)",
+        "archived": "Wed Aug 14 2019 12:15:49 GMT+0800 (中国标准时间)"
+    },
+    "pkTeamRule": {
+        "author": "mrzjd",
+        "name": "pkTeamRule",
+        "branch": "page/pkTeamRule",
+        "useTpl": "_basic_mobile",
+        "created": "Tue Aug 06 2019 10:12:25 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:08:11 GMT+0800 (中国标准时间)"
+    },
+    "icpDistantmeaning": {
+        "author": "mrzjd",
+        "name": "icpDistantmeaning",
+        "branch": "page/icpDistantmeaning",
+        "useTpl": "_basic_pc",
+        "created": "Thu Aug 15 2019 15:19:34 GMT+0800 (中国标准时间)",
+        "archived": "Fri Aug 23 2019 14:21:01 GMT+0800 (中国标准时间)"
+    },
+    "dmRanker": {
+        "author": "mrzjd",
+        "name": "dmRanker",
+        "branch": "page/dmRanker",
+        "useTpl": "_basic_pc",
+        "created": "Fri Aug 16 2019 11:29:33 GMT+0800 (中国标准时间)",
+        "archived": "Wed Sep 18 2019 16:27:29 GMT+0800 (中国标准时间)"
+    },
+    "dmModInfo": {
+        "author": "mrzjd",
+        "name": "dmModInfo",
+        "branch": "page/dmModInfo",
+        "useTpl": "_basic_pc",
+        "created": "Fri Aug 16 2019 12:26:34 GMT+0800 (中国标准时间)",
+        "archived": "Wed Sep 18 2019 16:26:48 GMT+0800 (中国标准时间)"
+    },
+    "2019/08/midAutumn": {
+        "author": "mrzjd",
+        "name": "2019/08/midAutumn",
+        "branch": "page/2019/08/midAutumn",
+        "useTpl": "_basic_mixin",
+        "created": "Tue Aug 27 2019 11:37:40 GMT+0800 (中国标准时间)",
+        "archived": "Mon Sep 16 2019 10:14:41 GMT+0800 (中国标准时间)"
+    },
+    "2019/08/luckysweetie": {
+        "author": "mrzjd",
+        "name": "2019/08/luckysweetie",
+        "branch": "page/2019/08/luckysweetie",
+        "useTpl": "_basic_mixin",
+        "created": "Wed Aug 21 2019 09:31:03 GMT+0800 (中国标准时间)",
+        "archived": "Mon Sep 16 2019 10:14:56 GMT+0800 (中国标准时间)"
+    },
+    "iosGuideLogin": {
+        "author": "mrzjd",
+        "name": "iosGuideLogin",
+        "branch": "page/iosGuideLogin",
+        "useTpl": "_basic_mobile",
+        "created": "Fri Sep 06 2019 12:20:36 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:29:29 GMT+0800 (中国标准时间)"
+    },
+    "iosVipGuide": {
+        "author": "mrzjd",
+        "name": "iosVipGuide",
+        "branch": "page/iosVipGuide",
+        "useTpl": "_basic_mobile",
+        "created": "Fri Sep 06 2019 09:55:45 GMT+0800 (中国标准时间)",
+        "archived": "Thu Apr 02 2020 14:11:53 GMT+0800 (中国标准时间)"
+    },
+    "app/v5.4.0/pkTeamRule": {
+        "author": "mrzjd",
+        "name": "app/v5.4.0/pkTeamRule",
+        "branch": "page/app/v5.4.0/pkTeamRule",
+        "useTpl": "_basic_mobile",
+        "created": "Tue Aug 27 2019 11:16:31 GMT+0800 (中国标准时间)",
+        "archived": "Wed Sep 18 2019 16:51:04 GMT+0800 (中国标准时间)"
+    },
+    "2019/09/nationalNotice": {
+        "author": "mrzjd",
+        "name": "2019/09/nationalNotice",
+        "branch": "page/2019/09/nationalNotice",
+        "useTpl": "bg_page",
+        "created": "Tue Sep 17 2019 10:11:42 GMT+0800 (中国标准时间)",
+        "archived": "Mon Sep 23 2019 16:21:57 GMT+0800 (中国标准时间)"
+    },
+    "icp/dm/index": {
+        "author": "Jesse",
+        "name": "icp/dm/index",
+        "branch": "page/icp/dm/index",
+        "useTpl": "_basic_pc",
+        "created": "Wed Dec 04 2019 16:19:18 GMT+0800 (中国标准时间)",
+        "archived": "Sat Dec 07 2019 11:32:25 GMT+0800 (中国标准时间)"
+    },
+    "2019/09/nationalDay": {
+        "author": "mrzjd",
+        "name": "2019/09/nationalDay",
+        "branch": "page/2019/09/nationalDay",
+        "useTpl": "bg_page",
+        "created": "Mon Sep 16 2019 10:18:58 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:10:55 GMT+0800 (中国标准时间)"
+    },
+    "2019/10/luckysweetie": {
+        "author": "mrzjd",
+        "name": "2019/10/luckysweetie",
+        "branch": "page/2019/10/luckysweetie",
+        "useTpl": "_basic_mixin",
+        "created": "Wed Sep 18 2019 17:43:14 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:13:08 GMT+0800 (中国标准时间)"
+    },
+    "2019/10/makeCompetition": {
+        "author": "mrzjd",
+        "name": "2019/10/makeCompetition",
+        "branch": "page/2019/10/makeCompetition",
+        "useTpl": "react_base",
+        "created": "Tue Sep 24 2019 10:57:24 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:14:26 GMT+0800 (中国标准时间)"
+    },
+    "2019/10/audioAct": {
+        "author": "mrzjd",
+        "name": "2019/10/audioAct",
+        "branch": "page/2019/10/audioAct",
+        "useTpl": "_basic_mobile",
+        "created": "Thu Oct 10 2019 18:05:19 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:15:44 GMT+0800 (中国标准时间)"
+    },
+    "2019/11/voiceOffline": {
+        "author": "mrzjd",
+        "name": "2019/11/voiceOffline",
+        "branch": "page/2019/11/voiceOffline",
+        "useTpl": "pic_mobile_page",
+        "created": "Tue Nov 19 2019 12:20:18 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:18:03 GMT+0800 (中国标准时间)"
+    },
+    "2019/10/hallows": {
+        "author": "mrzjd",
+        "name": "2019/10/hallows",
+        "branch": "page/2019/10/hallows",
+        "useTpl": "react_base",
+        "created": "Wed Oct 16 2019 10:25:41 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:19:16 GMT+0800 (中国标准时间)"
+    },
+    "icp/hellowawa": {
+        "author": "mrzjd",
+        "name": "icp/hellowawa",
+        "branch": "page/icp/hellowawa",
+        "useTpl": "_blank",
+        "created": "Fri Oct 11 2019 11:41:56 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:20:55 GMT+0800 (中国标准时间)"
+    },
+    "icp/staryiyi": {
+        "author": "mrzjd",
+        "name": "icp/staryiyi",
+        "branch": "page/icp/staryiyi",
+        "useTpl": "_basic_pc",
+        "created": "Fri Oct 11 2019 15:58:49 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:25:51 GMT+0800 (中国标准时间)"
+    },
+    "2019/10/hallowsGallery": {
+        "author": "mrzjd",
+        "name": "2019/10/hallowsGallery",
+        "branch": "page/2019/10/hallowsGallery",
+        "useTpl": "react_base",
+        "created": "Mon Oct 21 2019 17:25:32 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:30:44 GMT+0800 (中国标准时间)"
+    },
+    "2019/11/doubleEl": {
+        "author": "mrzjd",
+        "name": "2019/11/doubleEl",
+        "branch": "page/2019/11/doubleEl",
+        "useTpl": "react_base",
+        "created": "Wed Oct 23 2019 17:10:22 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:32:01 GMT+0800 (中国标准时间)"
+    },
+    "2019/11/thkGiving": {
+        "author": "mrzjd",
+        "name": "2019/11/thkGiving",
+        "branch": "page/2019/11/thkGiving",
+        "useTpl": "react_base",
+        "created": "Fri Nov 01 2019 14:35:54 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:33:11 GMT+0800 (中国标准时间)"
+    },
+    "app/v5.5.5/liveProtocol": {
+        "author": "mrzjd",
+        "name": "app/v5.5.5/liveProtocol",
+        "branch": "page/app/v5.5.5/liveProtocol",
+        "useTpl": "_basic_mobile",
+        "created": "Thu Oct 24 2019 10:07:51 GMT+0800 (中国标准时间)",
+        "archived": "Wed Dec 04 2019 17:34:38 GMT+0800 (中国标准时间)"
+    },
+    "2019/12/annualFestival": {
+        "author": "mrzjd",
+        "name": "2019/12/annualFestival",
+        "branch": "page/2019/12/annualFestival",
+        "useTpl": "react_base",
+        "created": "Tue Nov 12 2019 16:29:47 GMT+0800 (中国标准时间)",
+        "archived": "Wed Mar 25 2020 18:08:31 GMT+0800 (中国标准时间)"
+    },
+    "icp/dm/modinfo": {
+        "author": "Jesse",
+        "name": "icp/dm/modinfo",
+        "branch": "page/icp/dm/modinfo",
+        "useTpl": "_basic_pc",
+        "created": "Wed Dec 04 2019 16:13:24 GMT+0800 (中国标准时间)",
+        "archived": "Fri Jan 17 2020 14:07:37 GMT+0800 (中国标准时间)"
+    },
+    "preventViolenceAnnouncemment": {
+        "author": "liben",
+        "name": "preventViolenceAnnouncemment",
+        "branch": "page/preventViolenceAnnouncemment",
+        "useTpl": "_basic_mixin",
+        "created": "Wed Dec 18 2019 18:56:03 GMT+0800 (中国标准时间)",
+        "archived": "Fri Jan 17 2020 15:06:25 GMT+0800 (中国标准时间)"
+    },
+    "icp/dm/ranker": {
+        "author": "Jesse",
+        "name": "icp/dm/ranker",
+        "branch": "page/icp/dm/ranker",
+        "useTpl": "_basic_pc",
+        "created": "Wed Dec 04 2019 16:24:12 GMT+0800 (中国标准时间)",
+        "archived": "Fri Jan 17 2020 15:24:46 GMT+0800 (中国标准时间)"
+    },
+    "icp/shanlian": {
+        "author": "Jesse",
+        "name": "icp/shanlian",
+        "branch": "page/icp/shanlian",
+        "useTpl": "_blank",
+        "created": "Fri Jan 17 2020 14:31:27 GMT+0800 (中国标准时间)",
+        "archived": "Mon Mar 30 2020 12:02:39 GMT+0800 (中国标准时间)"
+    },
+    "HWrecharge": {
+        "author": "Jesse",
+        "name": "HWrecharge",
+        "branch": "page/HWrecharge",
+        "useTpl": "_basic_mobile",
+        "created": "Wed Mar 18 2020 10:35:05 GMT+0800 (中国标准时间)",
+        "archived": "Wed Mar 25 2020 18:07:13 GMT+0800 (中国标准时间)"
+    },
+    "2019/12/christmasAndNewYear": {
+        "author": "liben",
+        "name": "2019/12/christmasAndNewYear",
+        "branch": "page/2019/12/christmasAndNewYear",
+        "useTpl": "_basic_mixin",
+        "created": "Tue Dec 10 2019 12:03:09 GMT+0800 (GMT+08:00)",
+        "archived": "Wed Mar 25 2020 18:08:51 GMT+0800 (中国标准时间)"
+    },
+    "2019/12/gloryhall": {
+        "author": "liben",
+        "name": "2019/12/gloryhall",
+        "branch": "page/2019/12/gloryhall",
+        "useTpl": "_basic_mixin",
+        "created": "Wed Nov 27 2019 17:40:33 GMT+0800 (GMT+08:00)",
+        "archived": "Wed Mar 25 2020 18:09:15 GMT+0800 (中国标准时间)"
+    },
+    "2019/12/newSpringMall": {
+        "author": "liben",
+        "name": "2019/12/newSpringMall",
+        "branch": "page/2019/12/newSpringMall",
+        "useTpl": "_basic_mixin",
+        "created": "Tue Dec 24 2019 16:45:30 GMT+0800 (中国标准时间)",
+        "archived": "Wed Mar 25 2020 18:09:31 GMT+0800 (中国标准时间)"
+    },
+    "notice": {
+        "author": "Jesse",
+        "name": "notice",
+        "branch": "page/notice",
+        "useTpl": "_basic_mobile",
+        "created": "Thu Apr 02 2020 14:45:19 GMT+0800 (中国标准时间)",
+        "archived": "Thu Apr 02 2020 15:23:54 GMT+0800 (中国标准时间)"
+    },
+    "2019/11/threeThousandFamily": {
+        "author": "liben",
+        "name": "2019/11/threeThousandFamily",
+        "branch": "page/2019/11/threeThousandFamily",
+        "useTpl": "_basic_mixin",
+        "created": "Wed Nov 13 2019 15:04:04 GMT+0800 (GMT+08:00)",
+        "archived": "Tue Apr 21 2020 17:07:38 GMT+0800 (中国标准时间)"
+    },
+    "2020/4/4": {
+        "author": "liben",
+        "name": "2020/4/4",
+        "branch": "page/2020/4/4",
+        "useTpl": "_basic_mixin",
+        "created": "Fri Apr 03 2020 18:44:03 GMT+0800 (中国标准时间)",
+        "archived": "Tue Apr 21 2020 17:41:55 GMT+0800 (中国标准时间)"
+    },
+    "2020/1/raisePopularityNotice": {
+        "author": "liben",
+        "name": "2020/1/raisePopularityNotice",
+        "branch": "page/2020/1/raisePopularityNotice",
+        "useTpl": "_basic_mobile",
+        "created": "Wed Jan 15 2020 16:37:14 GMT+0800 (中国标准时间)",
+        "archived": "Tue Apr 21 2020 17:43:33 GMT+0800 (中国标准时间)"
+    },
+    "2020/2/goddess": {
+        "author": "liben",
+        "name": "2020/2/goddess",
+        "branch": "page/2020/2/goddess",
+        "useTpl": "_basic_mixin",
+        "created": "Thu Feb 13 2020 12:06:41 GMT+0800 (中国标准时间)",
+        "archived": "Tue Apr 21 2020 17:45:49 GMT+0800 (中国标准时间)"
+    },
+    "2020/5/oppoLandingPage": {
+        "author": "Leon",
+        "name": "2020/5/oppoLandingPage",
+        "branch": "page/2020/5/oppoLandingPage",
+        "useTpl": "pic_mobile_page",
+        "created": "Fri May 29 2020 17:13:13 GMT+0800 (中国标准时间)",
+        "archived": "Mon Jun 01 2020 11:54:34 GMT+0800 (中国标准时间)"
+    },
+    "2019/12/newSpringStore": {
+        "author": "liben",
+        "name": "2019/12/newSpringStore",
+        "branch": "page/2019/12/newSpringStore",
+        "useTpl": "_basic_mixin",
+        "created": "Mon Dec 30 2019 14:34:35 GMT+0800 (中国标准时间)",
+        "archived": "Mon Aug 10 2020 10:10:06 GMT+0800 (中国标准时间)"
+    },
+    "2020/1/valentinesday": {
+        "author": "liben",
+        "name": "2020/1/valentinesday",
+        "branch": "page/2020/1/valentinesday",
+        "useTpl": "_basic_mixin",
+        "created": "Thu Jan 09 2020 14:53:28 GMT+0800 (中国标准时间)",
+        "archived": "Mon Aug 10 2020 10:38:31 GMT+0800 (中国标准时间)"
+    },
+    "2020/11/annual": {
+        "author": "liben",
+        "name": "2020/11/annual",
+        "branch": "page/2020/11/annual",
+        "useTpl": "_basic_mixin",
+        "created": "Tue Nov 03 2020 10:05:12 GMT+0800 (中国标准时间)",
+        "archived": "Fri Mar 12 2021 18:08:24 GMT+0800 (中国标准时间)"
+    },
+    "2020/12/christmas": {
+        "author": "liben",
+        "name": "2020/12/christmas",
+        "branch": "page/2020/12/christmas",
+        "useTpl": "_basic_mixin",
+        "created": "Wed Dec 09 2020 17:38:11 GMT+0800 (中国标准时间)",
+        "archived": "Mon Mar 15 2021 11:13:01 GMT+0800 (中国标准时间)"
+    }
+}

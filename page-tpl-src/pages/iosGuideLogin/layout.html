@@ -1,0 +1,86 @@
+<!-- webpack.htmlwebpackplugin mobile layout 入口html文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="wap-font-scale" content="no">
+        <link rel="shortcut icon" href="//static.guojiang.tv/src/mobile/v2/img/common/title_icon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="//static.guojiang.tv/src/mobile/v2/img/common/logo_1.png" sizes="144x144">
+        <title><%= htmlWebpackPlugin.options.app.pageTitle %></title>
+        <script type="text/javascript">
+            var _czc = _czc || []
+            _czc.push(["_setAccount", "1255976554"])
+        </script>
+        <% if (htmlWebpackPlugin.options.injectScripts) {
+            htmlWebpackPlugin.options.injectScripts.forEach((val) => { %>
+        <script>
+            <%= require('fs').readFileSync(val) %>
+        </script>
+        <%  })
+        } %>
+    </head>
+    <body>
+        <!-- html ejs / vue template -->
+        <div id="app" v-cloak>
+            <div class="page-bgs"></div>
+            <div class="page-content">
+                <div class="sprite-s info-h">
+                    <div class="info-txt">VIP专享 稳定版安装包</div>
+                    <div class="desc">主播等级大于等于14级 用户等级大于等于4级</div>
+                </div>
+
+                <div class="footer">
+                    <div class="desc-i">更稳定的使用体验</div>
+                    <div class="desc-i">更快的享受最新功能</div>
+                    <div class="desc-i">赶快登录下载吧~</div>
+
+                    <div class="sprite-s btn-phone" @click="loginByPhone">手机号登录</div>
+
+                    <div class="login-panel">
+                        <div class="sprite-s btn_wx" @click="loginByWx">微信</div>
+                        <div class="sprite-s btn_qq" @click="loginByQQ">QQ</div>
+                        <!-- <div class="sprite-s btn_weibo" @click="loginByWeibo">微博</div> -->
+                    </div>
+                </div>
+            </div>
+        
+            <loading ref="loading"></loading>
+            <toast ref="toast"></toast>
+        </div>
+
+        <script>
+        var gjShareParam = JSON.stringify({ // eslint-disable-line
+            title: '<%= htmlWebpackPlugin.options.app.pageTitle %>',
+            content: '星光直播ios下载引导',
+            link: location.href,
+            imgLink: '${require("./images/share.png")}' // eslint-disable-line
+        })
+        </script>
+        <script type="text/javascript">
+            var _hmt = _hmt || []
+
+            ;(function() {
+                function async_load_cnzz () {
+                    var cz = document.createElement("script")
+                    cz.src = "//s11.cnzz.com/z_stat.php?id=1255976554&web_id=1255976554"
+                    cz.async = true
+                    document.getElementsByTagName('body')[0].appendChild(cz)
+                }
+
+                async_load_cnzz()
+            })();
+        </script>
+        
+        <% if (htmlWebpackPlugin.options.externals) {
+            htmlWebpackPlugin.options.externals.forEach((val) => {  %>
+        <script src="<%= val %>"></script>
+        <%  })
+        } %>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!-- webpack.htmlwebpackplugin mobile layout 入口html文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="wap-font-scale" content="no">
+        <link rel="shortcut icon" href="//static.guojiang.tv/src/mobile/v2/img/common/title_icon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="//static.guojiang.tv/src/mobile/v2/img/common/logo_1.png" sizes="144x144">
+        <title><%= htmlWebpackPlugin.options.app.pageTitle %></title>
+        <style>[v-cloak]{ display:none!important; }</style>
+        <script type="text/javascript">
+            var _czc = _czc || []
+            _czc.push(["_setAccount", "1255976554"])
+        </script>
+        <% if (htmlWebpackPlugin.options.injectScripts) {
+            htmlWebpackPlugin.options.injectScripts.forEach((val) => { %>
+        <script>
+            <%= require('fs').readFileSync(val) %>
+        </script>
+        <%  })
+        } %>
+    </head>
+    <body>
+        <!-- html ejs / vue template -->
+        <div id="app" v-cloak>
+            <%= require('html-loader?attrs=false&interpolate=require!../mixin.html') %>
+            <div class="banner">
+                <div class="introduce">
+                    <div class="text">
+                        <p>世界那么大，因为“缘”，三千兄弟在{{packageName}}大陆上相识、相知、相交，因为“义”，我们聚在一起，彼此默契，共同驰骋{{packageName}}疆场，为大家带来更加热闹更加欢乐的气氛。</p>
+                        <p>家族座右铭：三千铁骑，踏遍天南地北，三千兄弟欢迎你的加入……</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gift">
+                <div class="wrapper">
+                    <p class="price">10克拉/个</p>
+                    <p class="get-gift-btn" @click="showPopup=true"></p>
+                </div>
+            </div>
+            <div class="metting">
+                <div class="room">
+                    <ul>
+                        <li v-for="item in roomList">
+                            <div class="avatar" @click="redirectRoom(item)">
+                                <div class="live" v-if="item.isPlaying"></div>
+                            </div>
+                            <p class="nickname">{{ item.nickname }}</p>
+                            <div class="follow-group">
+                                <p class="follow-btn unfollow" v-if="!item.isLoved" @click="follow(item)"></p>
+                                <p class="follow-btn followed" v-if="item.isLoved"></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="invitation-btn" @click="showInvitationImg=true"></div>
+                </div>
+            </div>
+
+            <div class="invitation-share" v-if="showInvitationImg" @click.self="showInvitationImg=false">
+                <div class="wrap">
+                    <div class="con">
+                        <img src="${require('../images/qrcode-m.png')}" alt="邀请函">
+                    </div>
+                    <p class="save-btn" @click="saveImg"></p>
+                </div>
+            </div>
+
+            <div class="popup" v-if="showPopup">
+                <div class="content">
+                    <div class="close-btn" @click="showPopup=false"></div>
+                    <div class="btn-group">
+                        <button @click="getGift">确定</button>
+                        <button @click="showPopup=false">不了</button>
+                    </div>
+                </div>
+            </div>
+
+            <Toast ref="toast"></Toast>
+        </div>
+
+        <script>
+        var gjShareParam = JSON.stringify({ // eslint-disable-line
+            title: '<%= htmlWebpackPlugin.options.app.pageTitle %>',
+            content: '三千家族2周年啦_邀您共聚星光直播',
+            link: location.href,
+            imgLink: '${require("../images/share.jpg")}' // eslint-disable-line
+        })
+        </script>
+        <script>
+        ;(function adaptation () {
+            var href = window.location
+            var hostname = href.hostname.split('.').slice(-2).join('.')
+            if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|Windows Phone|SymbianOS/i.test(navigator.userAgent)) {
+                if (href.host.indexOf('www') >= 0) {
+                    window.location.href = '//m.' + hostname + '/dist' + href.pathname
+                }
+            } else {
+                if (href.host.indexOf('www') < 0) {
+                    window.location.href = '//www.' + hostname + href.pathname.replace('/dist', '')
+                }
+            }
+        }());
+
+        </script>
+        <script type="text/javascript">
+            var _hmt = _hmt || []
+
+            ;(function() {
+                function async_load_cnzz () {
+                    var cz = document.createElement("script")
+                    cz.src = "//s11.cnzz.com/z_stat.php?id=1255976554&web_id=1255976554"
+                    cz.async = true
+                    document.getElementsByTagName('body')[0].appendChild(cz)
+                }
+
+                async_load_cnzz()
+            })();
+        </script>
+        
+        <% if (htmlWebpackPlugin.options.externals) {
+            htmlWebpackPlugin.options.externals.forEach((val) => {  %>
+        <script src="<%= val %>"></script>
+        <%  })
+        } %>
+    </body>
+</html>

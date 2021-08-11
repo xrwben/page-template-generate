@@ -1,0 +1,244 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <!-- 顶部tips -->
+    <div class="header-tips"></div>
+    <!-- 每日任务 -->
+    <div class="module-task">
+        <div class="task-con">
+            <div class="task-item">
+                <div class="pic pic-ts"></div>
+                <div class="info">今日已发言<i>{{ taskData && taskData.card1Score }}</i>次<span>（{{ taskData && taskData.card1Receive }} / 10）</span></div>
+                <div class="btn sprite-btn-s get-btn" @click="getCard(1)"></div>
+            </div>
+            <div class="task-item">
+                <div class="pic pic-ww"></div>
+                <div class="info">今日已累计观看<i>{{ taskData && taskData.card2Score }}</i>分钟<span>（{{ taskData && taskData.card2Receive }} / 5）</span></div>
+                <div class="btn sprite-btn-s get-btn" @click="getCard(2)"></div>
+            </div>
+            <div class="task-item">
+                <div class="pic pic-gl"></div>
+                <div class="info">今日已送礼<i>{{ taskData && taskData.card3Score }}</i>次<span>（{{ taskData && taskData.card3Receive }} / 10）</span></div>
+                <div class="btn sprite-btn-s get-btn" @click="getCard(3)"></div>
+            </div>
+        </div>
+        <div class="task-tip">
+            <p>*一套女神卡包含：天使卡*1、温婉卡*1、高冷卡*1，女神榜将以女神卡套数排名。</p>
+            <p>*卡片需当日手动领取，领取后下发至背包中，逾期未领取不予补发。</p>
+        </div>
+    </div>
+    <!-- 百变女神榜 -->
+    <div class="module-rank">
+        <div class="title sprite-s rank-title"></div>
+        <div class="rank-container">
+            <div class="rank-top-three">
+                <p class="rank-top-tip">*榜单以女神卡套数排名</p>
+                <div class="top-three second" v-if="rankList[1]">
+                    <div class="avatar" @click="goRoom(rankList[1])">
+                        <span class="live sprite-s" v-if="rankList[1].isPlaying"></span>
+                        <img :src="rankList[1].headPic" alt="">
+                    </div>
+                    <div class="name">
+                        <p class=" txt-of">{{ rankList[1].nickname }}</p>
+                        <span :class="['level_icon', 'm_level_icon_'+rankList[1].level]"></span>
+                    </div>
+                    <div class="val txt-of">女神卡: <span :class="[{'underline':rankList[1].score!=='--'}]" @click="getModCardDetails(rankList[1])">{{ rankList[1].score }}</span></div>
+                    <div class="follow" v-if="rankList[1].follow!=='hide'">
+                        <span class="followed sprite-btn-s" v-if="rankList[1].isLoved"></span>
+                        <span class="btn unfollow sprite-btn-s" v-else @click="follow(rankList[1])"></span>
+                    </div>
+                </div>
+                <div class="top-three first" v-if="rankList[0]">
+                    <div class="avatar" @click="goRoom(rankList[0])">
+                        <span class="live sprite-s" v-if="rankList[0].isPlaying"></span>
+                        <img :src="rankList[0].headPic" alt="">
+                    </div>
+                    <div class="name">
+                        <p class=" txt-of">{{ rankList[0].nickname }}</p>
+                        <span :class="['level_icon', 'm_level_icon_'+rankList[0].level]"></span>
+                    </div>
+                    <div class="val txt-of">女神卡: <span :class="[{'underline':rankList[0].score!=='--'}]" @click="getModCardDetails(rankList[0])">{{ rankList[0].score }}</span></div>
+                    <div class="follow" v-if="rankList[0].follow!=='hide'">
+                        <span class="followed sprite-btn-s" v-if="rankList[0].isLoved"></span>
+                        <span class="btn unfollow sprite-btn-s" v-else @click="follow(rankList[0])"></span>
+                    </div>
+                </div>
+                <div class="top-three third" v-if="rankList[2]">
+                    <div class="avatar" @click="goRoom(rankList[2])">
+                        <span class="live sprite-s" v-if="rankList[2].isPlaying"></span>
+                        <img :src="rankList[2].headPic" alt="">
+                    </div>
+                    <div class="name">
+                        <p class=" txt-of">{{ rankList[2].nickname }}</p>
+                        <span :class="['level_icon', 'm_level_icon_'+rankList[2].level]"></span>
+                    </div>
+                    <div class="val txt-of">女神卡: <span :class="[{'underline':rankList[2].score!=='--'}]" @click="getModCardDetails(rankList[2])">{{ rankList[2].score }}</span></div>
+                    <div class="follow" v-if="rankList[2].follow!=='hide'">
+                        <span class="followed sprite-btn-s" v-if="rankList[2].isLoved"></span>
+                        <span class="btn unfollow sprite-btn-s" v-else @click="follow(rankList[2])"></span>
+                    </div>
+                </div>
+                <!-- <div class="top-three first"  v-for="(item, index) in rankList(0, 3)">
+                    <div class="avatar">
+                        <span class="live sprite-s"></span>
+                        <img src="${require('./images/xwyd.png')}" alt="">
+                    </div>
+                    <div class="name">
+                        <p class=" txt-of">{{ "虚位以待" }}</p>
+                        <span :class="['level_icon', 'm_level_icon_'+24]"></span>
+                    </div>
+                    <div class="val txt-of">女神卡: <span :class="[{'underline':rankList[0].score!=='--'}]">{{ "99991234567" }}</span :class="[{'underline':rankList[1].score!=='--'}]"></div>
+                    <div class="follow">
+                        <span class="followed sprite-btn-s" v-if="1"></span>
+                        <span class="btn unfollow sprite-btn-s" v-if="0" @click="follow()"></span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="rank-list">
+                <div class="list-title">
+                    <span>排名</span>
+                    <span>主播</span>
+                    <span>女神卡</span>
+                </div>
+                <div class="list-con">
+                    <pc-scroller class="rank-scroller" ref="rank-scroller" thumb-color="rgba(255, 255, 255, 0.5)">
+                        <div class="list-item" v-for="(item, index) in rankList.slice(3)" :key="index">
+                            <span class="keys">{{ index+4 }}</span>
+                            <div class="avatar" @click="goRoom(item)">
+                                <span class="live sprite-s" v-if="item.isPlaying"></span>
+                                <img :src="item.headPic" alt="">
+                            </div>
+                            <div class="name txt-of">
+                                <p class=" txt-of">{{ item.nickname }}</p>
+                                <span :class="['level_icon', 'm_level_icon_'+item.level]"></span>
+                            </div>
+                            <div :class="['val', 'txt-of', {'underline':item.score!=='--'}]" @click="getModCardDetails(item)">{{ item.score }}</div>
+                        </div>
+                    </pc-scroller>
+                </div>
+                <div class="list-tip">当前只展示前100名主播</div>
+            </div>
+            <div class="self-container" v-if="isLogin && isMod && myRank">
+                <div class="block block-1">
+                    <div class="avatar" @click="goRoom(myRank)">
+                        <span class="live sprite-s" v-if="myRank.isPlaying"></span>
+                        <img :src="myRank.headPic" alt="">
+                    </div>
+                    <div class="name txt-of">
+                        <p class=" txt-of">{{ myRank.nickName }}</p>
+                        <span :class="['level_icon', 'm_level_icon_'+myRank.level]"></span>
+                    </div>
+                </div>
+                <div class="block block-2">
+                    <div class="tl">
+                        <span>{{ myRank.pairInfos[0].name }}</span>
+                        <p>{{ myRank.pairInfos[0].value }}</p>
+                    </div>
+                    <div class="bl">
+                        <span>{{ myRank.pairInfos[1].name }}</span>
+                        <p class="underline" @click="getModCardDetails(myRank)">{{ myRank.pairInfos[1].value }}</p>
+                    </div>
+                </div>
+                <div class="block block-3">
+                    <div class="tr">
+                        <span>{{ myRank.pairInfos[2].name }}</span>
+                        <p>{{ myRank.pairInfos[2].value }}</p>
+                    </div>
+                    <div class="br">
+                        <span>{{ myRank.pairInfos[3].name }}</span>
+                        <p>{{ myRank.pairInfos[3].value }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <footer class="copyright">在法律允许的范围内，本活动的解释权归平台所有</footer>
+
+    <!-- 活动规则按钮 -->
+    <div class="rule-btn sprite-btn-s" @click="showRulePopup=true"></div>
+
+    <!-- 活动规则弹窗 -->
+    <div class="popup-module" v-if="showRulePopup">
+        <div class="popup-rule-container">
+            <div class="title sprite-s rule-title"></div>
+            <i class="close sprite-btn-s" @click="showRulePopup=false">关闭</i>
+            <div class="content">
+                <pc-scroller class="rule-scroller" ref="rule-scroller" thumb-color="rgba(255, 255, 255, 0.5)">
+                    <p class="item"><span>1. 活动时间：</span>2020.3.6 11:00:00 - 3.8 23:59:59。</p>
+                    <p class="item"><span>2. 活动礼物：</span></p>
+                    <div class="gift">
+                        <div class="block">
+                            <div class="pic ts"></div>
+                            <div class="name">1{{ giftPer }}/张</div>
+                        </div>
+                        <div class="block">
+                            <div class="pic ww"></div>
+                            <div class="name">1{{ giftPer }}/张</div>
+                        </div>
+                        <div class="block">
+                            <div class="pic gl"></div>
+                            <div class="name">1{{ giftPer }}/张</div>
+                        </div>
+                    </div>
+                    <div class="tip">注：三种卡片主播均不参与分成</div>
+                    <p class="item"><span>3. 活动玩法：</span>主播收集卡片，合成女神卡，一套女神卡包含：天使卡*1，温婉卡*，高冷卡*1。</p>
+                    <p class="item subitem">天使卡：直播间发言1次，可领取1张，每人每天限10张；</p>
+                    <p class="item subitem">温婉卡：每观看直播5min，可领取1张，每人每天限5张；</p>
+                    <p class="item subitem">高冷卡：每送任意礼物1次(背包礼物除外)，可领取1张，每人每天限10张。</p>
+                    <p class="item tip">注：三种卡片需手动至活动页面领取，领取后下发至背包中，当天未领取的卡片不予补发，领取的卡片永久有效！</p>
+                    <p class="item"><span>4. 活动奖励：</span>女神榜前三名将分别获得99999{{ giftPer }}、88888{{ giftPer }}、66666{{ giftPer }}的女神基金哦！</p>
+                    <p class="item tip">注：</p>
+                    <p class="item tip">1. 活动奖励将于活动结束的五个工作日内发放至主播账户。</p>
+                    <p class="item tip">2. 活动期间送礼量大，服务器会有一定程度的延迟，请提前10秒冲榜，以免成绩未计入榜单。若发生因服务器延迟，造成成绩未计入榜单情况，平台不予补偿，请谅解！</p>
+                </pc-scroller>
+            </div>
+        </div>
+    </div>
+
+    <!-- 女神卡详情弹窗 -->
+    <div class="popup-module" v-if="showCardPopup">
+        <div class="popup-card-container">
+            <i class="close sprite-btn-s" @click="showCardPopup=false">关闭</i>
+            <div class="content">
+                <pc-scroller class="card-scroller" ref="card-scroller" thumb-color="rgba(255, 255, 255, 0.5)">
+                    <div class="avatar">
+                        <!-- <img src="${require('./images/xwyd.png')}" alt=""> -->
+                        <img :src="modCardDetails && modCardDetails.headPic" alt="">
+                    </div>
+                    <div class="name">
+                        <p class="txt-of">{{ modCardDetails && modCardDetails.nickname }}</p>
+                        <span v-if="modCardDetails" :class="['level_icon', 'm_level_icon_'+modCardDetails.level]"></span>
+                    </div>
+                    <div class="num">已集齐{{ modCardDetails && modCardDetails.score }}套女神卡</div>
+                    <div class="details">
+                        <p>天使卡<br />{{ modCardDetails && modCardDetails.card1 }}</p>
+                        <p class="ct">温婉卡<br />{{ modCardDetails && modCardDetails.card2 }}</p>
+                        <p>高冷卡<br />{{ modCardDetails && modCardDetails.card3 }}</p>
+                    </div>
+                    <div class="user-list" v-if="modCardDetails">
+                        <div class="user-item" v-for="(item, index) in modCardDetails.userRanks">
+                            <div class="avatar">
+                                <img v-if="item" :src="item.headPic" alt="">
+                                <img v-else src="${require('./images/xwyd.png')}" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="username txt-of">{{ item && item.nickname || '虚位以待' }}</div>
+                                <div class="num txt-of">{{ item && item.content }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <p>*一套女神卡包含：天使卡*1、温婉卡*1、高冷卡*1</p>
+                        <p>*榜单以女神卡套数排名</p>
+                    </div>
+                </pc-scroller>
+            </div>
+        </div>
+    </div>
+
+    <!-- loading -->
+    <loading ref="loading"></loading>
+    <!-- toast -->
+    <toast ref="toast"></toast>
+</div>
+<!-- mixin html content -->

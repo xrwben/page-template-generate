@@ -1,0 +1,23 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@mobileImg: './images';
+
+@import '../mixin.less';
+
+.level_icon {
+    height: 48/@bf !important;
+}
+
+#app {
+    background: url("../images/bg-m-1.jpg") no-repeat center top / 100% 459/@bf,
+        url("../images/bg-m-2.jpg") no-repeat 0 458/@bf ~"/" 100% 552/@bf,
+        url("../images/bg-m-3.jpg") no-repeat 0 1001/@bf ~"/" 100% 1080/@bf,
+        url("../images/bg-m-4.jpg") no-repeat 0 2080/@bf ~"/" 100% 1266/@bf,
+        url("../images/bg-m-5.jpg") no-repeat 0 3345/@bf ~"/" 100% 2409/@bf;
+    background-color: #8bd9c0;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 760/@bf;
+    margin: 0 auto;
+}

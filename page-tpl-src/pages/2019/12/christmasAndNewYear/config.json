@@ -1,0 +1,12 @@
+{
+    "author": "liben",
+    "email": "liben@guojiang.tv",
+    "type": "page",
+    "name": "2019/12/christmasAndNewYear",
+    "useTpl": "_basic_mixin",
+    "branch": "page/2019/12/christmasAndNewYear",
+    "created": "Tue Dec 10 2019 12:03:09 GMT+0800 (GMT+08:00)",
+    "app": {
+        "pageTitle": "2019星光双旦嘉年华"
+    }
+}

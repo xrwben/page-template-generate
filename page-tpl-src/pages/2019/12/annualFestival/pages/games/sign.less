@@ -1,0 +1,295 @@
+.sign-c {
+    .sign-rule {
+        // padding-top: 50/@bf;
+        // padding-bottom: 1/@bf;
+        margin-top: 90/@bf;
+        margin-bottom: 100/@bf;
+
+        &.border-deco:after {
+            z-index: 1;
+        }
+    }
+
+    .sign-counter {
+        margin-bottom: 40/@bf;
+
+        .time {
+            font-size: 50/@bf;
+            color: #ff4873;
+            margin-left: 40/@bf;
+        }
+    }
+
+    .sign-rule-i {
+        font-size: 36/@bf;
+        color: #ffe476;
+        margin: 30/@bf 68/@bf;
+    }
+
+    .sign-info {
+        width: 1038/@bf;
+        border: 3/@bf solid #ebc063;
+        margin: 40/@bf auto -44/@bf;
+        padding: 12/@bf 0 10/@bf;
+    }
+
+    .sign-info-c {
+        width: 1016/@bf;
+        height: 230/@bf;
+        margin: 0 auto;
+        background: url('./images/my-info-bg.jpg') no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+
+        .headpic {
+            border-radius: 50%;
+            border: 5/@bf solid #d6b057;
+            background-color: #000;
+            padding: 4/@bf;
+            position: relative;
+        }
+
+        .avatar {
+            width: 190/@bf;
+            height: 190/@bf;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #d6b057;
+        }
+
+        .txt-my {
+            margin-left: 34/@bf;
+            margin-right: 10/@bf;
+        }
+
+        .status {
+            font-size: 40/@bf;
+            color: #ffe476;
+            position: relative;
+            top: -4/@bf;
+            margin-right: 50/@bf;
+        }
+    }
+
+    .sign-path {
+        margin-top: 140/@bf;
+    }
+
+    .sign-path-i {
+        position: relative;
+        margin-top: 80/@bf;
+        margin-bottom: 120/@bf;
+
+        &.border-deco2:before {
+            top: -36/@bf;
+        }
+
+        &.border-deco2:after {
+            bottom: -44/@bf;
+        }
+
+        .open {
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+    }
+
+    .sign-path-c {
+        width: 1010/@bf;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-size: 95% auto;
+        background-position: top center;
+        padding-bottom: 10/@bf;
+        position: relative;
+        z-index: 2;
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 98%;
+            height: 374/@bf;
+            background: url('./images/sign/s-bg-btm.jpg') no-repeat;
+            background-size: 100% auto;
+            background-position: bottom center;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            opacity: .5;
+        }
+
+        &.active {
+            &:after {
+                display: block;
+            }
+
+            .open {
+                transform: rotate(-180deg);
+                transform-origin: center center;
+            }
+
+            .sign-list {
+                height: auto;
+            }
+        }
+    }
+
+    .path-info {
+        padding-top: 90/@bf;
+        padding-left: 500/@bf;
+        height: 300/@bf;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .info-h {
+            position: relative;
+        }
+
+        .sign-num {
+            font-size: 40/@bf;
+            color: #ffe476;
+            position: absolute;
+            top: 10/@bf;
+            left: 370/@bf;
+        }
+
+        .sign-btn {
+            margin-top: 16/@bf;
+            margin-left: 40/@bf;
+        }
+    }
+
+    .sign-bg-0 {
+        background-image: url('./images/sign/s-bg-0.jpg');
+    }
+
+    .sign-bg-1 {
+        background-image: url('./images/sign/s-bg-1.jpg');
+    }
+
+    .sign-bg-2 {
+        background-image: url('./images/sign/s-bg-2.jpg');
+    }
+
+    .sign-bg-3 {
+        background-image: url('./images/sign/s-bg-3.jpg');
+    }
+
+    .sign-bg-4 {
+        background-image: url('./images/sign/s-bg-4.jpg');
+    }
+
+    .sign-list {
+        position: relative;
+        z-index: 2;
+        margin-top: 40/@bf;
+        flex-wrap: wrap;
+        height: 240/@bf;
+        overflow: hidden;
+
+        .sign-item {
+            margin: 0 14/@bf 20/@bf;
+        }
+
+        .headpic {
+            border-radius: 50%;
+            border: 5/@bf solid #d6b057;
+            background-color: #000;
+            padding: 4/@bf;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 144/@bf;
+            height: 144/@bf;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #d6b057;
+        }
+
+        .icon-live {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(30%, 50%);
+        }
+
+        .name {
+            margin: 10/@bf auto 0;
+            text-align: center;
+            font-size: 36/@bf;
+            color: #ffe476;
+            width: 144/@bf;
+        }
+    }
+
+    .sign-nav {
+        width: 367/@bf;
+        height: 569/@bf;
+        background: url('./images/sign/sign-nav.png') no-repeat;
+        background-size: 100% auto;
+        padding-top: 210/@bf;
+        right: 38%;
+        bottom: 10%;
+    }
+
+    .sign-nav-i {
+        width: 200/@bf;
+        height: 46/@bf;
+        margin: 14/@bf auto;
+    }
+
+    .nav-4 {
+        margin-bottom: 0;
+    }
+
+    .nav-top {
+        margin-top:  5/@bf;
+        width: 180/@bf;
+    }
+}
+
+.layer-sign-c {
+    .layer-cus {
+        width: 1080/@bf;
+        height: 626/@bf;
+        background: url('./images/sign/sign-t-bg.png') no-repeat;
+        background-size: 100% auto;
+        position: relative;
+        padding-top: 150/@bf;
+        box-sizing: border-box;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 70/@bf;
+        right: 80/@bf;
+    }
+
+    .c-h {
+        font-size: 46/@bf;
+        text-align: center;
+        color: #ffe476;
+        margin: 40/@bf 100/@bf;
+    }
+
+    .opts {
+        justify-content: space-around;
+        margin: 0 100/@bf;
+    }
+
+    .c-tips {
+        font-size: 30/@bf;
+        color: #ffe476;
+        text-align: center;
+        opacity: .5;
+        margin-top: 30/@bf;
+        transform: skewX(-8deg);
+    }
+}

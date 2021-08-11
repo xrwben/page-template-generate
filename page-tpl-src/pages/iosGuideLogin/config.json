@@ -1,0 +1,12 @@
+{
+    "author": "mrzjd",
+    "email": "390303304@qq.com",
+    "type": "page",
+    "name": "iosGuideLogin",
+    "useTpl": "_basic_mobile",
+    "branch": "page/iosGuideLogin",
+    "created": "Fri Sep 06 2019 12:20:36 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "星光直播ios下载引导"
+    }
+}

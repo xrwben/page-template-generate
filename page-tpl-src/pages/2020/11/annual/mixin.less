@@ -1,0 +1,111 @@
+@import "./style/sprite-commom.less";
+@import "./style/sprite-reward.less";
+@import "./style/sprite-competition.less";
+@import "./style/sprite-user.less";
+@import "./style/sprite-hi.less";
+@import "./style/sprite-rule.less";
+@import "./style/style-reward.less";
+@import "./style/style-competition.less";
+@import "./style/style-bp.less";
+@import "./style/style-user.less";
+@import "./style/style-hi.less";
+@import "./style/style-rule.less";
+
+* {
+    box-sizing: border-box;
+}
+#app {
+    overflow: hidden;
+}
+.txt-of {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 视频
+.module-video {
+    width: 900/@bf;
+    height: 637/@bf;
+    background: url("./images/video-bg.png") no-repeat center top / 100% 100%;
+    margin: 0 auto;
+    padding: 135/@bf 8/@bf 8/@bf;
+    overflow: hidden;
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+}
+
+// 路由tab
+.module-tab {
+    width: 900/@bf;
+    height: 250/@bf;
+    background: url("./images/tab-bg.png") no-repeat center / 591/@bf 223/@bf;
+    margin: 90/@bf auto 70/@bf;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    & > div {
+        cursor: pointer;
+    }
+    & > div:nth-of-type(2n) {
+        align-self: flex-end;
+    }
+}
+
+// 注意事项
+.module-attention {
+    width: 889/@bf;
+    height: 425/@bf;
+    background: url("./images/footer-attention.png") no-repeat center / 100% 100%;
+    margin: 0 auto 70/@bf;
+}
+
+// 活动规则按钮
+.btn-rule {
+    position: fixed;
+    right: 0;
+    bottom: 30%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+// toast
+.toast-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .toast-msg {
+        padding: 12/@bf 18/@bf;
+        font-size: 36/@bf;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 12/@bf;
+        max-width: 800/@bf;
+    }
+}
+
+.svg-layer {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    .svg-container {
+        width: 1080/@bf;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+}

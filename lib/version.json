@@ -1,0 +1,158 @@
+{
+    "dll.mobile.js": {
+        "latest": "v0.0.7",
+        "v0.0.2": {
+            "pubTest": true,
+            "pubTestTime": "Mon Aug 05 2019 14:05:08 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Thu Aug 08 2019 18:41:00 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.3": {
+            "pubTest": true,
+            "pubTestTime": "Wed Mar 18 2020 12:25:48 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Wed Mar 18 2020 15:32:48 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.4": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 27 2020 11:44:28 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Fri Mar 27 2020 11:45:59 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.5": {
+            "pubTest": true,
+            "pubTestTime": "Tue Apr 21 2020 18:12:20 GMT+0800 (中国标准时间)",
+            "pubTrunk": false,
+            "pubTrunkTime": null
+        },
+        "v0.0.6": {
+            "pubTest": true,
+            "pubTestTime": "Tue May 12 2020 09:54:26 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Tue May 12 2020 10:46:03 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.7": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 19 2021 11:32:16 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Thu Jan 28 2021 17:38:55 GMT+0800 (中国标准时间)"
+        }
+    },
+    "dll.web.js": {
+        "latest": "v0.0.7",
+        "v0.0.2": {
+            "pubTest": true,
+            "pubTestTime": "Mon Aug 05 2019 14:05:08 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Tue Nov 26 2019 16:33:12 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.3": {
+            "pubTest": true,
+            "pubTestTime": "Wed Mar 18 2020 12:25:48 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Wed Mar 18 2020 15:32:48 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.4": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 27 2020 11:44:28 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Fri Mar 27 2020 11:45:59 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.5": {
+            "pubTest": true,
+            "pubTestTime": "Tue Apr 21 2020 18:12:20 GMT+0800 (中国标准时间)",
+            "pubTrunk": false,
+            "pubTrunkTime": null
+        },
+        "v0.0.6": {
+            "pubTest": true,
+            "pubTestTime": "Tue May 12 2020 09:54:26 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Tue May 12 2020 10:46:03 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.7": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 19 2021 11:32:16 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Thu Jan 28 2021 17:38:55 GMT+0800 (中国标准时间)"
+        }
+    },
+    "vendor.mobile.js": {
+        "latest": "v0.0.7",
+        "v0.0.2": {
+            "pubTest": true,
+            "pubTestTime": "Mon Aug 05 2019 14:05:08 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Thu Aug 08 2019 18:41:00 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.3": {
+            "pubTest": true,
+            "pubTestTime": "Wed Mar 18 2020 12:25:48 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Wed Mar 18 2020 15:32:48 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.4": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 27 2020 11:44:28 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Fri Mar 27 2020 11:45:59 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.5": {
+            "pubTest": true,
+            "pubTestTime": "Tue Apr 21 2020 18:12:20 GMT+0800 (中国标准时间)",
+            "pubTrunk": false,
+            "pubTrunkTime": null
+        },
+        "v0.0.6": {
+            "pubTest": true,
+            "pubTestTime": "Tue May 12 2020 09:54:26 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Tue May 12 2020 10:46:03 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.7": {
+            "pubTest": true,
+            "pubTestTime": "Wed Apr 07 2021 16:51:27 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Fri Apr 09 2021 14:13:44 GMT+0800 (中国标准时间)"
+        }
+    },
+    "vendor.web.js": {
+        "latest": "v0.0.7",
+        "v0.0.2": {
+            "pubTest": true,
+            "pubTestTime": "Wed Oct 23 2019 15:45:10 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Tue Nov 26 2019 16:33:12 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.3": {
+            "pubTest": true,
+            "pubTestTime": "Wed Mar 18 2020 12:25:48 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Wed Mar 18 2020 15:32:48 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.4": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 27 2020 11:44:28 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Fri Mar 27 2020 11:45:59 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.5": {
+            "pubTest": true,
+            "pubTestTime": "Tue Apr 21 2020 18:12:20 GMT+0800 (中国标准时间)",
+            "pubTrunk": false,
+            "pubTrunkTime": null
+        },
+        "v0.0.6": {
+            "pubTest": true,
+            "pubTestTime": "Tue May 12 2020 09:54:26 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Tue May 12 2020 10:46:03 GMT+0800 (中国标准时间)"
+        },
+        "v0.0.7": {
+            "pubTest": true,
+            "pubTestTime": "Fri Mar 19 2021 11:32:16 GMT+0800 (中国标准时间)",
+            "pubTrunk": true,
+            "pubTrunkTime": "Fri Mar 19 2021 11:58:59 GMT+0800 (中国标准时间)"
+        }
+    }
+}

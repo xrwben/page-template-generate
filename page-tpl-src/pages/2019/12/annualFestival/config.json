@@ -1,0 +1,12 @@
+{
+    "author": "mrzjd",
+    "email": "390303304@qq.com",
+    "type": "page",
+    "name": "2019/12/annualFestival",
+    "useTpl": "react_base",
+    "branch": "page/2019/12/annualFestival",
+    "created": "Tue Nov 12 2019 16:29:47 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "2019星光年度盛典"
+    }
+}

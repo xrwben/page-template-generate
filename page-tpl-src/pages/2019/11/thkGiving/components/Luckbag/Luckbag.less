@@ -1,0 +1,202 @@
+.luckbag {
+    &.wrap-box {
+        margin-top: 120/@bf;
+    }
+
+    .wrap-c {
+        padding-bottom: 32/@bf;
+    }
+
+    .h-luckbag {
+        width: 709/@bf;
+        height: 122/@bf;
+        background: url('../../images/h-luckbag.png') no-repeat;
+        background-size: 100% auto;
+        position: relative;
+        top: -74/@bf;
+    }
+
+    .luckbag-c {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: -54/@bf;
+        padding-left: 40/@bf;
+        padding-right: 40/@bf;
+        padding-bottom: 32/@bf;
+    }
+
+    .luck-pic {
+        margin-right: 30/@bf;
+
+        .pic-c {
+            width: 279/@bf;
+            height: 285/@bf;
+            padding: 46/@bf 30/@bf 30/@bf 46/@bf;
+            position: relative;
+            &:before {
+                content: '';
+                .icon-s;
+                .g-bg;
+                transform-origin: top left;
+                transform: scale(279/406);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+        }
+
+        .btn-isopen,
+        .btn-open {
+           margin: 16/@bf auto 0;
+        }
+
+        .bag {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .prog {
+        width: 240/@bf;
+        height: 54/@bf;
+        margin: 20/@bf auto 0;
+        border: 1px solid #d5872d;
+        border-radius: 40/@bf;
+        position: relative;
+        background-color: #fff;
+
+        .bar {
+            width: 50%;
+            height: 100%;
+            border-radius: 40/@bf;
+            background: linear-gradient(to right, #fc509b, #ea6d23);
+            box-shadow: 0 0 6px inset #fff;
+        }
+
+        .val {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 50/@bf;
+            color: #603300;
+            font-size: 40/@bf;
+        }
+    }
+
+    .luck-info {
+        padding-top: 14/@bf;
+    }
+
+    .luck-i {
+        font-size: 40/@bf;
+        color: #9e2b0c;
+        line-height: 44/@bf;
+        margin-bottom: 20/@bf;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .luck-i-tip {
+        font-size: 32/@bf;
+        color: #fd290d;
+        line-height: 38/@bf;
+    }
+
+    .btn-rw {
+        margin: 0 auto;
+    }
+
+    .open-box {
+        position: fixed;
+        z-index: 10;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: none;
+        opacity: 0;
+        transform: scale(0);
+
+        @keyframes lbOpening {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1.2; }
+            75% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        &.active {
+            display: block;
+            animation: lbOpening 4s ease;
+        }
+    }
+
+    @keyframes rtLight {
+        0% { transform: translate(-50%, -50%) scale(1.4) rotate(0); }
+        100% { transform: translate(-50%, -50%) scale(1.4) rotate(360deg); }
+    }
+
+    .pic-light {
+        width: 600/@bf;
+        height: 600/@bf;
+        background: url('../../images/lightx600.png') no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.4);
+        animation: rtLight 6s linear infinite;
+    }
+
+    .pic-lb {
+        width: 400/@bf;
+        height: 417/@bf;
+        background: url('../../images/lbx400.png') no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    .pic-stars {
+        width: 120/@bf;
+        height: 120/@bf;
+        background: url('../../images/star.png') no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    @keyframes rtStar {
+        0% { transform: translate(-8%, 60%) scale(0) rotate(0); }
+        60% { transform: translate(-8%, 60%) scale(1.2) rotate(360deg); }
+        100% { transform: translate(-8%, 60%) scale(0) rotate(720deg); }
+    }
+
+    @keyframes rtStar2 {
+        0% { transform: translate(-150%, 0%) scale(0) rotate(0); }
+        60% { transform: translate(-150%, 0%) scale(1.2) rotate(360deg); }
+        100% { transform: translate(-150%, 0%) scale(0) rotate(720deg); }
+    }
+
+    .star1 {
+        transform: translate(-8%, 60%);
+        animation: rtStar 4s ease infinite;
+    }
+
+    .star2 {
+        transform: translate(-150%, 0%);
+        animation: rtStar2 6s ease infinite;
+    }
+}

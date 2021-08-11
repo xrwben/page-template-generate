@@ -1,0 +1,123 @@
+.pk-bar {
+    margin-top: 48/@bf;
+
+    .h-rank {
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+    }
+
+    .bar {
+        width: 1008/@bf;
+        height: 66/@bf;
+        margin: -74/@bf auto 0;
+        background-color: #00e7ff;
+        border-radius: 40/@bf;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+        // overflow: hidden;
+        position: relative;
+    }
+
+    .bar-w {
+        width: 50%;
+        height: 100%;
+        background-color: #ef2b35;
+        border-top-left-radius: 40/@bf;
+        border-bottom-left-radius: 40/@bf;
+    }
+
+    .l-val {
+        position: absolute;
+        top: 50%;
+        left: 30/@bf;
+        transform: translateY(-44%) scale(0.8);
+        transform-origin: left center;
+    }
+
+    .r-val {
+        position: absolute;
+        top: 50%;
+        right: 30/@bf;
+        transform: translateY(-44%) scale(0.8);
+        transform-origin: right center;
+    }
+
+    .end {
+        .l-val {
+            left: 180/@bf;
+        }
+
+        .r-val {
+            right: 180/@bf;
+        }
+
+        
+        &:before {
+            content: '';
+            .pic2-s;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 10/@bf;
+            transform: translate(0, -54%);
+        }
+
+        &:after {
+            content: '';
+            .pic2-s;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            right: 10/@bf;
+            transform: translate(0, -54%);
+        }
+    }
+
+    .winner-from {
+        &:before {
+            .icon-win;
+        }
+
+        &:after {
+            .icon-lose;
+        }
+    }
+
+    .winner-to {
+        &:before {
+            .icon-lose;
+        }
+
+        &:after {
+            .icon-win;
+        }
+    }
+
+    .num-s {
+        display: inline-block;
+        margin: 0px -2/@bf;
+    }
+
+    // .l-7, .r-7 {
+    //     margin-right: -6/@bf;
+    // }
+
+    // .l-4, .r-4 {
+    //     margin-left: -4/@bf;
+    // }
+
+    .bar-deco-w {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .bar-deco {
+        position: absolute;
+        top: -6/@bf;
+        left: 40/@bf;
+    }
+}

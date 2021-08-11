@@ -1,0 +1,48 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <div class="banner" v-if="!appIconEntry">
+        <div class="animation-entry" ref="entry"></div>
+        <div class="animation-float" ref="float"></div>
+    </div>
+    <div class="static-banner" v-else></div>
+    <!-- 视频 -->
+    <div class="module-video" v-if="!appIconEntry">
+        <video class="video"
+            playsInline="true"
+            webkit-playsinline="true"
+            x5-playsinline="true"
+            x-webkit-airplay="allow"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen=""
+            x5-video-orientation="portraint"
+            src="//static.guojiang.tv/vmaker/video/annual2020-video.mp4"
+            controls="true"
+            preload="auto"
+            controlsList="nodownload nofullscreen"
+            poster="${require('./images/video-poster.jpg')}">
+        </video>
+    </div>
+    <!-- 路由tab -->
+    <div class="module-tab">
+        <div class="com-sprite-s" :class="currentPath==='/reward'?'reward-normal':'reward-gray'" @click="goRoute('/reward')"></div>
+        <div class="com-sprite-s" :class="currentPath==='/competition'?'competition-normal':'competition-gray'" @click="goRoute('/competition')"></div>
+        <div class="com-sprite-s" :class="currentPath==='/user'?'user-normal':'user-gray'" @click="goRoute('/user')"></div>
+        <div class="com-sprite-s" :class="currentPath==='/hi'?'hi-normal':'hi-gray'" @click="goRoute('/hi')"></div>
+    </div>
+    <!-- 路由 -->
+    <router-view></router-view>
+    <!-- 注意事项 -->
+    <div class="module-attention"></div>
+
+    <div v-if="activityStatus!==0" class="btn-rule rule-sprite-s rule" @click="showRulePopup=true"></div>
+    <!-- 活动规则 -->
+    <Rule v-if="showRulePopup" @close-rule-popup="closeRulePopup"></Rule>
+
+     <!-- loading -->
+     <loading ref="loading"></loading>
+     <!-- toast -->
+     <toast ref="toast"></toast>
+     <!-- 礼物预览 -->
+    <svg-player ref="svgPlayer"></svg-player>
+</div>
+<!-- mixin html content -->

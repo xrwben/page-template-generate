@@ -1,0 +1,415 @@
+@pageName: 'rewards';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@images: './images';
+
+@import './sprite.less';
+
+.rewards {
+    .pic-sec {
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        position: relative;
+        margin: 0 auto;
+        width: 1080/@bf;
+    }
+
+    .show-sec-0 {
+        height: 431/@bf;
+        background-image: url('./images/rw-bg-0.png');
+    }
+
+    .show-sec-1 {
+        height: 187/@bf;
+        background-image: url('./images/rw-bg-1.png');
+        left: -1px;
+        margin-bottom: -1px;
+    }
+
+    .show-sec-2 {
+        width: 1035/@bf;
+        height: 332/@bf;
+        background-image: url('./images/rw-bg-2.jpg');
+    }
+
+    .show-sec-3 {
+        width: 1035/@bf;
+        height: 712/@bf;
+        background-image: url('./images/rw-bg-3.jpg');
+        margin-bottom: 40/@bf;
+    }
+
+    .show-sec-4 {
+        height: 182/@bf;
+        background-image: url('./images/rw-bg-4.png');
+        left: -1px;
+        margin-bottom: -1px;
+    }
+
+    .show-sec-5 {
+        width: 1035/@bf;
+        height: 445/@bf;
+        background-image: url('./images/rw-bg-5.jpg');
+    }
+
+    .show-sec-6 {
+        width: 1035/@bf;
+        height: 446/@bf;
+        background-image: url('./images/rw-bg-6.jpg');
+    }
+
+    .show-sec-7 {
+        width: 1035/@bf;
+        height: 446/@bf;
+        background-image: url('./images/rw-bg-7.jpg');
+    }
+
+    .show-sec-8 {
+        width: 1035/@bf;
+        height: 444/@bf;
+        background-image: url('./images/rw-bg-8.jpg');
+    }
+
+    .show-sec-9 {
+        width: 1035/@bf;
+        height: 446/@bf;
+        background-image: url('./images/rw-bg-9.jpg');
+    }
+
+    .show-sec-10 {
+        width: 1035/@bf;
+        height: 462/@bf;
+        background-image: url('./images/rw-bg-10.jpg');
+    }
+
+    .btn-go-rw {
+        width: 362/@bf;
+        height: 101/@bf;
+        background: url('./images/btn-rw.png') no-repeat;
+        background-size: cover;
+        font-size: 0;
+    }
+
+    .btn-go-rw2 {
+        width: 235/@bf;
+        height: 89/@bf;
+        background: url('./images//btn-rw2.png') no-repeat;
+        background-size: cover;
+        font-size: 0;
+    }
+
+    .btn-m-top0 {
+        position: relative;
+        top: 170/@bf;
+        left: 80/@bf;
+    }
+
+    .btn-m-top1 {
+        position: relative;
+        top: 365/@bf;
+        left: 390/@bf;
+    }
+
+    .btn-m-top2 {
+        position: relative;
+        top: 440/@bf;
+        left: 80/@bf;
+    }
+
+    .btn-m-top3 {
+        position: relative;
+        top: 352/@bf;
+        left: 704/@bf;
+    }
+
+    .btn-u-top0 {
+        position: relative;
+        top: 245/@bf;
+        left: 102/@bf;
+    }
+
+    .btn-u-top1,
+    .btn-u-top3 {
+        position: absolute;
+        top: 310/@bf;
+        left: 130/@bf;
+    }
+
+    .btn-u-top2,
+    .btn-u-top4 {
+        position: absolute;
+        top: 310/@bf;
+        right: 156/@bf;
+    }
+
+    .btn-u-top-10 {
+        position: absolute;
+        top: 300/@bf;
+        left: 394/@bf;
+    }
+}
+
+.layer-rw {
+    .layer-c {
+        height: 60%;
+    }
+
+    .layer-h {
+        height: 80/@bf;
+        position: relative;
+        padding-left: 376/@bf;
+        padding-top: 16/@bf;
+    }
+
+    .layer-m {
+        z-index: 2;
+    }
+
+    .rw-h {
+        // width: 376/@bf;
+        // height: 80/@bf;
+        // position: relative;
+        z-index: 9;
+        position: absolute;
+        width: 430/@bf;
+        height: 430/@bf;
+        background-size: 100% auto;
+        bottom: -120/@bf;
+        left: 0;
+        pointer-events: none;
+
+        .rw-h-pic {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 150%;
+        }
+
+        .rw-h-pic.m_0 {
+            transform: translate(-50%, -50%) scale(.85);
+        }
+
+        .rw-h-pic.m_1,
+        .rw-h-pic.m_2,
+        .rw-h-pic.m_3 {
+            max-width: 100%;
+        }
+
+        .rw-h-pic.u_0,
+        .rw-h-pic.u_1,
+        .rw-h-pic.u_2,
+        .rw-h-pic.u_3,
+        .rw-h-pic.u_4,
+        .rw-h-pic.u_5,
+        .rw-h-pic.u_6,
+        .rw-h-pic.u_7,
+        .rw-h-pic.u_8,
+        .rw-h-pic.u_9 {
+            transform: translate(-50%, -50%) scale(.65);
+        }
+    }
+
+    .rw-h-t {
+        height: 47/@bf;
+
+        &.m_0 {
+            padding-left: 40/@bf;
+        }
+
+        &.m_1,
+        &.m_2,
+        &.m_3 {
+            padding-left: 14/@bf;
+        }
+
+        &.u_0 {
+            padding-left: 14/@bf;
+        }
+
+        &.u_1 {
+            padding-left: 12/@bf;
+        }
+
+        &.u_2,
+        &.u_3,
+        &.u_4,
+        &.u_5,
+        &.u_6,
+        &.u_7,
+        &.u_8,
+        &.u_9 {
+            padding-left: 0/@bf;
+        }
+    }
+
+    .rw-list {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 0 20/@bf;
+        height: 100%;
+
+        .sep {
+            width: 100%;
+        }
+    }
+
+    .rw-i {
+        width: 320/@bf;
+        margin: 54/@bf 0 0;
+    }
+
+    .rw-g-icon {
+        position: relative;      
+        width: 222/@bf;
+        height: 222/@bf;
+        margin: 0 auto;
+
+        &:before {
+            content: '';
+            width: 320/@bf;
+            height: 296/@bf;
+            position: absolute;
+            z-index: 1;
+            background: url('./images/g-bg.jpg') no-repeat;
+            background-size: 100% auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:after {
+            content: '';
+            width: 164/@bf;
+            height: 224/@bf;
+            position: absolute;
+            z-index: 3;
+            background: url('./images/g-cover.png') no-repeat;
+            background-size: 100% auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+        }
+    }
+
+    .mount-play {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 11;
+        transform: translate(-50%, -50%);
+    }
+
+    .rw-g-pic {
+        position: relative;
+        z-index: 2;
+        margin: 0 auto;
+    }
+    .rw-name {
+        position: relative;
+        z-index: 2;
+        margin: 10/@bf auto 0;
+    }
+
+    .rw-name-tips {
+        left: -6/@bf;
+    }
+
+    .rw-pic {
+        position: relative;
+        z-index: 2;
+    }
+
+    .badge-pic,
+    .label-pic {
+        width: 180/@bf;
+    }
+
+    .avatar-pic {
+        width: 160/@bf;
+        transform: translate(-2%, -3%);
+    }
+
+    .danmu-pic {
+        width: 180/@bf;
+        transform: translate(-4%, -2%);
+
+        &.m_0 {
+            transform: translate(-4%, -14%);
+        }
+    }
+
+    .cdanmu-pic {
+        width: 180/@bf;
+    }
+
+    .rw-desc {
+        width: 100%;
+        font-size: 30/@bf;
+        color: #e09b42;
+        text-align: center;
+        transform: skewX(-10deg);
+    }
+
+    .g-danmu {
+        left: -6/@bf;
+    }
+
+    .g-income {
+        top: -10/@bf;
+        left: -10/@bf;
+    }
+
+    .g-zs {
+        top: 10/@bf;
+        left: -4/@bf;
+    }
+
+    .icon-qs {
+        position: absolute;
+        transform: translate(100%, 13%);
+        right: 0;
+    }
+}
+
+.layer-rw {
+    .g-t-zs-0,
+    .g-t-zs-1,
+    .g-t-zs-2,
+    .g-t-zs-3 {
+        position: relative;
+        left: -40/@bf;
+        &:after {
+            content: '';
+            .rw-t-m-s;
+            .g-per-kala;
+            position: absolute;
+            top: -2/@bf;
+            right: -80/@bf;
+        }
+    }
+
+    &[data-per="甜蜜"] {
+        .g-t-zs-0,
+        .g-t-zs-1,
+        .g-t-zs-2,
+        .g-t-zs-3 {
+            &:after {
+                .g-per-tm;
+            }
+        }
+    }
+
+    &[data-per="花瓣"] {
+        .g-t-zs-0,
+        .g-t-zs-1,
+        .g-t-zs-2,
+        .g-t-zs-3 {
+            &:after {
+                .g-per-hb;
+            }
+        }
+    }
+}

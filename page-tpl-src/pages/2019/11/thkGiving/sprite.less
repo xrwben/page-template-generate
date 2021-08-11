@@ -1,0 +1,65 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_btn_sprite () {
+    .btn-s {
+        background: url('./images/btn.png') no-repeat;
+        background-size: 663/@bf 525/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn-atte-d { .getSprite(194, 77, 225, 331); }
+    .btn-atte { .getSprite(194, 77, 225, 229); }
+    .btn-buy-d { .getSprite(215, 92, 0, 229); }
+    .btn-buy { .getSprite(214, 92, 448, 204); }
+    .btn-cancel { .getSprite(215, 92, 0, 331); }
+    .btn-cancel2 { .getSprite(214, 92, 0, 433); }
+    .btn-charge { .getSprite(214, 92, 448, 306); }
+    .btn-close { .getSprite(64, 63, 224, 433); }
+    .btn-give { .getSprite(215, 92, 448, 102); }
+    .btn-give2 { .getSprite(194, 77, 225, 127); }
+    .btn-preview { .getSprite(215, 92, 448, 0); }
+    .btn-rw { .getSprite(438, 117, 0, 0); }
+    .btn-search { .getSprite(215, 92, 0, 127); }
+}
+.set_btn_sprite();
+
+.set_btn-2_sprite () {
+    .btn-2-s {
+        background: url('./images/btn-2.png') no-repeat;
+        background-size: 697/@bf 539/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn-isopen { .getSprite(215, 92, 171, 334); }
+    .btn-open { .getSprite(215, 92, 396, 334); }
+    .btn-rule { .getSprite(161, 205, 0, 334); }
+    .tab-m-a { .getSprite(379, 153, 0, 171); }
+    .tab-m { .getSprite(289, 129, 408, 0); }
+    .tab-u-a { .getSprite(398, 161, 0, 0); }
+    .tab-u { .getSprite(287, 129, 408, 139); }
+}
+.set_btn-2_sprite();
+
+.set_icon_sprite () {
+    .icon-s {
+        background: url('./images/icon.png') no-repeat;
+        background-size: 862/@bf 643/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .badge { .getSprite(159, 159, 644, 228); }
+    .cown-1 { .getSprite(136, 121, 416, 228); }
+    .cown-2 { .getSprite(136, 121, 228, 425); }
+    .cown-3 { .getSprite(136, 121, 374, 425); }
+    .cown-bg-1 { .getSprite(218, 218, 416, 0); }
+    .cown-bg-2 { .getSprite(218, 218, 644, 0); }
+    .cown-bg-3 { .getSprite(218, 218, 0, 425); }
+    .g-bg { .getSprite(406, 415, 0, 0); }
+    .icon-live { .getSprite(95, 42, 416, 359); }
+    .icon-triangle { .getSprite(43, 37, 813, 228); }
+}
+.set_icon_sprite();

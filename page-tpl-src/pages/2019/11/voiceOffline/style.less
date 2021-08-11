@@ -1,0 +1,33 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@imgUrl: './images';
+
+html, body {
+    margin: 0;
+    padding: 0px;
+}
+
+#app {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1080/@bf;
+    margin: 0 auto;
+}
+
+.pic {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.pic-1 {
+    height: 560/@bf;
+    background-image: url('@{imgUrl}/bg0.jpg');
+}
+
+.pic-2 {
+    height: 742/@bf;
+    background-image: url('@{imgUrl}/bg1.jpg');
+    margin-top: -1px;
+}

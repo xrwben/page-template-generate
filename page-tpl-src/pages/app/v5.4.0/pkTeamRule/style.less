@@ -1,0 +1,276 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@imgUrl: './images';
+
+[v-cloak]{ display:none!important; }
+
+.getSpritePad (@w, @h, @posx, @posy, @pad) {
+    background-position: (@posx + @pad)/@bf (@posy + @pad)/@bf;
+    width: (@w + @pad*2)/@bf;
+    height: (@h + @pad*2)/@bf;
+}
+.getSprite (@w, @h, @posx, @posy) {
+    .getSpritePad(@w, @h, @posx, @posy, 5);
+}
+
+.set_sprite () {
+    .daoju {
+        background: url('@{imgUrl}/danju.png') no-repeat;
+        background-size: 348/@bf 327/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .daoju-1 {
+        .getSprite(151, 130, -186, -183);
+    }
+    .daoju-2 {
+        .getSprite(155, 153, -10, -10);
+    }
+    .daoju-3 {
+        .getSprite(153, 140, -185, -10);
+    }
+    .daoju-4 {
+        .getSprite(156, 134, -10, -183);
+    }
+
+    .h-title {
+        background: url('@{imgUrl}/h-title.png') no-repeat;
+        background-size: 289/@bf 296/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .tlevel2 {
+        .getSprite(269, 79, -10, -108);
+    }
+    .tlevel {
+        .getSprite(269, 79, -10, -207);
+    }
+    .trule {
+        .getSprite(268, 78, -10, -10);
+    }
+
+    .badge-s {
+        background: url('@{imgUrl}/badge.png') no-repeat;
+        background-size: 258/@bf 172/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .badge-3 {
+        .getSprite(66, 66, -10, -10);
+    }
+    .badge-4 {
+        .getSprite(66, 66, -96, -10);
+    }
+    .badge-0 {
+        .getSprite(66, 66, -10, -96);
+    }
+    .badge-1 {
+        .getSprite(66, 66, -96, -96);
+    }
+    .badge-2 {
+        .getSprite(66, 66, -182, -10);
+    }
+}
+.set_sprite();
+
+#app {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #452fc4;
+}
+
+.page-bgs {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+
+    .page-bg {
+        // width: 100%;
+        background-repeat: no-repeat;
+        // background-size: 100% auto;
+        background-size: cover;
+    }
+
+    .bg1 {
+        height: 700/@bf;
+        background-image: url('@{imgUrl}/bg1.jpg');
+    }
+
+    .bg2 {
+        height: 3300/@bf;
+        background-image: url('@{imgUrl}/bg2.jpg');
+    }
+}
+
+.page-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 490/@bf;
+
+    .deco {
+        position: absolute;
+        z-index: 3;
+    }
+
+    .deco-a {
+        width: 178/@bf;
+        height: 419/@bf;
+        background: url('@{imgUrl}/deco-2.png') no-repeat;
+        background-size: cover;
+        top: -110/@bf;
+        left: 0px;
+    }
+
+    .deco-b {
+        width: 159/@bf;
+        height: 419/@bf;
+        background: url('@{imgUrl}/deco-1.png') no-repeat;
+        background-size: cover;
+        bottom: 40px;
+        right: 0px;
+    }
+}
+
+.sec-a {
+    margin-bottom: 70/@bf;
+}
+
+.tlevel,
+.tlevel2 {
+    margin: 0 auto;
+}
+
+.my-level {
+    position: relative;
+    width: 1020/@bf;
+    height: 210/@bf;
+    margin: 0 auto 0;
+    padding-left: 160/@bf;
+    padding-top: 40/@bf;
+    padding-right: 10/@bf;
+    background:rgba(29, 31, 116, 0.8);
+    border: 4/@bf solid #a632e9;
+    border-radius: 14/@bf;
+}
+
+.level-badge {
+    width: 105/@bf;
+    height: 105/@bf;
+    position: absolute;
+    top: 48%;
+    left: 30/@bf;
+    transform: translateY(-50%);
+
+    .badge-s {
+        transform-origin: top left;
+        transform: scale(105 / 76);
+    }
+}
+
+.level-txt {
+    font-size: 42/@bf;
+    color: #ffeb93;
+    letter-spacing: 2px;
+}
+
+.level-info {
+    font-size: 39/@bf;
+    color: #88c7fa;
+    margin-top: 10/@bf;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sec-b {
+    position: relative;
+    padding-bottom: 100/@bf;
+
+    .trule {
+        margin: 0 auto;
+    }
+
+    .rule-box {
+        width: 1020/@bf;
+        background:rgba(29, 31, 116, 0.8);
+        border: 4/@bf solid #5e5fff;
+        border-radius: 14/@bf;
+        margin: 10/@bf auto 0;
+        padding-top: 36/@bf;
+    }
+
+    .rule-name {
+        padding: 0px 36/@bf;
+        font-size: 39/@bf;
+        color: #ffeb93;
+        line-height: 88/@bf;
+    }
+
+    .rule-info {
+        padding: 0px 36/@bf;
+        font-size: 36/@bf;
+        color: #88c7fa;
+        line-height: 60/@bf;
+    }
+
+    .color-yl {
+        color: #ffeb93;
+    }
+
+    .rule-tb1 {
+        width: 940/@bf;
+        height: 808/@bf;
+        background: url('@{imgUrl}/rule-tb1.jpg') no-repeat;
+        background-size: 100% auto;
+        margin: 0 auto;
+    }
+
+    .rule-tb2 {
+        width: 940/@bf;
+        height: 178/@bf;
+        background: url('@{imgUrl}/rule-tb2.jpg') no-repeat;
+        background-size: 100% auto;
+        margin: 0 auto;
+    }
+
+    .rule-dj {
+        width: 940/@bf;
+        margin: 0 auto;
+        padding-left: 170/@bf;
+        position: relative;
+        padding-bottom: 68/@bf;
+    }
+
+    .daoju {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .dj-name {
+        font-size: 36/@bf;
+        color: #fff;
+        padding-top: 10/@bf;
+        margin-bottom: 10/@bf;
+    }
+
+    .dj-info {
+        font-size: 36/@bf;
+        color: #88c7fa;
+    }
+
+    .m-gap {
+        margin-bottom: 56/@bf;
+    }
+
+    .daoju-2 {
+        margin-top: -20/@bf;
+    }
+
+    .daoju-3 {
+        margin-left: -16/@bf;
+    }
+}

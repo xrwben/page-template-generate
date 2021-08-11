@@ -1,0 +1,291 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_com-sprite_sprite () {
+    .com-sprite-s {
+        background: url('./images/com-sprite.png') no-repeat;
+        background-size: 810/@bf 473/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .close { .getSprite(59, 59, 0, 414); }
+    .competition-gray { .getSprite(195, 197, 205, 207); }
+    .competition-normal { .getSprite(195, 197, 205, 0); }
+    .hi-gray { .getSprite(195, 197, 410, 0); }
+    .hi-normal { .getSprite(195, 197, 0, 207); }
+    .live { .getSprite(74, 35, 69, 414); }
+    .question { .getSprite(25, 25, 153, 414); }
+    .reward-gray { .getSprite(195, 197, 615, 0); }
+    .reward-normal { .getSprite(195, 197, 615, 207); }
+    .user-gray { .getSprite(195, 197, 410, 207); }
+    .user-normal { .getSprite(195, 197, 0, 0); }
+}
+.set_com-sprite_sprite();
+
+.set_competition-apply_sprite () {
+    .competition-apply-s {
+        background: url('./images/competition-apply.png') no-repeat;
+        background-size: 458/@bf 391/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .act-fy { .getSprite(183, 61, 0, 259); }
+    .act-ox { .getSprite(183, 61, 193, 188); }
+    .act-rq { .getSprite(183, 61, 193, 259); }
+    .act-tl { .getSprite(183, 61, 0, 330); }
+    .act-yl { .getSprite(183, 61, 0, 188); }
+    .apply-gray { .getSprite(203, 84, 0, 0); }
+    .apply-normal { .getSprite(203, 84, 0, 94); }
+    .arrow { .getSprite(32, 31, 426, 0); }
+    .cancel-kk { .getSprite(203, 84, 213, 94); }
+    .confirm { .getSprite(203, 84, 213, 0); }
+    .my-track { .getSprite(185, 45, 193, 330); }
+}
+.set_competition-apply_sprite();
+
+.set_competition-cjgjs_sprite () {
+    .competition-cjgjs-s {
+        background: url('./images/competition-cjgjs.png') no-repeat;
+        background-size: 332/@bf 252/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .from6to3-gray { .getSprite(65, 108, 110, 144); }
+    .from6to3-normal { .getSprite(65, 108, 185, 144); }
+    .title-cjgjb { .getSprite(222, 134, 0, 0); }
+    .to3q-gray { .getSprite(100, 108, 232, 0); }
+    .to3q-normal { .getSprite(100, 108, 0, 144); }
+}
+.set_competition-cjgjs_sprite();
+
+.set_competition-jjs_sprite () {
+    .competition-jjs-s {
+        background: url('./images/competition-jjs.png') no-repeat;
+        background-size: 547/@bf 500/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .from10to8-gray { .getSprite(74, 108, 169, 392); }
+    .from10to8-normal { .getSprite(74, 108, 85, 392); }
+    .from15to10-gray { .getSprite(82, 108, 465, 118); }
+    .from15to10-normal { .getSprite(82, 108, 465, 0); }
+    .fromnto15-gray { .getSprite(75, 108, 0, 392); }
+    .fromnto15-normal { .getSprite(75, 108, 465, 236); }
+    .fy-gray { .getSprite(145, 88, 310, 0); }
+    .fy-normal { .getSprite(145, 88, 310, 98); }
+    .ox-gray { .getSprite(145, 88, 0, 0); }
+    .ox-normal { .getSprite(145, 88, 0, 294); }
+    .rq-gray { .getSprite(145, 88, 310, 196); }
+    .rq-normal { .getSprite(145, 88, 155, 196); }
+    .tl-gray { .getSprite(145, 88, 0, 196); }
+    .tl-normal { .getSprite(145, 88, 155, 98); }
+    .yl-gray { .getSprite(145, 88, 0, 98); }
+    .yl-normal { .getSprite(145, 88, 155, 0); }
+}
+.set_competition-jjs_sprite();
+
+.set_competition-sdzb_sprite () {
+    .competition-sdzb-s {
+        background: url('./images/competition-sdzb.png') no-repeat;
+        background-size: 945/@bf 622/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .logo-hide { .getSprite(305, 39, 640, 0); }
+    .lose { .getSprite(142, 111, 152, 172); }
+    .pk-icon { .getSprite(51, 64, 640, 115); }
+    .round1-gray { .getSprite(144, 103, 0, 519); }
+    .round1-normal { .getSprite(144, 103, 154, 519); }
+    .round2-gray { .getSprite(144, 103, 308, 519); }
+    .round2-normal { .getSprite(144, 103, 304, 172); }
+    .round3-gray { .getSprite(144, 103, 0, 293); }
+    .round3-normal { .getSprite(144, 103, 154, 293); }
+    .round4-gray { .getSprite(144, 103, 308, 293); }
+    .round4-normal { .getSprite(144, 103, 486, 0); }
+    .round5-gray { .getSprite(144, 103, 486, 113); }
+    .round5-normal { .getSprite(144, 103, 486, 226); }
+    .round6-gray { .getSprite(144, 103, 0, 406); }
+    .round6-normal { .getSprite(144, 103, 154, 406); }
+    .round7-gray { .getSprite(144, 103, 308, 406); }
+    .round7-normal { .getSprite(144, 103, 462, 406); }
+    .tab-pk-gray { .getSprite(233, 76, 0, 86); }
+    .tab-pk-normal { .getSprite(233, 76, 243, 0); }
+    .tab-sdzb-gray { .getSprite(233, 76, 243, 86); }
+    .tab-sdzb-normal { .getSprite(233, 76, 0, 0); }
+    .title-jfb { .getSprite(176, 56, 640, 49); }
+    .win { .getSprite(142, 111, 0, 172); }
+}
+.set_competition-sdzb_sprite();
+
+.set_competition-sprite_sprite () {
+    .competition-sprite-s {
+        background: url('./images/competition-sprite.png') no-repeat;
+        background-size: 983/@bf 845/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .bp-rule { .getSprite(97, 25, 733, 570); }
+    .cjgjs-gray { .getSprite(250, 104, 733, 456); }
+    .cjgjs-normal { .getSprite(250, 104, 0, 741); }
+    .hxs-gray { .getSprite(250, 104, 260, 741); }
+    .hxs-normal { .getSprite(250, 104, 733, 0); }
+    .jjs-gray { .getSprite(250, 104, 733, 114); }
+    .jjs-normal { .getSprite(250, 104, 733, 228); }
+    .sdbm-gray { .getSprite(250, 104, 733, 342); }
+    .sdbm-normal { .getSprite(250, 104, 390, 418); }
+    .sdzb-gray { .getSprite(250, 104, 0, 627); }
+    .sdzb-normal { .getSprite(250, 104, 260, 627); }
+    .title-bp { .getSprite(723, 199, 0, 0); }
+    .title-glory { .getSprite(380, 199, 0, 418); }
+    .title-ryjb { .getSprite(628, 199, 0, 209); }
+    .yxs-gray { .getSprite(250, 104, 520, 741); }
+    .yxs-normal { .getSprite(250, 104, 520, 627); }
+}
+.set_competition-sprite_sprite();
+
+.set_competition-yxs_sprite () {
+    .competition-yxs-s {
+        background: url('./images/competition-yxs.png') no-repeat;
+        background-size: 454/@bf 426/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .d1128-gray { .getSprite(121, 64, 0, 288); }
+    .d1128-normal { .getSprite(121, 64, 131, 288); }
+    .d1129-gray { .getSprite(121, 64, 262, 288); }
+    .d1129-normal { .getSprite(121, 64, 0, 362); }
+    .d1130-gray { .getSprite(121, 64, 131, 362); }
+    .d1130-normal { .getSprite(121, 64, 262, 362); }
+    .rb-gray { .getSprite(222, 134, 0, 0); }
+    .rb-normal { .getSprite(222, 134, 232, 0); }
+    .yxsb-gray { .getSprite(222, 134, 0, 144); }
+    .yxsb-normal { .getSprite(222, 134, 232, 144); }
+}
+.set_competition-yxs_sprite();
+
+.set_hi-tab_sprite () {
+    .hi-tab-s {
+        background: url('./images/hi-tab.png') no-repeat;
+        background-size: 454/@bf 422/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .hr-gray { .getSprite(222, 134, 0, 0); }
+    .hr-noraml { .getSprite(222, 134, 232, 0); }
+    .jl-gray { .getSprite(222, 134, 0, 144); }
+    .jl-normal { .getSprite(222, 134, 232, 144); }
+    .qq-gray { .getSprite(222, 134, 0, 288); }
+    .qq-normal { .getSprite(222, 134, 232, 288); }
+}
+.set_hi-tab_sprite();
+
+.set_reward-mod_sprite () {
+    .reward-mod-s {
+        background: url('./images/reward-mod.png') no-repeat;
+        background-size: 638/@bf 632/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .bq-1 { .getSprite(123, 123, 0, 509); }
+    .bq-2 { .getSprite(123, 123, 512, 137); }
+    .bq-3 { .getSprite(122, 118, 133, 509); }
+    .bq-zj { .getSprite(126, 127, 512, 0); }
+    .hz-1 { .getSprite(181, 60, 371, 509); }
+    .hz-zj { .getSprite(186, 60, 426, 382); }
+    .jb { .getSprite(185, 112, 0, 0); }
+    .jv { .getSprite(115, 119, 387, 160); }
+    .kl { .getSprite(138, 103, 278, 382); }
+    .kp { .getSprite(115, 150, 387, 0); }
+    .lw { .getSprite(96, 118, 265, 509); }
+    .pp-1 { .getSprite(182, 96, 195, 0); }
+    .pp-2 { .getSprite(182, 95, 0, 277); }
+    .pp-3 { .getSprite(182, 92, 192, 277); }
+    .pp-zj { .getSprite(182, 95, 195, 106); }
+    .qmjc { .getSprite(117, 91, 512, 270); }
+    .tc { .getSprite(136, 145, 0, 122); }
+    .xxk { .getSprite(128, 112, 140, 382); }
+    .ztme { .getSprite(130, 117, 0, 382); }
+}
+.set_reward-mod_sprite();
+
+.set_reward-user_sprite () {
+    .reward-user-s {
+        background: url('./images/reward-user.png') no-repeat;
+        background-size: 768/@bf 737/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .cl { .getSprite(104, 104, 468, 255); }
+    .dhj { .getSprite(105, 114, 125, 618); }
+    .dm-bj { .getSprite(154, 108, 149, 371); }
+    .dm-gggj { .getSprite(154, 108, 614, 118); }
+    .dm-gw { .getSprite(155, 107, 0, 501); }
+    .dm-hj { .getSprite(154, 108, 614, 236); }
+    .dm-js { .getSprite(154, 108, 614, 354); }
+    .dm-nj { .getSprite(154, 108, 165, 253); }
+    .dm-qw { .getSprite(155, 107, 165, 501); }
+    .dm-xgzj { .getSprite(154, 108, 313, 371); }
+    .dm-xj { .getSprite(154, 108, 614, 0); }
+    .dm-zz { .getSprite(155, 108, 0, 253); }
+    .fl { .getSprite(104, 110, 316, 130); }
+    .hb { .getSprite(136, 123, 468, 0); }
+    .jv-user { .getSprite(115, 119, 0, 618); }
+    .lh { .getSprite(139, 120, 0, 371); }
+    .nc { .getSprite(223, 83, 0, 160); }
+    .pp { .getSprite(180, 91, 330, 501); }
+    .stt { .getSprite(143, 141, 163, 0); }
+    .tr { .getSprite(142, 120, 316, 0); }
+    .xxk-user { .getSprite(128, 112, 468, 133); }
+    .zj { .getSprite(153, 150, 0, 0); }
+}
+.set_reward-user_sprite();
+
+.set_rule-sprite_sprite () {
+    .rule-sprite-s {
+        background: url('./images/rule-sprite.png') no-repeat;
+        background-size: 662/@bf 633/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .bq-100 { .getSprite(129, 31, 0, 602); }
+    .bq-tl15 { .getSprite(129, 31, 190, 544); }
+    .bq-tl4 { .getSprite(129, 31, 468, 544); }
+    .bq-tl8 { .getSprite(129, 31, 329, 544); }
+    .icon-activity { .getSprite(180, 48, 0, 544); }
+    .icon-apply { .getSprite(180, 48, 380, 486); }
+    .icon-gift { .getSprite(180, 48, 190, 486); }
+    .icon-mod { .getSprite(180, 48, 0, 486); }
+    .icon-time { .getSprite(180, 48, 378, 396); }
+    .icon-user { .getSprite(180, 48, 188, 396); }
+    .rule-cjgjs-gray { .getSprite(214, 89, 448, 99); }
+    .rule-cjgjs-normal { .getSprite(214, 89, 0, 99); }
+    .rule-hxs-gray { .getSprite(214, 89, 448, 297); }
+    .rule-hxs-normal { .getSprite(214, 89, 448, 198); }
+    .rule-jjs-gray { .getSprite(214, 89, 448, 0); }
+    .rule-jjs-normal { .getSprite(214, 89, 224, 297); }
+    .rule-sdbm-gray { .getSprite(214, 89, 0, 0); }
+    .rule-sdbm-normal { .getSprite(214, 89, 224, 198); }
+    .rule-sdzb-gray { .getSprite(214, 89, 0, 198); }
+    .rule-sdzb-normal { .getSprite(214, 89, 224, 99); }
+    .rule-yxs-gray { .getSprite(214, 89, 224, 0); }
+    .rule-yxs-normal { .getSprite(214, 89, 0, 297); }
+    .rule { .getSprite(178, 80, 0, 396); }
+}
+.set_rule-sprite_sprite();
+
+.set_user-sprite_sprite () {
+    .user-sprite-s {
+        background: url('./images/user-sprite.png') no-repeat;
+        background-size: 376/@bf 359/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .get-gray { .getSprite(164, 68, 0, 209); }
+    .get-normal { .getSprite(164, 68, 174, 209); }
+    .ticket { .getSprite(98, 72, 0, 287); }
+    .title-user { .getSprite(376, 199, 0, 0); }
+}
+.set_user-sprite_sprite();

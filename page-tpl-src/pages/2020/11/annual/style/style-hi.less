@@ -1,0 +1,207 @@
+// 嗨翻年度
+.module-hi {
+    width: 100%;
+    background: #1a1a1c;
+    padding: 30/@bf 0 80/@bf;
+    .tab-container {
+        width: 750/@bf;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tab-item {
+            cursor: pointer;
+        }
+    }
+    .rank-container {
+        width: 900/@bf;
+        background: url("../images/bg-center.png") repeat-y center / 100%;
+        margin: 73/@bf auto 0;
+        padding: 0 30/@bf;
+        position: relative;
+        &::before {
+            content: "";
+            width: 900/@bf;
+            height: 73/@bf;
+            background: url("../images/bg-top.png") no-repeat center bottom / 100% 100%;
+            position: absolute;
+            left: 0;
+            top: -73/@bf;
+        }
+        &::after {
+            content: "";
+            width: 900/@bf;
+            height: 35/@bf;
+            background: url("../images/bg-bottom.png") no-repeat center top / 100% 100%;
+            position: absolute;
+            left: 0;
+            bottom: -35/@bf;
+        }
+        .rank-tip {
+            padding: 0 25/@bf;
+            .tip-head {
+                color: #fff005;
+                font-size: 34/@bf;
+                font-weight: bold;
+            }
+            & > p {
+                color: #fff005;
+                font-size: 24/@bf;
+                line-height: 38/@bf;
+                & > i {
+                    display: inline-block;
+                    vertical-align: middle;
+                    cursor: pointer;
+                }
+            }
+        }
+        .list-head {
+            border-top: 2/@bf solid #dfb667;
+            margin: 40/@bf auto 0;
+            padding: 55/@bf 0 15/@bf;
+            display: flex;
+            align-items: center;
+            & > p {
+                color: #fff005;
+                font-size: 34/@bf;
+                font-weight: bold;
+                text-align: center;
+            }
+            & > p:nth-of-type(1) {
+                margin-left: 50/@bf;
+            }
+            & > p:nth-of-type(2) {
+                margin-left: 165/@bf;
+            }
+            & > p:nth-of-type(3) {
+                margin-left: 290/@bf;
+            }
+        }
+        .list-con {
+            width: 100%;
+            overflow: hidden;
+            .list-item {
+                padding: 25/@bf 0;
+                display: flex;
+                align-items: center;
+                .order {
+                    width: 100/@bf;
+                    font-size: 34/@bf;
+                    // font-weight: bold;
+                    color: #fff005;
+                    margin-left: 20/@bf;
+                    text-align: center;
+                }
+                .avatar {
+                    width: 110/@bf;
+                    height: 109/@bf;
+                    margin-left: 80/@bf;
+                    position: relative;
+                    cursor: pointer;
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5/@bf;
+                    }
+                    &::after {
+                        content: "";
+                        width: 141/@bf;
+                        height: 139/@bf;
+                        background: url("../images/avatar-bg.png") no-repeat center / 100% 100%;
+                        position: absolute;
+                        left: -16/@bf;
+                        top: -15/@bf;
+                    }
+                    .live {
+                        position: absolute;
+                        right: -45/@bf;
+                        top: 5/@bf;
+                        z-index: 1;
+                    }
+                }
+                .name {
+                    width: 0;
+                    min-width: 0;
+                    flex: 1;
+                    margin-left: 40/@bf;
+                    color: #fff005;
+                    font-size: 34/@bf;
+                    display: flex;
+                    align-items: center;
+                    & > span {
+                        flex-shrink: 0;
+                        margin-left: 3/@bf;
+                    }
+                }
+                .val {
+                    width: 250/@bf;
+                    color: #fff005;
+                    font-size: 34/@bf;
+                    text-align: center;
+                    margin: 0 10/@bf;
+                }
+            }
+        }
+        .list-footer {
+            color: #fff;
+            font-size: 30/@bf;
+            text-align: center;
+            padding: 10/@bf 0 15/@bf;
+        }
+        .self-container {
+            width: 100%;
+            border-top: 2/@bf solid #dfb667;
+            padding: 50/@bf 30/@bf 20/@bf;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            .block-1 {
+                width: 260/@bf;
+            }
+            .block {
+                .avatar {
+                    width: 110/@bf;
+                    height: 109/@bf;
+                    margin-left: 80/@bf;
+                    position: relative;
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5/@bf;
+                    }
+                    &::after {
+                        content: "";
+                        width: 141/@bf;
+                        height: 139/@bf;
+                        background: url("../images/avatar-bg.png") no-repeat center / 100% 100%;
+                        position: absolute;
+                        left: -16/@bf;
+                        top: -15/@bf;
+                    }
+                }
+                .name {
+                    width: 100%;
+                    color: #fff005;
+                    font-size: 34/@bf;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20/@bf;
+                    & > span {
+                        flex-shrink: 0;
+                        margin-left: 3/@bf;
+                    }
+                }
+            }
+            .block-2 {
+                margin-left: 30/@bf;
+                & > p {
+                    color: #fff005;
+                    font-size: 34/@bf;
+                }
+            }
+        }
+    }
+}

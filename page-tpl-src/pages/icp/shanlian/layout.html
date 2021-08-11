@@ -1,0 +1,103 @@
+<!-- webpack.htmlwebpackplugin basic layout 入口html文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="wap-font-scale" content="no">
+        <link rel="shortcut icon" href="<%= require('./images/ketian.png') %>" type="image/x-icon">
+        <link rel="apple-touch-icon" href="<%= require('./images/ketian.png') %>" sizes="144x144">
+        <title><%= htmlWebpackPlugin.options.app.pageTitle %></title>
+        <link rel="stylesheet" href="//static.guojiang.tv/src/pc/v4/css/lib/layer.css">
+        <script type="text/javascript">
+            var _czc = _czc || []
+            _czc.push(["_setAccount", "1255976554"])
+        </script>
+        <% if (htmlWebpackPlugin.options.injectScripts) {
+            htmlWebpackPlugin.options.injectScripts.forEach((val) => { %>
+        <script>
+            <%= require('fs').readFileSync(val) %>
+        </script>
+        <%  })
+        } %>
+    </head>
+    <body>
+        <!-- html ejs / vue template -->
+        <div id="app">
+            <div class="page-bgs">
+                <div class="page-bg bg1"></div>
+                <div class="page-bg bg2"></div>
+                <div class="page-bg bg3"></div>
+                <div class="page-bg bg4"></div>
+            </div>
+            <div class="page-content">
+                <div class="header">
+                    <div class="icon-logo logo"></div>
+                    <div class="opr">
+                        <div class="home active">首页</div>
+                        <div class="login">登录</div>
+                    </div>
+                </div>
+                <div class="butn btn-download btn-main"></div>
+                <div class="icon-logo ft-logo"></div>
+                <div class="butn btn-download btn-ft"></div>
+                <div class="footer">©2005-2018 hello . All rights reserved. &nbsp;&nbsp;<a class="link" href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备18078095号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;深圳市声远文化传媒有限公司&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="http://jbts.mct.gov.cn" target="_blank">12318全国文化市场举报网站</a></div>
+            </div>
+
+            <div id="overlay-cont" class="rl_wrap">
+                <ul class="rl_controller clearfix">
+                    <li class="fl active">登录</li>
+                    <li class="line"></li>
+                </ul>
+                <span class="close_btn close"></span>
+                <!--overlay-login-->
+                <div class="overlay-inner" id="overlay-login">
+                    <form id="login-form" novalidate="novalidate">
+                        <table cellpadding="0" cellspacing="0" width="100%" border="0" id="login-area">
+                            <tbody>
+                                <tr><td><input name="username" type="text" placeholder="用户名/手机" class="fi-txt" autocomplete="off"></td></tr>
+                                <tr><td><input name="password" type="password" placeholder="密码" class="fi-txt" autocomplete="off"></td></tr>
+                                <tr>
+                                    <td class="clearfix form_funcs">
+                                        <label class="fl"><input type="checkbox" checked="" id="login-remember" class="login_remember">7天内自动登录</label>
+                                        <a href="javascript:;" class="fr forget_passward_link">忘记密码</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" class="btns go-login" value="登录"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+            
+                    <ul class="other_login_type clearfix">
+                        <li>使用社交账户登录</li>
+                        <li class="qq_login"><a class="go-login" href="javascript:;"></a></li> 
+                        <li class="weibo_login"><a class="go-login" href="javascript:;"></a></li>
+                        <li class="wechat_login"><a class="go-login" href="javascript:;"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var _hmt = _hmt || []
+
+            ;(function() {
+                function async_load_cnzz () {
+                    var cz = document.createElement("script")
+                    cz.src = "//s11.cnzz.com/z_stat.php?id=1255976554&web_id=1255976554"
+                    cz.async = true
+                    document.getElementsByTagName('body')[0].appendChild(cz)
+                }
+
+                async_load_cnzz()
+            })();
+        </script>
+    </body>
+</html>

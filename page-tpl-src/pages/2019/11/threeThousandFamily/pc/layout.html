@@ -1,0 +1,159 @@
+<!-- webpack.htmlwebpackplugin pc layout 入口html文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="wap-font-scale" content="no">
+        <meta name="renderer" content="webkit">
+        <meta property="qc:admins" content="7261517777656512176375" />
+
+        <meta name="keywords" content="星光直播,人气直播,美女直播,女主播,手机直播,美颜直播,土壕直播,直播间,才艺直播,秀场"/>
+        <meta name="description" content="土豪最爱看的美女直播.一个美颜效果最好的聚集超高颜值明星大咖、美女帅哥、热门网红、校花校草、逗比萌妹的手机直播社交平台" />
+        <meta name="baidu-site-verification" content="ulQb1ppmog" />
+
+        <link rel="shortcut icon" href="//static.guojiang.tv/mobile/img/common/title_icon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="//static.guojiang.tv/mobile/img/common/logo_1.png" sizes="144x144">
+
+        <title><%= htmlWebpackPlugin.options.app.pageTitle %></title>
+        <style>[v-cloak]{ display:none!important; }</style>
+        <script type="text/javascript">
+            var _czc = _czc || [];
+            _czc.push(['_setAccount', '1255976554'])
+        </script>
+        <% if (htmlWebpackPlugin.options.injectScripts) {
+            htmlWebpackPlugin.options.injectScripts.forEach((val) => { %>
+        <script>
+            <%= require('fs').readFileSync(val) %>
+        </script>
+        <%  })
+        } %>
+    </head>
+
+    <body>
+        <!--[if lt IE 9]>
+        <p class="browsehappy">您正使用过时的浏览器访问，可能有安全风险。建议您<a href="//browsehappy.osfipin.com/#" target="_balnk">升级浏览器</a>来获得更好的用户体验，发现一个全新的
+        星光直播-真的能撩到主播的直播
+        </p>
+        <div class="update_browser_wrap">
+            <span class="mask" style="background: #000!important;z-index:99999;"></span>
+            <div class="content"style="z-index:999999;">
+                <p>hi，您当前的浏览器版本过低，可能存在重大安全漏洞！</p>
+                <h3>请立即<a href="//browsehappy.osfipin.com" target="_blank">升级浏览器</a></h3>
+                <a href="//se.360.cn/" target="_blank" class="skip_btn">360浏览器</a>
+            </div>
+        </div>
+        <![endif]-->
+
+        <div class="header_wrap">
+            <header-nav></header-nav>
+        </div>
+
+        <!-- html ejs / vue template -->
+        <div id="app" v-cloak>
+            <%= require('html-loader?attrs=false&interpolate=require!../mixin.html') %>
+            <div class="banner">
+                <div class="introduce">
+                    <div class="text">
+                        <p>世界那么大，因为“缘”，三千兄弟在{{packageName}}大陆上相识、相知、相交，因为“义”，我们聚在一起，彼此默契，共同驰骋{{packageName}}疆场，为大家带来更加热闹更加欢乐的气氛。</p>
+                        <p>家族座右铭：三千铁骑，踏遍天南地北，三千兄弟欢迎你的加入……</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gift">
+                <div class="wrapper">
+                    <p class="price">10克拉/个</p>
+                    <p class="get-gift-btn" @click="showPopup=true"></p>
+                </div>
+            </div>
+            <div class="metting">
+                <div class="room">
+                    <ul>
+                        <li v-for="item in roomList">
+                            <div class="avatar" @click="redirectRoom(item)">
+                                <div class="live" v-if="item.isPlaying"></div>
+                            </div>
+                            <p class="nickname">{{ item.nickname }}</p>
+                            <div class="follow-group">
+                                <p class="follow-btn unfollow" v-if="!item.isLoved" @click="follow(item)"></p>
+                                <p class="follow-btn followed" v-if="item.isLoved"></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="invitation-btn" @click="showInvitationImg=true"></div>
+                </div>
+                <footer class="footer">在法律允许的范围内，本活动的解释权归平台所有</footer>
+            </div>
+            <div class="invitation-share" v-show="showInvitationImg" @click.self="showInvitationImg=false">
+                <div class="wrap">
+                    <div class="con InvitationPic" ref="InvitationPic">
+                        <img src="${require('../images/qrcode-m.png')}" alt="邀请函">
+                    </div>
+                    <!-- <p class="save-btn" @click="saveImg"></p> -->
+                    <a class="save-btn" :href="base64.invitationPic" download="三千家族2周年啦_邀您共聚星光直播.jpg"></a>
+                </div>
+                <!-- <a ref="downloadHref" href="" download="三千家族2周年啦_邀您共聚星光直播.png" id="download-pic" style="display:none"></a> -->
+            </div>
+    
+            <div class="popup" v-if="showPopup">
+                <div class="content">
+                    <div class="close-btn" @click="showPopup=false"></div>
+                    <div class="btn-group">
+                        <button @click="getGift">确定</button>
+                        <button @click="showPopup=false">不了</button>
+                    </div>
+                </div>
+            </div>
+
+            <Toast ref="toast"></Toast>
+        </div>
+
+        <script>
+        ;(function adaptation () {
+            var href = window.location
+            var hostname = href.hostname.split('.').slice(-2).join('.')
+            if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|Windows Phone|SymbianOS/i.test(navigator.userAgent)) {
+                if (href.host.indexOf('www') >= 0) {
+                    window.location.href = '//m.' + hostname + '/dist' + href.pathname
+                }
+            } else {
+                if (href.host.indexOf('www') < 0) {
+                    window.location.href = '//www.' + hostname + href.pathname.replace('/dist', '')
+                }
+            }
+        }());
+        </script>
+        <script type="text/javascript">
+            var _hmt = _hmt || []
+
+            ;(function() {
+                function async_load_baidu () {
+                    var hm = document.createElement('script')
+                    hm.src = 'https://hm.baidu.com/hm.js?a17ccf7bc3d9be2ed6f415dfe67056f0'
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(hm, s)
+                }
+                function async_load_cnzz () {
+                    var cz = document.createElement('script')
+                    cz.src = '//s11.cnzz.com/z_stat.php?id=1255976554&web_id=1255976554'
+                    cz.async = true
+                    document.getElementsByTagName('body')[0].appendChild(cz)
+                }
+
+                async_load_cnzz()
+                async_load_baidu()
+            })();
+        </script>
+        
+        <% if (htmlWebpackPlugin.options.externals) {
+            htmlWebpackPlugin.options.externals.forEach((val) => {  %>
+        <script src="<%= val %>"></script>
+        <%  })
+        } %>
+    </body>
+</html>

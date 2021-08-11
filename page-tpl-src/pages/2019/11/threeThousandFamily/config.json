@@ -1,0 +1,12 @@
+{
+    "author": "liben",
+    "email": "liben@guojiang.tv",
+    "type": "page",
+    "name": "2019/11/threeThousandFamily",
+    "useTpl": "_basic_mixin",
+    "branch": "page/2019/11/threeThousandFamily",
+    "created": "Wed Nov 13 2019 15:04:04 GMT+0800 (GMT+08:00)",
+    "app": {
+        "pageTitle": "三千家族两周年庆典"
+    }
+}

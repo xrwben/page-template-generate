@@ -1,0 +1,75 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_btn-sprite_sprite () {
+    .btn-sprite-s {
+        background: url('./images/btn-sprite.png') no-repeat;
+        background-size: 517/@bf 391/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .close { .getSprite(77, 77, 440, 0); }
+    .follow-gray { .getSprite(224, 84, 206, 0); }
+    .follow-normal { .getSprite(224, 84, 206, 94); }
+    .no { .getSprite(191, 76, 202, 230); }
+    .preview { .getSprite(191, 75, 0, 316); }
+    .purcharse { .getSprite(191, 75, 201, 316); }
+    .recharge { .getSprite(192, 76, 0, 230); }
+    .rule { .getSprite(196, 220, 0, 0); }
+}
+.set_btn-sprite_sprite();
+
+.set_icon-sprite_sprite () {
+    .icon-sprite-s {
+        background: url('./images/icon-sprite.png') no-repeat;
+        background-size: 262/@bf 234/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .crwon-1 { .getSprite(141, 133, 0, 0); }
+    .crwon-2 { .getSprite(111, 101, 151, 0); }
+    .crwon-3 { .getSprite(101, 91, 0, 143); }
+    .live { .getSprite(90, 43, 111, 143); }
+}
+.set_icon-sprite_sprite();
+
+.set_tab-sprite_sprite () {
+    .tab-sprite-s {
+        background: url('./images/tab-sprite.png') no-repeat;
+        background-size: 1391/@bf 876/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .sd-mod-gray { .getSprite(400, 147, 410, 729); }
+    .sd-mod-normal { .getSprite(400, 147, 0, 729); }
+    .sd-user-gray { .getSprite(409, 136, 982, 146); }
+    .sd-user-normal { .getSprite(409, 136, 982, 0); }
+    .sdkh-gray { .getSprite(498, 174, 0, 0); }
+    .sdkh-normal { .getSprite(498, 174, 0, 184); }
+    .sdwf-gray { .getSprite(450, 155, 508, 196); }
+    .sdwf-normal { .getSprite(450, 155, 460, 564); }
+    .ydkh-gray { .getSprite(464, 186, 0, 368); }
+    .ydkh-normal { .getSprite(464, 186, 508, 0); }
+    .ydwf-gray { .getSprite(450, 155, 0, 564); }
+    .ydwf-normal { .getSprite(450, 155, 474, 368); }
+}
+.set_tab-sprite_sprite();
+
+.set_title-sprite_sprite () {
+    .title-sprite-s {
+        background: url('./images/title-sprite.png') no-repeat;
+        background-size: 1028/@bf 411/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .title-rule { .getSprite(509, 130, 0, 141); }
+    .title-sdb { .getSprite(509, 130, 0, 281); }
+    .title-sdxd { .getSprite(509, 131, 0, 0); }
+    .title-sdzfq { .getSprite(509, 130, 519, 0); }
+    .title-ydb { .getSprite(509, 130, 519, 140); }
+    .title-ydxd { .getSprite(509, 130, 519, 280); }
+}
+.set_title-sprite_sprite();

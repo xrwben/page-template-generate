@@ -1,0 +1,142 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_gift_sprite () {
+    .gift-s {
+        background: url('./images/gift.png') no-repeat;
+        background-size: 612/@bf 563/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .g-bx { .getSprite(110, 109, 332, 399); }
+    .g-cnst { .getSprite(167, 166, 444, 178); }
+    .g-hcar { .getSprite(180, 163, 0, 226); }
+    .g-luky { .getSprite(100, 93, 452, 399); }
+    .g-mmm { .getSprite(156, 148, 166, 399); }
+    .g-plane { .getSprite(208, 208, 226, 0); }
+    .g-prxd { .getSprite(216, 216, 0, 0); }
+    .g-ship { .getSprite(168, 159, 190, 226); }
+    .g-shoe { .getSprite(168, 168, 444, 0); }
+    .g-wishes { .getSprite(156, 164, 0, 399); }
+}
+.set_gift_sprite();
+
+.set_icon_sprite () {
+    .icon-s {
+        background: url('./images/icon.png') no-repeat;
+        background-size: 687/@bf 553/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .atte { .getSprite(224, 83, 234, 324); }
+    .atted { .getSprite(224, 83, 0, 324); }
+    .btn-close { .getSprite(105, 105, 582, 0); }
+    .btn-rule { .getSprite(122, 136, 0, 417); }
+    .cown0 { .getSprite(120, 107, 392, 417); }
+    .cown1 { .getSprite(120, 107, 262, 417); }
+    .cown2 { .getSprite(120, 107, 132, 417); }
+    .live { .getSprite(91, 41, 582, 115); }
+    .open-a { .getSprite(281, 98, 0, 0); }
+    .open { .getSprite(281, 98, 291, 216); }
+    .prog-i { .getSprite(22, 80, 582, 166); }
+    .prog-i1 { .getSprite(22, 80, 614, 166); }
+    .record-a { .getSprite(281, 98, 0, 216); }
+    .record { .getSprite(281, 98, 291, 108); }
+    .sender-a { .getSprite(281, 98, 291, 0); }
+    .sender { .getSprite(281, 98, 0, 108); }
+}
+.set_icon_sprite();
+
+.set_nums_sprite () {
+    .nums-s {
+        background: url('./images/nums.png') no-repeat;
+        background-size: 534/@bf 495/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .pirce_0 { .getSprite(176, 60, 0, 435); }
+    .pirce_1 { .getSprite(176, 60, 186, 435); }
+    .pirce_2 { .getSprite(193, 60, 0, 365); }
+    .pirce_3 { .getSprite(193, 60, 203, 365); }
+    .pirce_4 { .getSprite(201, 60, 316, 140); }
+    .pirce_5 { .getSprite(201, 60, 316, 210); }
+    .pirce_6 { .getSprite(201, 60, 316, 280); }
+    .pirce_7 { .getSprite(209, 60, 316, 70); }
+    .pirce_8 { .getSprite(218, 60, 316, 0); }
+    .price_bg { .getSprite(306, 355, 0, 0); }
+}
+.set_nums_sprite();
+
+.set_pic_sprite () {
+    .pic-s {
+        background: url('./images/pic.png') no-repeat;
+        background-size: 776/@bf 454/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .bg-avatar-x0 { .getSprite(252, 253, 0, 0); }
+    .bg-avatar-x1 { .getSprite(252, 253, 262, 0); }
+    .bg-avatar-x2 { .getSprite(252, 253, 524, 0); }
+    .bg-avatar-x3 { .getSprite(190, 191, 0, 263); }
+    .bg-avatar { .getSprite(183, 184, 200, 263); }
+}
+.set_pic_sprite();
+
+.set_txt_sprite () {
+    .txt-s {
+        background: url('./images/txt.png') no-repeat;
+        background-size: 851/@bf 586/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .num-x { .getSprite(26, 41, 69, 350); }
+    .num-y { .getSprite(35, 53, 51, 468); }
+    .num0 { .getSprite(43, 55, 215, 403); }
+    .num1 { .getSprite(28, 54, 0, 532); }
+    .num2 { .getSprite(42, 54, 321, 403); }
+    .num3 { .getSprite(43, 55, 109, 403); }
+    .num4 { .getSprite(46, 55, 0, 403); }
+    .num5 { .getSprite(42, 53, 373, 403); }
+    .num6 { .getSprite(43, 55, 162, 403); }
+    .num7 { .getSprite(41, 54, 0, 468); }
+    .num8 { .getSprite(43, 55, 56, 403); }
+    .num9 { .getSprite(43, 55, 268, 403); }
+    .per-a { .getSprite(43, 44, 425, 403); }
+    .per-b { .getSprite(59, 43, 0, 350); }
+    .per-x1-r { .getSprite(74, 38, 735, 246); }
+    .per-x1 { .getSprite(78, 44, 302, 246); }
+    .per-x2-r { .getSprite(75, 38, 650, 246); }
+    .per-x2 { .getSprite(77, 43, 477, 246); }
+    .per-x3-r { .getSprite(76, 38, 564, 246); }
+    .per-x3 { .getSprite(77, 44, 390, 246); }
+    .txt-bx { .getSprite(67, 38, 0, 302); }
+    .txt-center-l1 { .getSprite(156, 39, 0, 150); }
+    .txt-center-l2 { .getSprite(195, 38, 601, 49); }
+    .txt-center-l2x2 { .getSprite(195, 39, 191, 49); }
+    .txt-center-l3 { .getSprite(155, 37, 166, 150); }
+    .txt-center-l4 { .getSprite(195, 39, 396, 49); }
+    .txt-cnst { .getSprite(126, 37, 136, 199); }
+    .txt-cp { .getSprite(851, 39, 0, 0); }
+    .txt-hcar { .getSprite(126, 37, 0, 199); }
+    .txt-mmm { .getSprite(97, 37, 379, 199); }
+    .txt-plane { .getSprite(127, 37, 605, 150); }
+    .txt-prxd { .getSprite(127, 37, 468, 150); }
+    .txt-r-c1 { .getSprite(91, 46, 101, 246); }
+    .txt-r-c2 { .getSprite(91, 46, 0, 246); }
+    .txt-r-c2x { .getSprite(90, 45, 202, 246); }
+    .txt-r-c3 { .getSprite(181, 45, 0, 49); }
+    .txt-sendr { .getSprite(196, 36, 0, 104); }
+    .txt-ship { .getSprite(127, 37, 331, 150); }
+    .txt-shoe { .getSprite(97, 37, 272, 199); }
+    .txt-wishes { .getSprite(98, 37, 742, 150); }
+    .txt-x1-c1 { .getSprite(114, 35, 575, 104); }
+    .txt-x1-c2 { .getSprite(155, 35, 410, 104); }
+    .txt-x1-c3 { .getSprite(194, 36, 206, 104); }
+    .txt-x1-c4 { .getSprite(76, 34, 573, 199); }
+    .txt-x1-c5 { .getSprite(76, 35, 699, 104); }
+    .txt-x3-c1 { .getSprite(77, 34, 486, 199); }
+}
+.set_txt_sprite();

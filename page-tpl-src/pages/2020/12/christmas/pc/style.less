@@ -1,0 +1,19 @@
+@bf: 1px*10/6;
+
+@import '../mixin.less';
+
+#app {
+    background: url("../images/bg-p-1.jpg") no-repeat center top ~'/' auto 1025px,
+        url("../images/bg-p-2.jpg") no-repeat center 1025px ~"/" auto 3520px;
+    background-color: #9f1522;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 885px;
+    margin: 0 auto;
+}
+.rule-btn {
+    right: 50%;
+    top: 60%;
+    transform: translate(450px);
+}

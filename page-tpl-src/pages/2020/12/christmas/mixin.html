@@ -1,0 +1,245 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <!-- tab -->
+    <div class="module-tab">
+        <div class="tab tab-sprite-s" :class="currentTab==='sd'?'sdkh-normal':'sdkh-gray'" @click="changeCurrentTab('sd')"></div>
+        <div class="tab tab-sprite-s" :class="currentTab==='yd'?'ydkh-normal':'ydkh-gray'" @click="changeCurrentTab('yd')"></div>
+    </div>
+    <!-- 限定 -->
+    <div class="module-xd">
+        <div class="title title-sprite-s" :class="currentTab==='sd'?'title-sdxd':'title-ydxd'"></div>
+        <div class="xd-container">
+            <div class="block">
+                <div class="gift-bg" :class="currentTab==='sd'?'bg-sdxd':'bg-ydxd'">
+                    <div class="gift-img" :class="currentTab==='sd'?'img-xxr':'img-xjn'"></div>
+                </div>
+                <div class="name">{{ currentTab==='sd'?'小雪人':'小金牛' }}</div>
+                <div class="price">10{{ giftPer }}/个</div>
+                <div class="btn-group">
+                    <div class="btn btn-sprite-s preview" @click="preview(10)"></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="gift-bg" :class="currentTab==='sd'?'bg-sdxd':'bg-ydxd'">
+                    <div class="gift-img" :class="currentTab==='sd'?'img-sdml':'img-nyht'"></div>
+                </div>
+                <div class="name">{{ currentTab==='sd'?'圣诞麋鹿':'牛运亨通' }}</div>
+                <div class="price">9999{{ giftPer }}/个</div>
+                <div class="btn-group">
+                    <div class="btn btn-sprite-s preview" @click="preview(9999)"></div>
+                    <div class="btn btn-sprite-s purcharse" v-if="(currentTab==='sd'&&activityStatus===1) || (currentTab==='yd'&&activityStatus===2)" @click="purchase"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 榜单 -->
+    <div class="module-rank">
+        <div class="title title-sprite-s" :class="currentTab==='sd'?'title-sdb':'title-ydb'"></div>
+        <div class="rank-container">
+            <div class="tab-container">
+                <div class="tab tab-sprite-s" :class="rankTab==='mod'?'sd-mod-normal':'sd-mod-gray'" @click="changeRankTab('mod')"></div>
+                <div class="tab tab-sprite-s" :class="rankTab==='user'?'sd-user-normal':'sd-user-gray'" @click="changeRankTab('user')"></div>
+            </div>
+            <div class="rank-top-three">
+                <div class="top-three" v-for="(item, index) in rankList.slice(0, 3)">
+                    <div :class="['avatar', {'avatar-bg':index===0}]" @click="goRoomRedictor(item)">
+                        <span class="live icon-sprite-s" v-if="item.isPlaying && rankTab!=='user'"></span>
+                        <img :src="item.headPic" alt="">
+                    </div>
+                    <div class="name">
+                        <p class="txt-of">{{ item.nickname }}</p>
+                        <span :class="['level_icon', (rankTab==='user'?'u':'m')+'_level_icon_'+item.level]"></span>
+                    </div>
+                    <div class="val txt-of">积分:{{ item.score }}</div>
+                    <div class="follow" v-if="rankTab!=='user' && item.follow!=='hide'">
+                        <span class="btn-sprite-s follow-gray" v-if="item.isLoved"></span>
+                        <span class="btn-sprite-s follow-normal" v-else @click="follow(item)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-head">
+                <p>排名</p>
+                <p>{{ rankTab==='mod'?'主播':'用户' }}</p>
+                <p>积分</p>
+            </div>
+            <div class="list-con">
+                <div class="list-item" v-for="(item, index) in rankList.slice(3)" :key="index">
+                    <span class="keys">{{ index+4 }}</span>
+                    <div class="avatar" @click="goRoomRedictor(item)">
+                        <span class="live icon-sprite-s" v-if="item.isPlaying && rankTab!=='user'"></span>
+                        <img :src="item.headPic" alt="">
+                    </div>
+                    <div class="name txt-of">
+                        <p class=" txt-of">{{ item.nickname }}</p>
+                        <span :class="['level_icon', (rankTab==='user'?'u':'m')+'_level_icon_'+item.level]"></span>
+                    </div>
+                    <div class="val txt-of">{{ item.score }}</div>
+                </div>
+            </div>
+            <div class="list-tip">仅展示前10名{{ rankTab === 'user' ? '用户' : '主播'}}</div>
+            <div class="self-container" v-if="isLogin && rankCenter && (rankTab==='user' || isMod)">
+                <div class="block block-1">
+                    <div class="avatar">
+                        <img :src="rankCenter.headPic" alt="">
+                    </div>
+                    <div class="name txt-of">
+                        <p class=" txt-of">{{ rankCenter.nickname }}</p>
+                        <span :class="['level_icon', (rankTab==='user'?'u':'m')+'_level_icon_'+rankCenter.level]"></span>
+                    </div>
+                </div>
+                <div class="block block-2">
+                    <div class="tl">
+                        <span>{{ rankCenter.pairInfos[0].name }}</span>
+                        <p>{{ rankCenter.pairInfos[0].value }}</p>
+                    </div>
+                    <div class="bl">
+                        <span>{{ rankCenter.pairInfos[1].name }}</span>
+                        <p>{{ rankCenter.pairInfos[1].value }}</p>
+                    </div>
+                </div>
+                <div class="block block-3">
+                    <div class="tr">
+                        <span>{{ rankCenter.pairInfos[2].name }}</span>
+                        <p>{{ rankCenter.pairInfos[2].value }}</p>
+                    </div>
+                    <div class="br">
+                        <span>{{ rankCenter.pairInfos[3].name }}</span>
+                        <p>{{ rankCenter.pairInfos[3].value }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 圣诞祝福墙 -->
+    <div class="module-bless" v-if="[0, 1, 3].indexOf(activityStatus) > -1">
+        <div class="title title-sprite-s title-sdzfq"></div>
+        <div class="bless-container">
+            <div ref="scroll-up-wrapper" class="list-con scroll-up-wrapper">
+                <p class="tips" v-if="!blessList.length">一次性送出99个“小雪人”就能发出祝福哦~</p>
+                <ul ref="scroll-up-container" class="scroll-up-container" v-else>
+                    <li v-for="item in blessList">
+                        <p class="name txt-of">{{ item.userNickname }} 祝福 {{ item.modNickname }}：</p>
+                        <p class="txt txt-of">{{ item.msg }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="copyright">在法律允许的范围内，本活动的解释权归平台所有</footer>
+
+    <div class="rule-btn btn-sprite-s rule" @click="showRulePopup=true"></div>
+    <!-- 活动规则 -->
+    <div class="popup-module" v-if="showRulePopup">
+        <div class="popup-rule-container">
+            <i class="close btn-sprite-s" @click="showRulePopup=false">关闭</i>
+            <div class="title title-sprite-s title-rule"></div>
+            <div class="content">
+                <pc-scroller class="rule-scroller" ref="rule-scroller" thumb-color="rgba(255, 255, 255, 0.5)">
+                    <div class="tab-container">
+                        <div class="tab tab-sprite-s" :class="ruleTab==='sd'?'sdwf-normal':'sdwf-gray'" @click="changeRuleTab('sd')"></div>
+                        <div class="tab tab-sprite-s" :class="ruleTab==='yd'?'ydwf-normal':'ydwf-gray'" @click="changeRuleTab('yd')"></div>
+                    </div>
+                    <div class="sd-con" v-show="ruleTab==='sd'">
+                        <p class="item">1.圣诞活动时间：2020.12.24 11:00:00 - 12.28 23:59:59。</p>
+                        <p class="item">2.活动礼物：</p>
+                        <div class="gift-block">
+                            <div class="block">
+                                <div class="gift-bg bg-sdxd">
+                                    <div class="gift-img img-xxr"></div>
+                                </div>
+                                <div class="name">小雪人</div>
+                                <div class="price">10{{ giftPer }}/个</div>
+                            </div>
+                            <div class="block">
+                                <div class="gift-bg bg-sdxd">
+                                    <div class="gift-img img-sdml"></div>
+                                </div>
+                                <div class="name">圣诞麋鹿</div>
+                                <div class="price">9999{{ giftPer }}/个</div>
+                            </div>
+                        </div>
+                        <p class="item">3. 送出指定数量的小雪人，直播间掉落圣诞礼物，每天0点刷新直播间进度条，0点后，集满当前进度条小雪人，再从第一轮（500个小雪人）送出。</p>
+                        <div class="img-sd"></div>
+                        <p class="item">4.用户一次性送出99个小雪人，可触发圣诞动效及房间祝福飘屏。</p>
+                        <p class="item">5.2020.12.25 00:00:00，圣诞老人将在所有开播直播间将派发圣诞红包。</p>
+                        <p class="item">6.圣诞主播榜前五名获得奖励，排名按照积分高低排序，若有相同成绩，则按先到先得排序。奖励于双旦活动结束后5个工作日内发放。</p>
+                        <table class="table">
+                            <tr><th>圣诞主播榜</th><th>奖励({{ giftPer }})</th></tr>
+                            <tr><td>第1名</td><td>300000</td></tr>
+                            <tr><td>第2名</td><td>200000</td></tr>
+                            <tr><td>第3名</td><td>100000</td></tr>
+                            <tr><td>第4-5名</td><td>80000</td></tr>
+                        </table>
+                    </div>
+                    <div class="yd-con" v-show="ruleTab==='yd'">
+                        <p class="item">1.元旦活动时间：2020.12.29 11:00:00 -  2021.1.1 23:59:59。</p>
+                        <p class="item">2.活动礼物：</p>
+                        <div class="gift-block">
+                            <div class="block">
+                                <div class="gift-bg bg-ydxd">
+                                    <div class="gift-img img-xjn"></div>
+                                </div>
+                                <div class="name">小金牛</div>
+                                <div class="price">10{{ giftPer }}/个</div>
+                            </div>
+                            <div class="block">
+                                <div class="gift-bg bg-ydxd">
+                                    <div class="gift-img img-nyht"></div>
+                                </div>
+                                <div class="name">牛运亨通</div>
+                                <div class="price">9999{{ giftPer }}/个</div>
+                            </div>
+                        </div>
+                        <p class="item">3. 送出指定数量的小金牛，直播间掉落元旦礼物，每天0点刷新直播间进度条，0点后，集满当前进度条小金牛，再从第一轮（500个小金牛）送出。</p>
+                        <div class="img-yd"></div>
+                        <p class="item">4.用户一次性送出99个小金牛，可触发元旦动效。</p>
+                        <p class="item">5.活动期间，主播收取元旦礼物，按照1{{ giftPer }}=1积分进行榜单排名，若有相同成绩者，按照先到先得原则排名。</p>
+                        <p class="item">6.活动期间，送出小金牛、牛运亨通，主播/用户经验值、粉丝亲密度双倍计算，主播星光值、收益按原价计算。</p>
+                        <p class="item">7.2021.1.1 00:00:00，所有开播的直播间将自动派发跨年红包！一起来为新的一年狂欢吧~</p>
+                        <p class="item">8.元旦主播榜前三名主播获得奖励。</p>
+                        <table class="table">
+                            <tr><th>元诞主播榜</th><th>奖励</th></tr>
+                            <tr><td>第1名</td><td>新年开屏(2日)、牛运亨通*10</td></tr>
+                            <tr><td>第2名</td><td>牛运亨通*5</td></tr>
+                            <tr><td>第3名</td><td>牛运亨通*3</td></tr>
+                        </table>
+                        <p class="item">注：2021新年开屏上线周期为1.2 12:00:00 - 1.4 12:00:00。</p>
+                    </div>
+                </pc-scroller>
+            </div>
+        </div>
+    </div>
+    <!-- 购买弹窗 -->
+    <div class="popup-module" v-if="showPurchasePopup">
+        <div class="purchase-container">
+            <i class="close btn-sprite-s" @click="showPurchasePopup=false">关闭</i>
+            <div class="content">
+                <div class="prucharse-step-1" v-if="purchaseStep === 1">
+                    <div class="num">购买：<input type="text" @input="inputRuleReg" v-model="giftNumber" autofocus>个</div>
+                    <div class="price">价格：<span>{{ giftNumber * 9999 }}{{ giftPer }}</span></div>
+                    <div class="btn-group">
+                        <div class="btn-purchase btn-sprite-s purcharse" @click="confirmPay"></div>
+                    </div>  
+                </div>
+                <div class="prucharse-step-2" v-if="purchaseStep === 2">
+                    <div class="num tip">余额不足，快去充值吧！</div>
+                    <div class="btn-group">
+                        <div class="btn-sprite-s no" @click="showPurchasePopup=false"></div>
+                        <div class="btn-recharge btn-sprite-s recharge" @click="goRecharge"></div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- loading -->
+    <loading ref="loading"></loading>
+    <!-- toast -->
+    <toast ref="toast"></toast>
+    <!-- 礼物预览 -->
+    <svg-player ref="svgPlayer"></svg-player>
+    <!-- canvas雪花 -->
+    <canvas id="snow"></canvas>
+</div>
+<!-- mixin html content -->

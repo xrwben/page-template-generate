@@ -1,0 +1,12 @@
+{
+    "author": "liben",
+    "email": "liben@guojiang.tv",
+    "type": "page",
+    "name": "2019/12/gloryhall",
+    "useTpl": "_basic_mixin",
+    "branch": "page/2019/12/gloryhall",
+    "created": "Wed Nov 27 2019 17:40:33 GMT+0800 (GMT+08:00)",
+    "app": {
+        "pageTitle": "年度荣耀殿堂"
+    }
+}

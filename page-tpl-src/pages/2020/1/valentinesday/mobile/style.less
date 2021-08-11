@@ -1,0 +1,19 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@mobileImg: './images';
+
+@import '../mixin.less';
+
+.level_icon {
+    height: 48/@bf !important;
+}
+
+#app {
+    width: 100%;
+    background: url("../images/bg-m-1.jpg") no-repeat scroll center top / 100% 600/@bf, url("../images/bg-m-2.jpg") no-repeat scroll 0 599/@bf ~"/" 100% 700/@bf;
+    background-color: #ffc8cc;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 1184/@bf;
+}

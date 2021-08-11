@@ -1,0 +1,51 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_pic_sprite () {
+    .pic-s {
+        background: url('./images/pic.png') no-repeat;
+        background-size: 1393/@bf 843/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn_close { .getSprite(63, 61, 1140, 279); }
+    .btn_confirm_bg { .getSprite(469, 201, 924, 0); }
+    .btn_rule { .getSprite(164, 58, 924, 211); }
+    .btn_sign_bg { .getSprite(643, 201, 0, 220); }
+    .btn_sign_dis { .getSprite(643, 201, 0, 431); }
+    .btn_sign_dis_0 { .getSprite(643, 201, 0, 642); }
+    .i_star { .getSprite(53, 51, 1098, 211); }
+    .icon-date { .getSprite(97, 98, 924, 279); }
+    .icon-dg { .getSprite(99, 75, 1031, 279); }
+    .txt-h-bg { .getSprite(914, 210, 0, 0); }
+}
+.set_pic_sprite();
+
+.set_txt_sprite () {
+    .txt-s {
+        background: url('./images/txt.png') no-repeat;
+        background-size: 964/@bf 841/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .h-record { .getSprite(485, 64, 0, 675); }
+    .sec-b-h { .getSprite(466, 134, 0, 0); }
+    .sec_a_h { .getSprite(487, 105, 0, 144); }
+    .sec_a_h_2 { .getSprite(479, 105, 0, 259); }
+    .sec_a_h_3 { .getSprite(488, 105, 476, 0); }
+    .sign_a { .getSprite(382, 81, 497, 144); }
+    .sign_a_2 { .getSprite(382, 80, 489, 259); }
+    .sign_a_3 { .getSprite(380, 80, 512, 493); }
+    .sign_txt { .getSprite(502, 81, 415, 374); }
+    .sign_txt_2 { .getSprite(502, 81, 0, 584); }
+    .sign_txt_3 { .getSprite(502, 81, 0, 493); }
+    .txt_cancel { .getSprite(142, 67, 265, 749); }
+    .txt_charge { .getSprite(152, 80, 676, 584); }
+    .txt_confirm { .getSprite(154, 80, 512, 584); }
+    .txt_rule { .getSprite(405, 109, 0, 374); }
+    .txt_tips { .getSprite(255, 92, 0, 749); }
+}
+.set_txt_sprite();

@@ -1,0 +1,70 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <div class="module-con best">
+        <div class="module-title module-title-zj"></div>
+        <div class="container-layout">
+            <div class="avatar-con">
+                <div class="pic">
+                    <img v-if="anchorBest" :src="anchorBest.headPic" :alt="anchorBest.nickname">
+                    <img v-if="!anchorBest" src="${require('./images/xwyd.png')}" alt="虚位以待">
+                </div>
+                <p class="name">{{ anchorBest && anchorBest.nickname }}</p>
+                <div class="avatar-circle" @click="goRoom(anchorBest)"></div>
+            </div>
+        </div>
+    </div>
+    <div class="module-con" v-for="(value, key, index) in categoryList">
+        <div :class="['module-title', 'module-title-'+key]"></div>
+        <div class="container-layout">
+            <div class="avatar-con second">
+                <div class="crown">
+                    <div :class="['crown-title', 'category-s', key+'-2']"></div>
+                </div>
+                <div class="pic">
+                    <img v-if="value[1]" :src="value[1].headPic" :alt="value[1].nickname">
+                    <img v-if="!value[1]" src="${require('./images/xwyd.png')}" alt="虚位以待">
+                </div>
+                <p class="name">{{ value[1] && value[1].nickname }}</p>
+                <div class="avatar-circle" @click="goRoom(value[1])"></div>
+            </div>
+            <div class="avatar-con first">
+                <div class="crown">
+                    <div :class="['crown-title', 'category-s', key+'-1']"></div>
+                </div>
+                <div class="pic">
+                    <img v-if="value[0]" :src="value[0].headPic" :alt="value[0].nickname">
+                    <img v-if="!value[0]" src="${require('./images/xwyd.png')}" alt="虚位以待">
+                </div>
+                <p class="name">{{ value[0] && value[0].nickname }}</p>
+                <div class="avatar-circle" @click="goRoom(value[0])"></div>
+            </div>
+            <div class="avatar-con third">
+                <div class="crown">
+                    <div :class="['crown-title', 'category-s', key+'-3']"></div>
+                </div>
+                <div class="pic">
+                    <img v-if="value[2]" :src="value[2].headPic" :alt="value[2].nickname">
+                    <img v-if="!value[2]" src="${require('./images/xwyd.png')}" alt="虚位以待">
+                </div>
+                <p class="name">{{ value[2] && value[2].nickname }}</p>
+                <div class="avatar-circle" @click="goRoom(value[2])"></div>
+            </div>
+        </div>
+    </div>
+    <div class="drw">
+        <div class="container">
+            <div class="flex-wrapper">
+                {{  Array.isArray(drwList) }}
+                <div :class="['block', 'block-'+(index+1)]" v-for="(item, index) in drwList" :key="index">
+                    <div class="avatar">
+                        <div class="pic">
+                            <img v-if="item" :src="item.headPic" alt="虚位以待">
+                        </div>
+                    </div>
+                    <p class="name">{{ item && item.nickname || '虚位以待' }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- mixin html content -->

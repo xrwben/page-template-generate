@@ -1,0 +1,115 @@
+.sec-prog {
+    display: flex;
+    align-items: center;
+    background: #2a2a2b;
+    height: 190/@bf;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 890/@bf;
+        height: 10/@bf;
+        border-radius: 10/@bf;
+        background: #6e6461;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .prog-i {
+        flex: 1;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        .name {
+            color: #f8eab1;
+            font-size: 36/@bf;
+        }
+
+        .icon-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        &.active .icon-dot {
+            transform: translate(-50%, -50%) scale(1.4);
+        }
+    }
+
+    .prog-i:nth-child(2n+1) {
+        .name {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(26/@bf);
+        }
+
+        &.active .name {
+            color: #fea407;
+            transform: translateY(20/@bf) scale(1.2);
+        }
+    }
+
+    .prog-i:nth-child(2n) {
+        .name {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-74/@bf);
+        }
+
+        &.active .name {
+            color: #fea407;
+            transform: translateY(-80/@bf) scale(1.2);
+        }
+    }
+
+    .prog-index {
+        width: 890/@bf;
+        height: 12/@bf;
+        border-radius: 10/@bf;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .prog-ic {
+        width: 0;
+        height: 100%;
+        // background: #dd9068;
+        // opacity: 0.76;
+        background: url('../../images/bg-prog.png') repeat-x;
+        background-size: auto 100%;
+    }
+
+    .stage-1 .prog-ic {
+        width: 40/@bf;
+    }
+    .stage-2 .prog-ic {
+        width: (40+160)/@bf;
+    }
+    .stage-3 .prog-ic {
+        width: (40+160*2)/@bf;
+    }
+    .stage-4 .prog-ic {
+        width: (40+160*3)/@bf;
+    }
+    .stage-5 .prog-ic {
+        width: (40+160*4)/@bf;
+    }
+    .stage-6 .prog-ic {
+        width: (40+160*5)/@bf;
+    }
+    .stage-7 .prog-ic {
+        width: 100%;
+    }
+}

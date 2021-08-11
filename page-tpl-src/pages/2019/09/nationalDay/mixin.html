@@ -1,0 +1,155 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <div class="banner"></div>
+
+    <div class="lottery">
+        <div :class="'txt-s main-h sec_a_h' + perClass">打卡瓜分奖励</div>
+        <div class="pic-s butn btn-rule btn_rule" @click="showRule">详细玩法</div>
+        <div class="step-h">三步瓜分{{ perName }}</div>
+        <div class="step-box">
+            <span class="step-i">100{{ perName }}报名</span>
+            <span class="step-i">次日打卡</span>
+            <span class="step-i">瓜分奖池</span>
+        </div>
+        <div class="tiper">{{ tmAvgRewards }}</div>
+        <div class="rw-pool-h">当前总额（{{ perName }}）</div>
+        <div class="rw-pool">{{ totalMoney }}</div>
+        <div class="rw-pool-desc">
+            <span class="count">已有<b>{{ signedMan }}</b>人打卡</span>
+            <span class="sep"></span>
+            <div class="names">
+                <div class="namelist-w">
+                    <div class="namelist" ref="boards">
+                        <b v-for="(nick, ni) in signedName" :key="'bn_a_' + ni" class="name-i txt-of">{{ nick }}</b>
+                        <b v-if="signedName[0]" class="name-i txt-of">{{ signedName[0] }}</b>
+                    </div>
+                </div>
+                打卡
+            </div>
+        </div>
+        <div v-if="stage === 0" class="butn btn-sign pic-s btn_sign_dis_0"></div>
+        <div v-if="stage < 3 && stage > 0" :class="['butn btn-sign pic-s btn_sign_bg', !isSign && 'fo-ani']"  @click="goSign">
+            <div v-if="!isSign && !isLast" :class="'sign-status txt-s sign_txt' + perClass">100 立即报名</div>
+            <div v-if="!isSign && isLast" :class="'sign-status txt-s sign_a' + perClass">打卡瓜分</div>
+            <div v-show="isSign && !isLast" class="sign-count-a">距打卡还有<span ref="counting">00:00:00</span></div>
+            <div v-show="isSign && isLast" class="sign-count-b">距瓜分{{ perName }}还有<br/><span ref="counting-last" class="timer">00:00:00</span></div>
+        </div>
+        <div v-if="stage >= 3" class="butn btn-sign pic-s btn_sign_dis"></div>
+
+        <div class="butn btn-record" @click="showMyRecord">我的打卡记录>></div>
+    </div>
+
+    <div class="game-box">
+        <div class="pic-s game-h h-bg txt-h-bg">
+            <span class="txt-s h-txt sec-b-h">普天同庆 国庆特别玩法</span>
+        </div>
+        <div v-if="stage < 2" class="game-mask">10月1日00:00开启</div>
+        <div v-if="stage >= 2" class="game-c">国庆福利大放送：<br/>1. 国庆当日指定礼物7折（请认准礼物面板-热门角标为“7折”的礼物），用户经验值、粉丝亲密度不打折；主播星光值、主播经验值、主播分成按照折后价计算。<br/>2.国庆当日赠送“普天同庆”，用户经验值、粉丝亲密度双倍计算；主播星光值、主播经验值、主播分成按照原价计算，不翻倍。</div>
+    </div>
+
+    <p class="copyright">在法律允许的范围内，本活动的解释权归平台所有</p>
+</div>
+
+<!-- modal 玩法说明 -->
+<div class="modal modal-rule" v-show="ruleModal" @click="closeM('ruleModal')">
+    <div class="pic-s h-bg txt-h-bg" @click.stop="">
+        <span class="txt-s h-txt txt_rule">玩法说明</span>
+    </div>
+    <div class="modal-c" @click.stop="">
+        <div class="modal-bg">
+            <div class="modal-bg-bottom"></div>
+            <div class="modal-bg-i"></div>
+        </div>
+        <div class="modal-content">
+            <div class="butn pic-s btn_close" @click="closeM('ruleModal')"></div>
+            <div class="rule-i"><span class="pic-s i_star">1</span>支付100{{ perName }}可报名参加，获得次日瓜分{{ perName }}机会；</div>
+            <div class="rule-i"><span class="pic-s i_star">2</span>报名成功后在次日23:50:00前回到活动页面打卡，<span class="cl-purple">即可均分奖池内全部{{ perName }}；</span></div>
+            <div class="rule-i"><span class="pic-s i_star">3</span>奖池由前一天参加打卡的用户花费{{ perName }}组成，当期全部瓜分给用户，平台不收取任何费用；</div>
+            <div class="rule-i"><span class="pic-s i_star">4</span>每日瓜分{{ perName }}数额于当日23:50:01-23:59:59结算，结算完毕自动发放至个人账户，请留意官方小蜜通知，或者在打卡记录内查看。</div>
+            <div class="rule-i"><span class="pic-s i_star">5</span><span class="cl-purple">10月7日用户打卡不花费{{ perName }}。</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- modal 提示 -->
+<div class="modal modal-tips" v-show="tiperModal" @click="closeM('tiperModal')">
+    <div class="pic-s h-bg txt-h-bg" @click.stop="">
+        <span class="txt-s h-txt txt_tips">提示</span>
+    </div>
+    <div class="modal-c" @click.stop="">
+        <div class="modal-bg">
+            <div class="modal-bg-bottom"></div>
+            <div class="modal-bg-i"></div>
+        </div>
+        <div class="modal-content">
+            <div class="butn pic-s btn_close" @click="closeM('tiperModal')"></div>
+
+            <div class="tip-p">确定扣除100{{ perName }}参加活动吗？</div>
+            <div class="tip-p cl-purple">明日打卡瓜分{{ perName }}</div>
+
+            <div class="tip-opt fl-box">
+                <div class="butn btn-cancel" @click="closeM('tiperModal')">取&nbsp;消</div>
+                <div class="butn btn-confirm pic-s btn_confirm_bg"  @click="confirmSign"><span class="txt-s txt_confirm">确认</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal 提示 -->
+<div class="modal modal-charge" v-show="chargeModal" @click="closeM('chargeModal')">
+    <div class="pic-s h-bg txt-h-bg" @click.stop="">
+        <span class="txt-s h-txt txt_tips">提示</span>
+    </div>
+    <div class="modal-c" @click.stop="">
+        <div class="modal-bg">
+            <div class="modal-bg-bottom"></div>
+            <div class="modal-bg-i"></div>
+        </div>
+        <div class="modal-content">
+            <div class="butn pic-s btn_close" @click="closeM('chargeModal')"></div>
+
+            <div class="charge-p">余额不足，快去充值吧！</div>
+
+            <div class="tip-opt fl-box">
+                <div class="butn btn-cancel" @click="closeM('chargeModal')">取&nbsp;消</div>
+                <div class="butn btn-confirm pic-s btn_confirm_bg" @click="goRecharge"><span class="txt-s txt_charge">充值</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal 我的打卡记录 -->
+<div class="modal modal-record" v-show="recordModal" @click="closeM('recordModal')">
+    <div class="modal-c" @click.stop="">
+        <div class="modal-bg">
+            <div class="modal-bg-bottom"></div>
+            <div class="modal-bg-i"></div>
+        </div>
+        <div class="modal-content">
+            <div class="butn pic-s btn_close" @click="closeM('recordModal')"></div>
+
+            <div class="txt-s h-record">我的打卡记录</div>
+
+            <div class="record-box fl-box">
+                <div class="record-sec">
+                    <p class="num">{{ recordPay }}</p>
+                    <p class="desc">累计投入（{{ perName }}）</p>
+                </div>
+                <div class="sep"></div>
+                <div class="record-sec">
+                    <p class="num">{{ recordAward }}</p>
+                    <p class="desc">累计获得（{{ perName }}）</p>
+                </div>
+            </div>
+
+            <div class="record-list fl-box">
+                <div v-for="i in 9" :class="['record-i pic-s icon-date', records[i - 1] === -1 ? '' : (records[i - 1] ? 'check' : 'dis')]"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<loading ref="loading"></loading>
+
+<toast ref="toast"></toast>
+<!-- mixin html content -->

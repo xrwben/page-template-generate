@@ -1,0 +1,257 @@
+// 年度大人物
+.module-user {
+    width: 100%;
+    background: #1a1a1c;
+    padding: 30/@bf 0 80/@bf;
+    .title {
+        margin: 0 auto;
+    }
+    .user-container {
+        width: 900/@bf;
+        background: url("../images/bg-center.png") repeat-y center / 100%;
+        margin: 0/@bf auto 0;
+        padding: 0 30/@bf;
+        position: relative;
+        &::before {
+            content: "";
+            width: 900/@bf;
+            height: 73/@bf;
+            background: url("../images/bg-top.png") no-repeat center bottom / 100% 100%;
+            position: absolute;
+            left: 0;
+            top: -73/@bf;
+        }
+        &::after {
+            content: "";
+            width: 900/@bf;
+            height: 35/@bf;
+            background: url("../images/bg-bottom.png") no-repeat center top / 100% 100%;
+            position: absolute;
+            left: 0;
+            bottom: -35/@bf;
+        }
+        .task-list {
+            width: 100%;
+            .task-item {
+                width: 100%;
+                margin: 0 auto 24/@bf;
+                padding: 0/@bf 35/@bf 0 20/@bf;
+                display: flex;
+                align-items: center;
+                position: relative;
+                .task-con {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10/@bf;
+                    .txt-con {
+                        flex: 1;
+                        color: #fff005;
+                        font-size: 34/@bf;
+                        font-weight: bold;
+                    }
+                    .btn-get {
+                        cursor: pointer;
+                    }
+                }
+                .tip-icon {
+                    position: absolute;
+                    right: 8/@bf;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    cursor: pointer;
+                }
+            }
+        }
+        .list-head {
+            border-top: 2/@bf solid #dfb667;
+            margin: 40/@bf auto 0;
+            padding: 55/@bf 0 15/@bf;
+            display: flex;
+            align-items: center;
+            & > p {
+                color: #fff005;
+                font-size: 34/@bf;
+                font-weight: bold;
+                text-align: center;
+            }
+            & > p:nth-of-type(1) {
+                margin-left: 50/@bf;
+            }
+            & > p:nth-of-type(2) {
+                margin-left: 165/@bf;
+            }
+            & > p:nth-of-type(3) {
+                margin-left: 270/@bf;
+            }
+        }
+        .list-con {
+            width: 100%;
+            overflow: hidden;
+            .list-item {
+                padding: 25/@bf 0;
+                display: flex;
+                align-items: center;
+                .order {
+                    width: 100/@bf;
+                    font-size: 34/@bf;
+                    // font-weight: bold;
+                    color: #fff005;
+                    margin-left: 20/@bf;
+                    text-align: center;
+                }
+                .avatar {
+                    width: 110/@bf;
+                    height: 109/@bf;
+                    margin-left: 80/@bf;
+                    position: relative;
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5/@bf;
+                    }
+                    &::after {
+                        content: "";
+                        width: 141/@bf;
+                        height: 139/@bf;
+                        background: url("../images/avatar-bg.png") no-repeat center / 100% 100%;
+                        position: absolute;
+                        left: -16/@bf;
+                        top: -15/@bf;
+                    }
+                }
+                .name-logo {
+                    width: 0;
+                    min-width: 0;
+                    flex: 1;
+                    margin-left: 40/@bf;
+                    .name {
+                        color: #fff005;
+                        font-size: 34/@bf;
+                        display: flex;
+                        align-items: center;
+                        & > span {
+                            flex-shrink: 0;
+                            margin-left: 3/@bf;
+                        }
+                    }
+                    .logo {
+                        width: 187/@bf;
+                        height: 48/@bf;
+                        margin-top: 5/@bf;
+                    }
+                }
+                .val {
+                    width: 250/@bf;
+                    color: #fff005;
+                    font-size: 34/@bf;
+                    text-align: center;
+                    margin: 0 10/@bf;
+                }
+            }
+        }
+        .list-footer {
+            color: #fff;
+            font-size: 30/@bf;
+            text-align: center;
+            padding: 10/@bf 0 15/@bf;
+        }
+        .self-container {
+            width: 100%;
+            border-top: 2/@bf solid #dfb667;
+            padding: 50/@bf 30/@bf 20/@bf;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            .block-1 {
+                width: 40%;
+            }
+            .block {
+                .avatar {
+                    width: 110/@bf;
+                    height: 109/@bf;
+                    margin: 0 auto;
+                    position: relative;
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5/@bf;
+                    }
+                    &::after {
+                        content: "";
+                        width: 141/@bf;
+                        height: 139/@bf;
+                        background: url("../images/avatar-bg.png") no-repeat center / 100% 100%;
+                        position: absolute;
+                        left: -16/@bf;
+                        top: -15/@bf;
+                    }
+                }
+                .name {
+                    width: 100%;
+                    color: #fff005;
+                    font-size: 34/@bf;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20/@bf;
+                    & > span {
+                        flex-shrink: 0;
+                        margin-left: 3/@bf;
+                    }
+                }
+                .logo {
+                    width: 187/@bf;
+                    height: 48/@bf;
+                    margin: 0 auto 0;
+                }
+                .t-l, .t-r, .b-l, .b-r {
+                    color: #fff005;
+                    font-size: 34/@bf;
+                    text-align: center;
+                    & > p {
+                        color: #fff;
+                        font-size: 32/@bf;
+                        margin-top: 10/@bf;
+                    }
+                }
+                .b-l, .b-r {
+                    margin-top: 30/@bf;
+                }
+            }
+        }
+    }
+    .xz-zz {
+        background: url("../images/reward/user-xz/xz-zz.gif") no-repeat center / 100%;
+    }
+    .xz-gw {
+        background: url("../images/reward/user-xz/xz-gw.gif") no-repeat center / 100%;
+    }
+    .xz-qw {
+        background: url("../images/reward/user-xz/xz-qw.gif") no-repeat center / 100%;
+    }
+    .xz-gggj {
+        background: url("../images/reward/user-xz/xz-gggj.gif") no-repeat center / 100%;
+    }
+    .xz-hj {
+        background: url("../images/reward/user-xz/xz-hj.gif") no-repeat center / 100%;
+    }
+    .xz-bj {
+        background: url("../images/reward/user-xz/xz-bj.gif") no-repeat center / 100%;
+    }
+    .xz-xgzj {
+        background: url("../images/reward/user-xz/xz-xgzj.gif") no-repeat center / 100%;
+    }
+    .xz-nj {
+        background: url("../images/reward/user-xz/xz-nj.gif") no-repeat center / 100%;
+    }
+    .xz-xj {
+        background: url("../images/reward/user-xz/xz-xj.gif") no-repeat center / 100%;
+    }
+    .xz-js {
+        background: url("../images/reward/user-xz/xz-js.gif") no-repeat center / 100%;
+    }
+}

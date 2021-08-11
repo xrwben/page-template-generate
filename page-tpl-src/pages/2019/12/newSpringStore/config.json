@@ -1,0 +1,12 @@
+{
+    "author": "liben",
+    "email": "liben@guojiang.tv",
+    "type": "page",
+    "name": "2019/12/newSpringStore",
+    "useTpl": "_basic_mixin",
+    "branch": "page/2019/12/newSpringStore",
+    "created": "Mon Dec 30 2019 14:34:35 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "业绩冲刺 限时打折"
+    }
+}

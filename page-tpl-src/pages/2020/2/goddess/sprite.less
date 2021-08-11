@@ -1,0 +1,36 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_sprite_sprite () {
+    .sprite-s {
+        background: url('./images/sprite.png') no-repeat;
+        background-size: 849/@bf 392/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .NO1 { .getSprite(133, 119, 0, 273); }
+    .NO2 { .getSprite(103, 86, 143, 273); }
+    .NO3 { .getSprite(91, 74, 256, 273); }
+    .live { .getSprite(91, 42, 357, 273); }
+    .rank-title { .getSprite(849, 126, 0, 0); }
+    .rule-title  { .getSprite(790, 127, 0, 136); }
+}
+.set_sprite_sprite();
+
+.set_sprite-btn_sprite () {
+    .sprite-btn-s {
+        background: url('./images/sprite-btn.png') no-repeat;
+        background-size: 453/@bf 278/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .close { .getSprite(80, 82, 373, 0); }
+    .followed { .getSprite(251, 82, 112, 0); }
+    .unfollow { .getSprite(251, 82, 112, 92); }
+    .rule-btn { .getSprite(102, 278, 0, 0); }
+    .get-btn { .getSprite(166, 93, 112, 184); }
+}
+.set_sprite-btn_sprite();

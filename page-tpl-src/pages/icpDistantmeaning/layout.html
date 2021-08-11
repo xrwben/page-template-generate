@@ -1,0 +1,181 @@
+<!-- webpack.htmlwebpackplugin pc layout 入口html文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="wap-font-scale" content="no">
+        <meta name="renderer" content="webkit">
+        <meta property="qc:admins" content="7261517777656512176375" />
+
+        <meta name="keywords" content="星光直播,人气直播,美女直播,女主播,手机直播,美颜直播,土壕直播,直播间,才艺直播,秀场"/>
+        <meta name="description" content="土豪最爱看的美女直播.一个美颜效果最好的聚集超高颜值明星大咖、美女帅哥、热门网红、校花校草、逗比萌妹的手机直播社交平台" />
+        <meta name="baidu-site-verification" content="ulQb1ppmog" />
+
+        <link rel="shortcut icon" href="//static.guojiang.tv/mobile/img/common/title_icon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="//static.guojiang.tv/mobile/img/common/logo_1.png" sizes="144x144">
+
+        <title><%= htmlWebpackPlugin.options.app.pageTitle %></title>
+        <link rel="stylesheet" href="//static.guojiang.tv/src/pc/v4/css/lib/layer.css">
+        <script type="text/javascript">
+            var _czc = _czc || [];
+            _czc.push(['_setAccount', '1255976554'])
+        </script>
+        <% if (htmlWebpackPlugin.options.injectScripts) {
+            htmlWebpackPlugin.options.injectScripts.forEach((val) => { %>
+        <script>
+            <%= require('fs').readFileSync(val) %>
+        </script>
+        <%  })
+        } %>
+    </head>
+
+    <body>
+        <!--[if lt IE 9]>
+        <p class="browsehappy">您正使用过时的浏览器访问，可能有安全风险。建议您<a href="//browsehappy.osfipin.com/#" target="_balnk">升级浏览器</a>来获得更好的用户体验，发现一个全新的
+        星光直播-真的能撩到主播的直播
+        </p>
+        <div class="update_browser_wrap">
+            <span class="mask" style="background: #000!important;z-index:99999;"></span>
+            <div class="content"style="z-index:999999;">
+                <p>hi，您当前的浏览器版本过低，可能存在重大安全漏洞！</p>
+                <h3>请立即<a href="//browsehappy.osfipin.com" target="_blank">升级浏览器</a></h3>
+                <a href="//se.360.cn/" target="_blank" class="skip_btn">360浏览器</a>
+            </div>
+        </div>
+        <![endif]-->
+        <div class="header-wrap">
+            <div class="h-center container">
+                <a href="" class="logo">常伴交友</a>
+                <ul class="navbar">
+                    <li class="chat active"><a href="">首页<i></i></a></li>
+                    <li><a href="./dmRanker.html">排行榜</a></li>
+                </ul>
+
+                <div class="room_login h-login_info">
+                    <span class="login">登录</span>|<span class="register">注册</span>
+                </div>
+
+                <div class="room_logined h-login_info posA">
+                    <div class="avatar_wrap_51" width="51" height="51"></div>
+    
+                    <div class="tuc_wrap">
+                        <div class="tuc_title">
+                            <div class="header-avatar"></div>
+                            <p class="tuc_nickname">欢迎.常伴交友.</p>
+                            <p class="pp_val"><span>0</span>克拉</p>
+                            <span class="tuc_edit_nickname">修改昵称</span>
+                        </div>
+                        <ul class="top_user_center">
+                            <li class="last logout">退出</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- html ejs / vue template -->
+        <div id="app">
+            <div class="banner"></div>
+            <div class="content_wrap clearfix">
+                <div class="content_left fl">
+                    <div class="inner_banner">
+                        <div class="ib_avatar_wrap left">
+                            <img id="conn-user" src="//static.guojiang.tv/src/pc/v4/img/chat/user/0.jpg">
+                            <p>私聊听众</p>
+                        </div>
+                        <div class="ib_avatar_wrap right">
+                            <img id="conn-mod" src="//static.guojiang.tv/app/upload/2019_08_09/1a1b4d9c90487101d42c27b689f75fc0.jpg">
+                            <p>服务主播</p>
+                        </div>
+                        <p class="hint">有<span class="conn-num">5000</span>人正在连线中......</p>
+                        <div id="phoneAnimation" class="phone_animation"></div>
+                    </div>
+
+                    <ul id="modlist" class="list clearfix"></ul>
+                </div>
+                <div class="content_right fr" @click="beginCall">
+                    <h2>
+                        <span>声优排行</span>
+                    </h2>
+                    <ul id="sider-list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cp-footer">
+            <p>Copyright 深圳市声远文化传媒有限公司 All rights reserved.</p>
+            <p><a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备18078095号-1</a></p>
+            <p><a href="http://report.ccm.gov.cn" target="_blank">12318全国文化市场举报网站</a>
+        </div>
+
+        <div id="overlay-cont" class="rl_wrap">
+            <ul class="rl_controller clearfix">
+                <li class="fl active">登录</li>
+                <li class="line"></li>
+            </ul>
+            <span class="close_btn close"></span>
+            <!--overlay-login-->
+            <div class="overlay-inner" id="overlay-login">
+                <form id="login-form" novalidate="novalidate">
+                    <table cellpadding="0" cellspacing="0" width="100%" border="0" id="login-area">
+                        <tbody>
+                            <tr><td><input name="username" type="text" placeholder="用户名/手机" class="fi-txt" autocomplete="off"></td></tr>
+                            <tr><td><input name="password" type="password" placeholder="密码" class="fi-txt" autocomplete="off"></td></tr>
+                            <tr>
+                                <td class="clearfix form_funcs">
+                                    <label class="fl"><input type="checkbox" checked="" id="login-remember" class="login_remember">7天内自动登录</label>
+                                    <a href="javascript:;" target="_blank" class="fr forget_passward_link">忘记密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" class="btns go-login" value="登录"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+        
+                <ul class="other_login_type clearfix">
+                    <li>使用社交账户登录</li>
+                    <li class="qq_login"><a class="go-login" href="javascript:;"></a></li> 
+                    <li class="weibo_login"><a class="go-login" href="javascript:;"></a></li>
+                    <li class="wechat_login"><a class="go-login" href="javascript:;"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var _hmt = _hmt || []
+
+            ;(function() {
+                function async_load_baidu () {
+                    var hm = document.createElement('script')
+                    hm.src = 'https://hm.baidu.com/hm.js?a17ccf7bc3d9be2ed6f415dfe67056f0'
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(hm, s)
+                }
+                function async_load_cnzz () {
+                    var cz = document.createElement('script')
+                    cz.src = '//s11.cnzz.com/z_stat.php?id=1255976554&web_id=1255976554'
+                    cz.async = true
+                    document.getElementsByTagName('body')[0].appendChild(cz)
+                }
+
+                async_load_cnzz()
+                async_load_baidu()
+            })();
+        </script>
+    
+        <script src="//static.guojiang.tv/src/pc/v4/js/component/bodymovin.min.js"></script>
+        <% if (htmlWebpackPlugin.options.externals) {
+            htmlWebpackPlugin.options.externals.forEach((val) => {  %>
+        <script src="<%= val %>"></script>
+        <%  })
+        } %>
+    </body>
+</html>

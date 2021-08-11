@@ -1,0 +1,12 @@
+{
+    "author": "liben",
+    "email": "liben@guojiang.tv",
+    "type": "page",
+    "name": "2020/1/springFestivalNotice",
+    "useTpl": "_basic_mobile",
+    "branch": "page/2020/1/springFestivalNotice",
+    "created": "Mon Jan 13 2020 16:34:24 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "2020年春节假期安排"
+    }
+}

@@ -1,0 +1,94 @@
+.champion-c {
+    position: relative;
+    z-index: 10;
+    .es-tab:before {
+        transform: translate(-50%, -50%) scale(0.9);
+        transform-origin: center center;
+    }
+
+    .rank-h {
+        margin: 30/@bf auto 10/@bf;
+        position: relative;
+        z-index: 2;
+    }
+
+    .user-bg {
+        width: 1024/@bf;
+        height: 340/@bf;
+        background: url('../user/images/u-rank-bg.jpg') no-repeat;
+        background-size: 100% auto;
+        position: absolute;
+        top: 12/@bf;
+        left: 14/@bf;
+        z-index: 0;
+    }
+
+    .top-h {
+        width: 334/@bf;
+        height: 311/@bf;
+        background: url('./images/top-h.png') no-repeat;
+        background-size: 100% auto;
+        margin: 0 auto;
+        position: absolute;
+        top: -160/@bf;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+}
+
+.champion-rank {
+    position: relative;
+    margin-top: 120/@bf;
+    padding-top: 140/@bf;
+
+    .game-rank .icon-live {
+        z-index: 2;
+    }
+
+    .es-tab {
+        .es-tab-i {
+            margin: 0 100/@bf;
+        }
+
+        .f-tab-i0 { .f-tab-0; }
+        .f-tab-i1 { .f-tab-1; }
+
+        .active {
+            .f-tab-i0 { .f-tab-0-a; }
+            .f-tab-i1 { .f-tab-1-a; }
+        }
+
+        .dis {
+            .f-tab-i0 { .f-tab-0-d; }
+            .f-tab-i1 { .f-tab-1-d; }
+        }
+    }
+
+    .es-list {
+        .rank-item:nth-child(1) {
+            background-image: url('./images/rank-0-bg3.jpg');
+            height: 350/@bf;
+        }
+        .rank-item:nth-child(2),
+        .rank-item:nth-child(3) {
+            height: 290/@bf;
+        }
+    }
+
+    .es-list-1 {
+        .rank-item:nth-child(1) {
+            .headpic:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-52%, -53%);
+                width: 280/@bf;
+                height: 320/@bf;
+                background: url('./images/e-top.png') no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@activityName: '';
+@bf: 108rem; // 1080px -> fontSize -> 108px
+@imgUrl: './images';
+
+html, body {
+    margin: 0;
+    padding: 0px;
+}
+
+#app {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1080/@bf;
+    margin: 0 auto;
+}
+
+.pic {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pic-1 {
+    height: 528/@bf;
+    background-image: url('@{imgUrl}/bg_01.jpg');
+}
+
+.pic-2 {
+    height: 603/@bf;
+    background-image: url('@{imgUrl}/bg_02.jpg');
+}
+
+.pic-3 {
+    height: 596/@bf;
+    background-image: url('@{imgUrl}/bg_03.jpg');
+}
+
+.pic-4 {
+    height: 617/@bf;
+    background-image: url('@{imgUrl}/bg_04.jpg');
+}
+
+.pic-5 {
+    height: 184/@bf;
+    background-image: url('@{imgUrl}/bg_05.jpg');
+}

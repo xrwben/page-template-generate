@@ -1,0 +1,21 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_sprite_sprite () {
+    .sprite-s {
+        background: url('./images/sprite.png') no-repeat;
+        background-size: 436/@bf 398/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .badge { .getSprite(58, 69, 248, 229); }
+    .btn-cert { .getSprite(238, 80, 0, 229); }
+    .btn-close { .getSprite(38, 39, 316, 229); }
+    .btn-install { .getSprite(238, 79, 0, 319); }
+    .btn-tutor { .getSprite(395, 79, 0, 140); }
+    .info-h { .getSprite(436, 130, 0, 0); }
+}
+.set_sprite_sprite();

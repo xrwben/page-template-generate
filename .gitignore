@@ -1,0 +1,13 @@
+xg-tpl-src
+node_modules
+lib/dist
+dist
+playground.js
+
+.cache
+.publish
+.trunksvn
+.trunk
+.images
+.local
+.vscode

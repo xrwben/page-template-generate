@@ -1,0 +1,12 @@
+{
+    "author": "mrzjd",
+    "email": "390303304@qq.com",
+    "type": "template",
+    "name": "bg_page",
+    "useTpl": "_basic_mixin",
+    "branch": "tpl/bg_page",
+    "created": "Thu Aug 08 2019 10:29:06 GMT+0800 (中国标准时间)",
+    "app": {
+        "pageTitle": "页面标题"
+    }
+}

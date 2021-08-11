@@ -1,0 +1,79 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_u-avatar0_sprite () {
+    .u-avatar0-s {
+        background: url('./images/u-avatar0.png') no-repeat;
+        background-size: 627/@bf 500/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .u-avatar-0 { .getSprite(299, 330, 0, 0); }
+    .u-avatar-1 { .getSprite(154, 165, 309, 0); }
+    .u-avatar-2 { .getSprite(154, 162, 473, 0); }
+    .u-avatar-3 { .getSprite(154, 160, 0, 340); }
+}
+.set_u-avatar0_sprite();
+
+.set_u-badge_sprite () {
+    .u-badge-s {
+        background: url('./images/u-badge.png') no-repeat;
+        background-size: 427/@bf 279/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .u-badge-0 { .getSprite(248, 178, 0, 0); }
+    .u-badge-1 { .getSprite(169, 94, 258, 0); }
+    .u-badge-2 { .getSprite(149, 82, 157, 188); }
+    .u-badge-3 { .getSprite(147, 91, 0, 188); }
+}
+.set_u-badge_sprite();
+
+.set_user-c_sprite () {
+    .user-c-s {
+        background: url('./images/user-c.png') no-repeat;
+        background-size: 973/@bf 222/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn-draw-dis { .getSprite(235, 90, 270, 63); }
+    .btn-draw { .getSprite(235, 89, 515, 63); }
+    .ticket { .getSprite(260, 159, 0, 63); }
+    .u-r-h { .getSprite(973, 53, 0, 0); }
+}
+.set_user-c_sprite();
+
+.set_u-avatar1_sprite () {
+    .u-avatar1-s {
+        background: url('./images/u-avatar1.png') no-repeat;
+        background-size: 482/@bf 335/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .u-avatar-4 { .getSprite(154, 165, 164, 0); }
+    .u-avatar-5 { .getSprite(154, 164, 328, 0); }
+    .u-avatar-6 { .getSprite(154, 159, 0, 176); }
+    .u-avatar-7 { .getSprite(154, 166, 0, 0); }
+    .u-avatar-8 { .getSprite(154, 151, 328, 176); }
+    .u-avatar-9 { .getSprite(154, 154, 164, 176); }
+}
+.set_u-avatar1_sprite();
+
+.set_u-badge1_sprite () {
+    .u-badge1-s {
+        background: url('./images/u-badge1.png') no-repeat;
+        background-size: 324/@bf 285/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .u-badge-4 { .getSprite(153, 98, 0, 0); }
+    .u-badge-5 { .getSprite(161, 89, 163, 0); }
+    .u-badge-6 { .getSprite(162, 80, 156, 108); }
+    .u-badge-7 { .getSprite(146, 94, 0, 108); }
+    .u-badge-8 { .getSprite(135, 73, 0, 212); }
+    .u-badge-9 { .getSprite(133, 70, 145, 212); }
+}
+.set_u-badge1_sprite();

@@ -1,0 +1,30 @@
+@activityName: '';
+@bf: 1px*10/6;
+@pcUrl: './images';
+
+@import '../mixin.less';
+
+.btn {
+    cursor: pointer;
+}
+
+#app {
+    width: 100%;
+    background: url("../images/bg-p-1.jpg") no-repeat center 0px ~'/' 100% 683px,
+        url("../images/bg-p-2.jpg") no-repeat center 683px ~"/" 100% 798px,
+        url("../images/bg-p-3.jpg") no-repeat center 1481px ~"/" 100% 730px,
+        url("../images/bg-p-4.jpg") no-repeat center 2211px ~"/" 100% 1175px,
+        url("../images/bg-p-5.jpg") no-repeat center 3386px ~"/" 100% 1600px,
+        url("../images/bg-p-6.jpg") no-repeat center 4986px ~"/" 100% 2014px;
+    background-color: #ffc8cc;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 1000px;
+    margin: 0 auto;
+}
+.popup-btn {
+    right: 44%;
+    top: 50%;
+    transform: translate(500px);
+}

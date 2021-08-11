@@ -1,0 +1,250 @@
+// @import "./sprite.less";
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    width: 100%;
+    overflow: hidden;
+}
+.txt-of {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 弹窗样式
+.popup-module {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // 活动规则
+    .popup-rule-container {
+        // width: 1009/@bf;
+        // height: 70%;
+        // position: relative;
+        // background: url("./images/border-center.png") repeat-y center / 100%;
+        // margin: 40/@bf auto;
+        // padding: 60/@bf 30/@bf 0;
+        // &::before {
+        //     content: "";
+        //     width: 100%;
+        //     height: 40/@bf;
+        //     background: url("./images/border-top.png") no-repeat center / 100% 100%;
+        //     display: block;
+        //     position: absolute;
+        //     top: -39/@bf;
+        //     left: 0;
+        // }
+        // &::after {
+        //     content: "";
+        //     width: 100%;
+        //     height: 40/@bf;
+        //     background: url("./images/border-bottom.png") no-repeat center / 100% 100%;
+        //     display: block;
+        //     position: absolute;
+        //     bottom: -39/@bf;
+        //     left: 0;
+        // }
+        .title {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -140/@bf;
+            margin: auto;
+            z-index: 1;
+        }
+        .close {
+            position: absolute;
+            right: -20/@bf;
+            top: -70/@bf;
+            font-size: 0;
+            cursor: pointer;
+        }
+        .content {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            .rule-scroller {
+                height: 100%;
+                padding: 0 30/@bf;
+            }
+            .item {
+                color: #ff3769;
+                font-size: 36/@bf;
+                margin-bottom: 20/@bf;
+            }
+            .item-gift {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                .gift-block {
+                    width: 50%;
+                    margin-bottom: 40/@bf;
+                    .gift-img {
+                        margin: 0 auto;
+                    }
+                    .price {
+                        color: #ff3769;
+                        font-size: 36/@bf;
+                        font-weight: bold;
+                        font-style: italic;
+                        text-align: center;
+                        margin-top: 10/@bf;
+                    }
+                }
+            }
+            .table {
+                width: 100%;
+                border: 3/@bf solid #ff3769;
+                border-collapse: collapse;
+                margin: 20/@bf auto;
+                th, td {
+                    border: 4/@bf solid #ff3769;
+                    background: #fff5f3;
+                    text-align: center;
+                    color: #ff3769;
+                    font-size: 30/@bf;
+                    padding: 8/@bf 0;
+                    & > p {
+                        margin: 2/@bf auto;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                td {
+                    height: 153/@bf;
+                    &:nth-of-type(1) {
+                        width: 120/@bf;
+                    }
+                }
+                .item-blue {
+                    color: #ff2248;
+                    font-size: 36/@bf;
+                }
+            }
+        }
+    }
+    // 购买弹窗
+    .purchase-container {
+        // width: 850/@bf;
+        // height: 300/@bf;
+        // background: url("./images/border-center.png") repeat-y center / 100%;
+        // margin: 0 auto;
+        // position: relative;
+        // &::before {
+        //     content: "";
+        //     width: 100%;
+        //     height: 40/@bf;
+        //     background: url("./images/border-top.png") no-repeat center / 100% 100%;
+        //     display: block;
+        //     position: absolute;
+        //     top: -39/@bf;
+        //     left: 0;
+        // }
+        // &::after {
+        //     content: "";
+        //     width: 100%;
+        //     height: 40/@bf;
+        //     background: url("./images/border-bottom.png") no-repeat center / 100% 100%;
+        //     display: block;
+        //     position: absolute;
+        //     bottom: -39/@bf;
+        //     left: 0;
+        // }
+        .close {
+            position: absolute;
+            right: -20/@bf;
+            top: -70/@bf;
+            font-size: 0;
+            cursor: pointer;
+        }
+        .content {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .num, .price {
+                color: #ff3769;
+                font-size: 36/@bf;
+                font-weight: bold;
+                margin-top: 20/@bf;
+                display: flex;
+                align-items: center;
+                & > input {
+                    width: 240/@bf;
+                    height: 68/@bf;
+                    border: 3/@bf solid #fd8d97;
+                    border-radius: 10/@bf;
+                    background: transparent;
+                    text-align: center;
+                    color: #ff3769;
+                    font-size: 32/@bf;
+                    margin-right: 10/@bf;
+                }
+                & > span {
+                    font-weight: 400;
+                }
+            }
+            .btn-group {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 50/@bf;
+                & > div {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Toast样式
+.toast-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .toast-msg {
+        max-width: 900/@bf;
+        padding: 12/@bf 18/@bf;
+        font-size: 36/@bf;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 12/@bf;
+    }
+}
+
+// lottie-web动效
+.svg-layer {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    .svg-container {
+        width: 1080/@bf;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+}

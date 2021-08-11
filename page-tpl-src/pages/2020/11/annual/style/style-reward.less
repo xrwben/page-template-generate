@@ -1,0 +1,276 @@
+// 年度奖项
+.module-reward {
+    // 赛程安排
+    .plan-container {
+        width: 1078/@bf;
+        height: 319/@bf;
+        background: url("../images/reward/plan.png") no-repeat center / 100% 100%;
+        margin: 0 auto;
+    }
+    // 奖项设置
+    .mod-award-container {
+        width: 100%;
+        background: #1a1a1c;
+        margin: 70/@bf auto 0;
+        .mod-1 {
+            width: 900/@bf;
+            height: 470/@bf;
+            background: url("../images/reward/mod-1.png") no-repeat center top / 100% 100%;
+            margin: 0 auto;
+            position: relative;
+            .mod-zj {
+                position: absolute;
+                right: 90/@bf;
+                bottom: 50/@bf;
+            }
+        }
+        .mod-2 {
+            width: 900/@bf;
+            height: 972/@bf;
+            background: url("../images/reward/mod-2.png") no-repeat center top / 100% 100%;
+            margin: 0 auto;
+            position: relative;
+            .mod-one {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 520/@bf;
+                margin: auto;
+            }
+            .mod-two {
+                position: absolute;
+                left: 60/@bf;
+                bottom: 30/@bf;
+            }
+            .mod-three {
+                position: absolute;
+                right: 60/@bf;
+                bottom: 30/@bf;
+            }
+        }
+    }
+    // 年度任务
+    .user-award-container {
+        .user-1 {
+            width: 900/@bf;
+            height: 636/@bf;
+            background: url("../images/reward/user-1.png") no-repeat center top / 100% 100%;
+            margin: 0 auto;
+            position: relative;
+            .user-zz {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+        .user-2 {
+            width: 900/@bf;
+            height: 509/@bf;
+            background: url("../images/reward/user-2.png") no-repeat center top / 100% 100%;
+            margin: 0 auto;
+            position: relative;
+            .user-gw {
+                position: absolute;
+                left: 40/@bf;
+                bottom: 0;
+            }
+            .user-qw {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            .user-gj {
+                position: absolute;
+                right: 40/@bf;
+                bottom: 0;
+            }
+        }
+        .user-3 {
+            width: 900/@bf;
+            height: 515/@bf;
+            background: url("../images/reward/user-3.png") no-repeat center top / 100% 100%;
+            margin: 0 auto;
+            position: relative;
+            .user-hj {
+                position: absolute;
+                left: 40/@bf;
+                bottom: 0;
+            }
+            .user-bj {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            .user-zj {
+                position: absolute;
+                right: 40/@bf;
+                bottom: 0;
+            }
+        }
+        .user-4 {
+            width: 900/@bf;
+            height: 517/@bf;
+            background: url("../images/reward/user-4.png") no-repeat center top / 100% 100%;
+            margin: 0 auto 60/@bf;
+            position: relative;
+            .user-nj {
+                position: absolute;
+                left: 40/@bf;
+                bottom: 0;
+            }
+            .user-xj {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            .user-js {
+                position: absolute;
+                right: 40/@bf;
+                bottom: 0;
+            }
+        }
+    }
+    .look-award {
+        width: 213/@bf;
+        height: 84/@bf;
+        background: url("../images/reward/look-award.png") no-repeat center / 100%;
+        cursor: pointer;
+    }
+
+    // 奖项详情弹窗
+    .popup-module {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .popup-wrap {
+            width: 900/@bf;
+            max-height: 70%;
+            display: flex;
+        }
+        .popup-reward-container {
+            flex: 1;
+            background: url("../images/border-center.png") repeat-y center / 100%;
+            position: relative;
+            &::before {
+                content: "";
+                width: 900/@bf;
+                height: 35/@bf;
+                background: url("../images/border-top.png") no-repeat center bottom / 100%;
+                position: absolute;
+                left: 0;
+                top: -35/@bf;
+            }
+            &::after {
+                content: "";
+                width: 900/@bf;
+                height: 35/@bf;
+                background: url("../images/border-bottom.png") no-repeat center top / 100% 100%;
+                position: absolute;
+                left: 0;
+                bottom: -35/@bf;
+            }
+            .close {
+                position: absolute;
+                right: 0;
+                top: -100/@bf;
+                font-size: 0;
+                cursor: pointer;
+            }
+            .content {
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                .reward-scroller {
+                    width: 100%;
+                    height: 100%;
+                    -webkit-overflow-scrolling: touch;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .list-item {
+                    width: 33.33%;
+                    background: url("../images/reward/reward-bg.png") no-repeat center top / 203/@bf 207/@bf;
+                    margin-bottom: 10/@bf;
+                    padding-top: 25/@bf;
+                    .icon {
+                        width: 100%;
+                        height: 160/@bf;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            width: 150/@bf;
+                            height: 204/@bf;
+                            background: url("../images/reward/stream-light.png") no-repeat center / 100%;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: -40/@bf;
+                            margin: auto;
+                        }
+                        .gif-xz {
+                            width: 187/@bf;
+                            height: 48/@bf;
+                            background-size: 100% 100% !important;
+                            display: block;
+                        }
+                        .gif-txk {
+                            width: 119/@bf;
+                            height: 119/@bf;
+                            background-size: 100% 100% !important;
+                            display: block;
+                        }
+                        // .xz-zz {
+                        //     width: 187/@bf;
+                        //     height: 48/@bf;
+                        //     background: url("../images/reward/user-xz/xz-zz.gif") no-repeat center / 100%;
+                        // }
+                    }
+                    .name {
+                        width: 95%;
+                        color: #fff;
+                        font-size: 26/@bf;
+                        font-weight: bold;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: -5/@bf auto 0;
+                        .tip-q {
+                            flex-shrink: 0;
+                        }
+                    }
+                    .txt {
+                        color: #fff;
+                        font-size: 22/@bf;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                    .btn-question {
+                        width: 25/@bf;
+                        height: 25/@bf;
+                        background: url("../images/reward/question.png") no-repeat center / 100% 100%;
+                    }
+                }
+            }
+        }
+    }
+}

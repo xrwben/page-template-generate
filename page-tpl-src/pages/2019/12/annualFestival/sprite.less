@@ -1,0 +1,46 @@
+.getSprite (@w, @h, @posx, @posy) {
+    background-position: (@posx * -1)/@bf (@posy * -1)/@bf;
+    width: @w/@bf;
+    height: @h/@bf;
+}
+
+.set_e-icon_sprite () {
+    .e-icon-s {
+        background: url('./images/e-icon.png') no-repeat;
+        background-size: 1012/@bf 262/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .btn-et-rule { .getSprite(260, 123, 0, 139); }
+    .e-rule-pic { .getSprite(1012, 129, 0, 0); }
+    .e-rule-pic2 { .getSprite(137, 47, 270, 139); }
+}
+.set_e-icon_sprite();
+
+.set_es-tab_sprite () {
+    .es-tab-s {
+        background: url('./images/es-tab.png') no-repeat;
+        background-size: 500/@bf 314/@bf;
+        font-size: 0px;
+        display: block;
+    }
+    .et-st-0-a { .getSprite(160, 44, 170, 162); }
+    .et-st-0-d { .getSprite(159, 44, 341, 0); }
+    .et-st-0 { .getSprite(159, 44, 341, 162); }
+    .et-st-1-a { .getSprite(160, 44, 171, 0); }
+    .et-st-1-d { .getSprite(159, 44, 341, 108); }
+    .et-st-1 { .getSprite(159, 44, 341, 54); }
+    .et-st-2-a { .getSprite(160, 44, 0, 162); }
+    .et-st-2-d { .getSprite(161, 44, 0, 0); }
+    .et-st-2 { .getSprite(161, 44, 0, 54); }
+    .et-st-3-a { .getSprite(160, 44, 0, 108); }
+    .et-st-3-d { .getSprite(159, 44, 0, 270); }
+    .et-st-3 { .getSprite(159, 44, 169, 270); }
+    .et-st-4-a { .getSprite(160, 44, 170, 216); }
+    .et-st-4-d { .getSprite(160, 44, 171, 108); }
+    .et-st-4 { .getSprite(160, 44, 171, 54); }
+    .et-st-5-a { .getSprite(160, 44, 0, 216); }
+    .et-st-5-d { .getSprite(159, 44, 341, 216); }
+    .et-st-5 { .getSprite(159, 44, 341, 270); }
+}
+.set_es-tab_sprite();

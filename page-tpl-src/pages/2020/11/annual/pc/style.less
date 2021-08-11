@@ -1,0 +1,43 @@
+@bf: 1px*10/6;
+
+@import '../mixin.less';
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    background: url("../images/bg-p-1.jpg") no-repeat center top / auto 1304px,
+        url("../images/bg-p-2.png") no-repeat center 1000px ~"/" auto 830px,
+        url("../images/bg-p-3.png") no-repeat center bottom ~"/" auto 615px;
+    background-color: #121214;
+    position: relative;
+}
+.page-content {
+    width: 1080/@bf;
+    padding-top: 1050px;
+    margin: 0 auto;
+}
+.banner {
+    width: 1920px;
+    height: 1120px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    .animation-entry, .animation-float {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .animation-float {
+        display: none;
+    }
+}
+
+.btn-rule {
+    @diff: 552/@bf;
+    right: 44%;
+    bottom: calc(~"2% + @{diff}");
+    transform: translate(400px, 0);
+}

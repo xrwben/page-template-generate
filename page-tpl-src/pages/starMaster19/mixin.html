@@ -1,0 +1,189 @@
+<!-- mixin html content -->
+<div class="page-content">
+    <div class="h-s1 h-palace">星主大殿</div>
+    <div class="palace deco-box">
+        <div class="deco">
+            <div class="top-box">
+                <div v-for="(si, sind) in 3" :key="'star_top_' + si" :class="'top-i top' + si">
+                    <p :class="'title star-s txt-top' + si"></p>
+                    <div class="avatar" @click="goRoom(starTop3[sind])">
+                        <img v-if="starTop3[sind]" class="headpic" :src="starTop3[sind].headPic" alt="星主">
+                        <img v-else class="headpic" src="${require('./mobile/images/avatar-holder.jpg')}" alt="星主">
+                        <div :class="'cover icon-s border-top' + si"></div>
+                    </div>
+                    <p class="name txt-of">{{ starTop3[sind] ? starTop3[sind].nickname : '虚位以待' }}</p>
+                </div>
+            </div>
+            <div class="star-box fl-box">
+                <div v-for="(star, si) in [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2]" :key="'star_' + si" class="star-i">
+                    <p :class="['title star-s', 'txt-star' + star]"></p>
+                    <img v-if="starMaster[si]" class="headpic" :src="starMaster[si].headPic" alt="星主" @click="goRoom(starMaster[si])">
+                    <img v-else class="headpic" src="${require('./mobile/images/avatar-holder.jpg')}" alt="星主">
+                    <p class="name txt-of">{{ starMaster[si] ? starMaster[si].nickname : '虚位以待' }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h-s1 h-rank">星主争夺大战</div>
+    <div class="rank deco-box">
+        <div class="rank-tab fl-box">
+            <div :class="['btn rank-tab-i btn-s', rankTab === 'mod' ? 'btn-tab-mod' : 'btn-tab-mod-d']" @click="changeTab('mod')">星主榜</div>
+            <div :class="['btn rank-tab-i btn-s', rankTab === 'user' ? 'btn-tab-user' : 'btn-tab-user-d']" @click="changeTab('user')">守护榜</div>
+        </div>
+        <div class="deco">
+            <div class="tips">{{ rankTab === 'mod' ? '*点击守护值，即可查看十二星座明细' : ''}}</div>
+            <div class="top-box">
+                <div v-for="(ri, rind) in showRankTop3" :key="'rank_i_' + rind" :class="'top-i top-' + (rind + 1)">
+                    <div class="avatar-wrapper" @click="rankTab === 'mod' && goRoom(ri)">
+                        <div class="avatar avatar-bg">
+                            <div class="bg-color"></div>
+                        </div>
+                        <div class="avatar avatar-c">
+                            <div class="avatar-inner">
+                                <img class="headpic" :src="ri.headPic" alt="">
+                            </div>
+                        </div>
+                        <div :class="'icon-s cown cown' + (rind + 1)"></div>
+                        <div v-show="ri.isPlaying" class="icon-s icon-live"></div>
+                    </div>
+                    
+                    <div class="nickname fl-box">
+                        <div class="name txt-of">{{ ri.nickname }}</div>
+                        <span v-show="!ri._holder" :class="['level_icon', (rankTab === 'mod' ? 'm_level_icon_' : 'u_level_icon_') + ri.level]"></span>
+                    </div>
+                    <div :class="['value txt-of', (ri._holder || rankTab === 'user') && 'no-under-line']" @click="toggleInfos(ri)">守护值：{{ ri.score }}</div>
+                    <div v-show="rankTab === 'mod'" :class="['btn btn-s', ri.isLoved ? 'btn-atte-d' : 'btn-atte']" @click="atte(ri)"></div>
+                </div>
+            </div>
+            <div class="rank-list-h fl-box">
+                <div class="cell cell-1">排名</div>
+                <div class="cell cell-2">{{ rankTab === 'mod' ? '主播' : '用户' }}</div>
+                <div class="cell cell-3">守护值</div>
+            </div>
+            <div class="rank-list">
+                <div v-for="(ri, rind) in showRankOh" :key="'rank_i_' + rind" class="rank-item fl-box">
+                    <div class="cell-1">{{ rind + 4 }}</div>
+                    <div class="cell-2 fl-ver">
+                        <div class="avatar" @click="rankTab === 'mod' && goRoom(ri)">
+                            <img class="headpic" :src="ri.headPic" alt="">
+                            <div v-show="ri.isPlaying" class="icon-s icon-live"></div>
+                        </div>
+                        <div class="nickname fl-ver">
+                            <span class="name txt-of">{{ ri.nickname }}</span>
+                            <span v-show="!ri._holder" :class="['level_icon', (rankTab === 'mod' ? 'm_level_icon_' : 'u_level_icon_') + ri.level]"></span>
+                        </div>
+                    </div>
+                    <div :class="['cell-3 txt-of', (ri._holder || rankTab === 'user') && 'no-under-line']" @click="toggleInfos(ri)">{{ ri.score }}</div>
+                </div>
+            </div>
+
+            <div class="rank-tips">当前只展示前10名{{ rankTab === 'mod' ? '主播' : '用户' }}</div>
+
+            <div v-if="ranks.meCenter" class="me-center fl-box">
+                <div class="info">
+                    <div class="avatar" @click="rankTab === 'mod' && goRoom(ranks.meCenter)">
+                        <img :src="ranks.meCenter.headPic" alt="" class="headpic">
+                        <div v-show="ranks.meCenter.isPlaying" class="icon-s icon-live"></div>
+                    </div>
+                    <div class="nickname fl-box">
+                        <span class="name txt-of">{{ ranks.meCenter.nickName }}</span>
+                        <span :class="['level_icon', (rankTab === 'mod' ? 'm_level_icon_' : 'u_level_icon_') + ranks.meCenter.level]"></span>
+                    </div>
+                </div>
+                <div class="desc fl-box">
+                    <div v-for="di in [0, 2, 1, 3]" class="desc-i">
+                        <div class="title">{{ ranks.meCenter.pairInfos[di].name }}</div>
+                        <div :class="['value', rankTab === 'mod' && di === 1 && 'btn underline']" @click="rankTab === 'mod' && di === 1 && toggleInfos(ranks.meCenter)">{{ ranks.meCenter.pairInfos[di].value }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">本次活动最终解释权归平台运营团队所有</div>
+</div>
+
+<div class="floater btn btn-s btn-rules" @click="toggleRule">活动规则</div>
+
+<div v-show="layerRules" class="layer layer-rules">
+    <div class="layer-inner">
+        <div class="layer-close btn btn-s btn-close" @click="toggleRule"></div>
+        <div class="layer-h h-s3 h-rules">活动规则</div>
+        <div class="layer-main deco-box with-h">
+            <div class="deco">
+                <scroller
+                    class="deco-main"
+                    ref="rules-scroller"
+                    :right="4"
+                    :thumb-color="'#f7dd81'">
+                    <div class="rule-i"><span class="color-or">1. 活动时间：</span>8月14日 12:00:00-8月17日 23:59:59</div>
+                    <div class="rule-i"><span class="color-or">2. 活动礼物：</span></div>
+                    <div class="rule-pic rule-gift"></div>
+                    <div class="rule-i">3. 活动期间，星座系列守护礼物5折售卖，原价13140克拉，现价6570克拉。</div>
+                    <div class="rule-i">4. 主播收取活动礼物，前三名主播获得奖励，用户送出活动礼物，前三名用户获得奖励。</div>
+                    <div class="rule-i">5. 收取该星座礼物（年守护、月守护、星座守护）价值第一名的主播即为该星座星主，获得奖励。</div>
+                    <div class="rule-i"><span class="color-or">6. 活动奖励：</span></div>
+                    <div class="rule-pic rule-rw"></div>
+                    <div class="rule-i"><span class="color-or">7.奖励下发说明：</span></div>
+                    <div class="rule-i">1）克拉于活动结束的5个工作日内发放；</div>
+                    <div class="rule-i">2）勋章、上头条、冠名权在活动结束后即时下发；</div>
+                    <div class="rule-i">3）开播飘屏在活动结束的次日首次开播下发，每日下发一次。</div>
+                </scroller>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div v-show="layerInfos" class="layer layer-infos">
+    <div class="layer-inner">
+        <div class="layer-close btn btn-s btn-close" @click="toggleInfos"></div>
+        <div class="layer-main deco-box">
+            <div class="deco">
+                <scroller
+                    class="deco-main"
+                    ref="stars-scroller"
+                    :right="4"
+                    :thumb-color="'#f7dd81'">
+                    <div class="layer-h h-s2 h-stars">十二星座星主</div>
+                    <div class="starlist fl-box">
+                        <div v-for="(si, sind) in showStarTop" :key="'star-item-' + sind" class="star-item">
+                            <div class="star-name">
+                                <span :class="['badge star-s badge-star' + si._ind]"></span>
+                                <span class="name">{{ si._starName }}</span>
+                            </div>
+                            <div class="star-host">
+                                <img @click="goRoom(si)" class="headpic" :src="si.headPic" alt="">
+                                <div v-show="si.isPlaying" class="icon-s icon-live"></div>
+                                <div class="nickname txt-of">{{ si.modName }}</div>
+                                <div class="score txt-of">守护值：{{ si.score }}</div>
+                            </div>
+                            <div class="star-guard">
+                                <div class="sub-t">守护神</div>
+                                <div class="nickname txt-of">{{ si.uName || '--' }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-show="infoType === 1" class="layer-sub-h h-s3 h-herstar">TA的星座排名</div>
+                    <div v-show="infoType === 2" class="layer-sub-h h-s2 h-mystar">我的星座排名</div>
+                    
+                    <div class="mystars fl-box">
+                        <div v-for="(si, sind) in showGuards" :key="'guard-item-' + sind" class="star-item">
+                            <div class="star-details">
+                                <span :class="['badge star-s badge-star' + si._ind]"></span>
+                                <div class="name">{{ si._starName }}</div>
+                                <div class="rank-i txt-of">排名：{{ si.rank }}</div>
+                                <div class="score txt-of">守护值：{{ si.score | numPer }}</div>
+                            </div>
+                            <div class="star-owner txt-of">守护神：{{ si.nickname || '--' }}</div>
+                        </div>
+                    </div>
+                </scroller>
+            </div>
+        </div>
+    </div>
+</div>
+
+<loading ref="loading"></loading>
+
+<toast ref="toast"></toast>
